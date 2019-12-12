@@ -17,7 +17,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
+
+
 Route::get('/home','HomeController@index')->name('home');
+
 Route::get('/login/recruteur','Auth\LoginController@showRecruteurLoginForm')->name('recru');
 Route::get('/login/candidat','Auth\LoginController@showCandidatLoginForm')->name('can');
 Route::get('register/recruteur','Auth\RegisterController@showRecruteurRegisterForm')->name('recruteur');
@@ -27,6 +31,8 @@ Route::post('/login/recruteur','Auth\LoginController@recruteurLogin');
 Route::post('/login/candidat','Auth\LoginController@candidatLogin');
 Route::post('/register/recruteur','Auth\RegisterController@createRecruteur');
 Route::post('/register/candidat','Auth\RegisterController@createCandidat');
+
+
 
 Route::view('/home','home')->middleware('auth');
 Route::view('/recruteur','recruteur');
@@ -40,7 +46,7 @@ Route::get('recruteurdashboard', function () {
 
 Route::get('candidatdashboard', function () {
     return view('candidatdashboard');
-})->name('lol');
+});
 Route::get('acceuil', function () {
     return view('acceuil');
 });
@@ -48,14 +54,34 @@ Route::get('acceuil', function () {
 Route::get('profil','CandidatProfileController@profile')->name('profil');
 Route::post('profil','CandidatProfileController@update_avatar');
 
-Route::get('profil1','RecruteurProfileController@profile1')->name('profil1');
-Route::post('profil1','RecruteurProfileController@update_avatar1');
 
  Route::get('offres','OffreController@indexo'); 
  Route::get('offres/createo/{id}','OffreController@createo');    
  Route::post('offres','OffreController@storeo'); 
- Route::get('offres/{id}/edito','OffreController@edito');
+ Route::get('offres/{id}/edit','OffreController@edito');
  Route::put('offres/{id}','OffreController@updateo');
  Route::delete('offres/{id}','OffreController@destroyo'); 
 
-// Route::view('/offres/createo','offres/createo');
+ // route du cv
+ Route::get('formations/formation','FormationController@formation');
+ Route::get('formations/competence','FormationController@competence');
+ Route::get('formations/experience','FormationController@experience');
+ Route::get('cvs','CvController@index');
+ Route::get('cvs/create/{id}','CvController@create');    
+ Route::post('cvs','CvController@store'); 
+ Route::get('cvs/{id}/edit','CvController@edit');
+ Route::put('cvs/{id}','CvController@update');
+ Route::delete('cvs/{id}','CvController@destroy');
+
+
+Route::get('Cv/index', function () {
+    return view('Cv/index');
+});
+Route::get('Cv/formation', function () {
+    return view('Cv/formation');
+})->name('lol');
+
+Route::get('Cv/experience', function () {
+    return view('Cv/experience');
+});
+
