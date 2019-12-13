@@ -53,16 +53,20 @@
               <a href="#" class="account-button">My Account</a>
               <div class="account-card">
                 <div class="header-top-account-info">
-                  <a href="#" class="account-thumb">
-                  
-                </div>
+                      <a href="#" class="account-thumb">
+                        <img src="images/logo/{{ Auth::guard('recruteur')->user()->logo }}" class="img-fluid" alt="">
+                      </a>
+                      <div class="account-body">
+                        <h5><a href="#">{{ Auth::guard('recruteur')->user()->nom }}</a></h5>
+                      </div>
+                    </div>
                 <ul class="account-item-list">
 
 
-                  <li class="nav-item dropdown">
+                 <!--  <li class="nav-item dropdown">
                      <img src="images/logo/{{ Auth::guard('recruteur')->user()->logo }}" style="width: 80px;  height: 80px; position:absolute; top: 10px; right: 10px; border-radius: 50%; " >
                                    <b>{{ Auth::guard('recruteur')->user()->nom }}</b>  <span class=""></span>
-                                </a></li> 
+                                </a></li>  -->
                   <li><a href="{{ route('profil1') }}"><span class="ti-user"></span>Account</a></li>
                   <li><a href="#"><span class="ti-settings"></span>Settings</a></li>
                   <li> <a  href="{{ route('logout') }}"

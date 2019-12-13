@@ -28,7 +28,7 @@ class RecruteurProfileController extends Controller
                 $recruteur->logo = $filename;
                 $recruteur->save();
             }
-            return view('profil1', ['recruteur' => $recruteur] );
+            return view('recruteurdashboard');
         
 }
 }

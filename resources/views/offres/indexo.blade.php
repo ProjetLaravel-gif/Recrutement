@@ -84,10 +84,15 @@
                                            </div>
                                            <div class="more">
                                              <div class="buttons">
-                                               <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">postuler</a>
-                                               <a href="#" class="favourite"><i data-feather="heart"></i></a>
+                                              <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">supprimer</a>
+                                               <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">modifier</a>
+                                                <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">voir details</a>
+                                               <!-- <a href="#" class="favourite"><i data-feather="heart"></i></a> -->
                                              </div>
-                                             <p class="deadline">Deadline: Oct 31,  2019</p>
+                                             @php
+                                             $depot = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $offres->created_at);
+                                             @endphp
+                                             <p class="deadline">Date Dépot: {{$depot}}</p>
                                            </div>
                                          </div>
                                        </div>

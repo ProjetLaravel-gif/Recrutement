@@ -53,19 +53,22 @@
                <a href="#" class="account-button">My Account</a>
                <div class="account-card">
                  <div class="header-top-account-info">
-                   <a href="#" class="account-thumb">
-                     <img src="images/account/thumb-1.jpg" class="img-fluid" alt="">
-                   </a>
-                   <div class="account-body">
-                     <h5><a href="#">Robert Chavez</a></h5>
-                     <span class="mail">chavez@domain.com</span>
-                   </div>
-                 </div>
+                      <a href="#" class="account-thumb">
+                        <img src="images/avatars/{{ Auth::guard('candidat')->user()->avatar }}" class="img-fluid" alt="">
+                      </a>
+                      <div class="account-body">
+                        <h5><a href="#">{{ Auth::guard('candidat')->user()->nom }} {{ Auth::guard('candidat')->user()->prenom }}</a></h5>
+                        <span class="mail">{{ Auth::guard('candidat')->user()->email }}</span>
+                      </div>
+                    </div>
                  <ul class="account-item-list">
-                   <li><a href="#"><span class="ti-user"></span>Account</a></li>
+                   <!-- <li><a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('lol') }}" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="position: relative; padding-right: 50px; ">
+                    <img src="images/avatars/{{ Auth::guard('candidat')->user()->avatar }}" style="width: 80px;  height: 80px; position:absolute; top: 10px; right: 10px; border-radius: 50%; " >
+                                   <b>{{ Auth::guard('candidat')->user()->nom }} {{ Auth::guard('candidat')->user()->prenom }}</b> -->  <span class=""></span>
+                                </a></li> 
+                   <li><a href="{{ route('profil') }}"><span class="ti-user"></span>Account</a></li>
                    <li><a href="#"><span class="ti-settings"></span>Settings</a></li>
-                   <li> <a  href="{{ route('profil') }}"> mon profil </a> <br>
-                 <li> <a  href="{{ route('logout') }}"
+                    <li> <a  href="{{ route('logout') }}"
                                                         onclick="event.preventDefault();
                                                                       document.getElementById('logout-form').submit();">
                                                          logout
