@@ -63,7 +63,7 @@
                      <img src="images/logo/{{ Auth::guard('recruteur')->user()->logo }}" style="width: 80px;  height: 80px; position:absolute; top: 10px; right: 10px; border-radius: 50%; " >
                                    <b>{{ Auth::guard('recruteur')->user()->nom }}</b>  <span class=""></span>
                                 </a></li> 
-                  <li><a href="{{ route('profil1') }}""><span class="ti-user"></span>Account</a></li>
+                  <li><a href="{{ route('profil1') }}"><span class="ti-user"></span>Account</a></li>
                   <li><a href="#"><span class="ti-settings"></span>Settings</a></li>
                   <li> <a  href="{{ route('logout') }}"
                                       onclick="event.preventDefault();
@@ -171,7 +171,7 @@
                 </ul>
               </li>
               <li class="menu-item"><a href="contact.html">Contact Us</a></li>
-              <li class="menu-item post-job"><a href="post-job.html"><i class="fas fa-plus"></i>Post a Job</a></li>
+              <li class="menu-item post-job"><a href="{{ url('offres/createo/$offres->recruteur_id')}}"><i class="fas fa-plus"></i>Post a Job</a></li>
             </ul>
           </div>
         </nav>

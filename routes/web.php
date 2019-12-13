@@ -54,6 +54,8 @@ Route::get('acceuil', function () {
 Route::get('profil','CandidatProfileController@profile')->name('profil');
 Route::post('profil','CandidatProfileController@update_avatar');
 
+Route::get('profil1','RecruteurProfileController@profile1')->name('profil1');
+Route::post('profil1','RecruteurProfileController@update1_avatar');
 
  Route::get('offres','OffreController@indexo'); 
  Route::get('offres/createo/{id}','OffreController@createo');    
