@@ -97,10 +97,22 @@
                   
                    
                 <div class="form-group">
-                  <input type="text" placeholder="Nom Condidat" name="nom" class="form-control">
+                  <input type="text" placeholder="Nom Condidat"  class="form-control{{ $errors->has('nom') ? ' is-invalid' : '' }}" name="nom" value="{{ old('nom') }}" required autofocus>
+
+                                @if ($errors->has('nom'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('nom') }}</strong>
+                                    </span>
+                                @endif
                 </div>
                 <div class="form-group">
-                  <input type="text" placeholder="Prénom Condidat" name="prenom" class="form-control">
+                  <input type="text" placeholder="Prénom Condidat" class="form-control{{ $errors->has('prenom') ? ' is-invalid' : '' }}" name="prenom" value="{{ old('prenom') }}" required autofocus>
+
+                                @if ($errors->has('prenom'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('prenom') }}</strong>
+                                    </span>
+                                @endif
                 </div>
                 <!-- <div class="form-group">
                   <input type="radio" name="civilite" >Mr<br>
@@ -122,19 +134,44 @@
                    </div> 
                  </div> -->
                  <div class="form-group">
-                <input type="text" placeholder="numero telephone" name="numtel" class="form-control">
+                <input type="text" placeholder="numero telephone"class="form-control{{ $errors->has('numtel') ? ' is-invalid' : '' }}" name="numtel" value="{{ old('numtel') }}" required autofocus>
+
+                                @if ($errors->has('numtel'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('numtel') }}</strong>
+                                    </span>
+                                @endif
                 </div>
                 <!-- <div class="form-group">
                   <input type="email" placeholder="Email " name="email" class="form-control">
                 </div> -->
                  <div class="form-group">
-                  <input type="email" placeholder=" Address " name="adresse" class="form-control">
+                  <input type="text" placeholder=" Address " class="form-control{{ $errors->has('adresse') ? ' is-invalid' : '' }}" name="adresse" value="{{ old('adresse') }}" required autofocus>
+
+                                @if ($errors->has('adresse'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('adresse') }}</strong>
+                                    </span>
+                                @endif
                 </div>
                   <div class="form-group">
-                  <input type="date" name="datenaiss" class="form-control" >
+                  <input type="date" placeholder=" date de naissance "class="form-control{{ $errors->has('datenaiss') ? ' is-invalid' : '' }}" name="datenaiss" value="{{ old('datenaiss') }}" required autofocus>
+
+                                @if ($errors->has('datenaiss'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('datenaiss') }}</strong>
+                                    </span>
+                                @endif
                 </div>
+
                  <div class="form-group">
-                  <input type="email" placeholder="linkedin " name="linkedlin" class="form-control">
+                  <input type="text" placeholder="linkedlin " class="form-control{{ $errors->has('linkedlin') ? ' is-invalid' : '' }}" name="linkedlin" value="{{ old('linkedlin') }}" required autofocus>
+
+                                @if ($errors->has('linkedlin'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('linkedlin') }}</strong>
+                                    </span>
+                                @endif
                 </div>
 
                  <div class="form-group">

@@ -55,8 +55,24 @@ class RegisterController extends Controller
     protected function validator(array $data)
     {
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'nom' => ['required', 'string', 'max:255'],
+            'prenom' => ['required', 'string', 'max:255'],
+             'numtel' => ['required', 'string', 'max:10'],
+              'adresse' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:candidats'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
+        ]);
+    }
+
+
+     protected function validator1(array $data)
+    {
+        return Validator::make($data, [
+            'nom' => ['required', 'string', 'max:255'],
+            'numtel' => ['required', 'string', 'max:10'],
+            'adresse' => ['required', 'string', 'max:255'],
+            'siteweb' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:recruteurs'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ]);
     }
@@ -96,19 +112,21 @@ class RegisterController extends Controller
     {
 
 
-        // $this->validator($request->all())->validate();
+         $this->validator1($request->all())->validate();
+         
         $recruteur = Recruteur::create([
             'nom' => $request['nom'],
             'type' => $request['type'],
             'numtel' => $request['numtel'],
             'adresse' => $request['adresse'],
-            'logo' => $request['logo'],
             'siteweb' => $request['siteweb'], 
             'email' => $request['email'],
             'password' => Hash::make($request['password']),
-             
-            
              ]);
+        
+       
+            
+            
         // $recruteur->logo->store('image');
 
            
@@ -120,7 +138,9 @@ class RegisterController extends Controller
       protected function createCandidat(Request $request)
     {
 
-        //$this->validator($request->all())->validate();
+        
+        $this->validator($request->all())->validate();
+        
          $candidat = Candidat::create([
             'nom' => $request['nom'],
             'prenom' => $request['prenom'],

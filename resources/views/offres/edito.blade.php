@@ -11,9 +11,9 @@
                   <div class="basic-info-input">
                   	 <form action="{{url ('offres/'.$offres->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
                         {{ csrf_field() }}
-                    <h4><i data-feather="plus-circle"></i>Publier une offre</h4>
+                    <h4><i data-feather="plus-circle"></i>modifier l'offre</h4>
                     
-                          <input type="hidden" name="recruteur_id" value="{{$recruteur_id}}">
+                          <input type="hidden" name="recruteur_id" value="{{$offres->recruteur_id}}">
 
                     <div id="job-title" class="form-group row">
                       <label class="col-md-3 col-form-label">intitulé</label>
