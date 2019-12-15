@@ -35,7 +35,7 @@
     <div class="row no-gliters">
       <div class="col">
         <div class="post-container">
-          <div class="post-content-wrapper">
+          <div class="post-content-wrapper" id="app">
             <form action="#" class="job-post-form">
               <div class="basic-info-input">
                 
@@ -43,6 +43,7 @@
 
 
                           @yield('yasmine')
+                          @yield('javascripts')
 
                               </div>
                             </form>
