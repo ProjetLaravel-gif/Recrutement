@@ -65,16 +65,24 @@ Route::post('profil1','RecruteurProfileController@update_avatar1');
  Route::delete('offres/{id}','OffreController@destroyo'); 
 
  // route du cv
- Route::get('formations/formation','FormationController@formation');
- Route::get('formations/competence','FormationController@competence');
- Route::get('formations/experience','FormationController@experience');
+ // Route::get('formations/formation','FormationController@formation');
+ // Route::get('formations/competence','FormationController@competence');
+ // Route::get('formations/experience','FormationController@experience');
+
+ // Route::resource('cvs','CvController');
  Route::get('cvs','CvController@index');
  Route::get('cvs/create/{id}','CvController@create');    
- Route::post('cvs','CvController@store'); 
+ Route::post('cvs','CvController@store')->name('cvs'); 
  Route::get('cvs/{id}/edit','CvController@edit');
  Route::put('cvs/{id}','CvController@update');
+ Route::get('cvs/{id}','CvController@show');
  Route::delete('cvs/{id}','CvController@destroy');
-
+ Route::get('getFormations','CvController@getFormations');
+   
+   // route formation
+   Route::get('formations','FormationController@index');
+   Route::get('formations/create/{id}','FormationController@create');    
+   Route::post('formations','FormationController@store'); 
 
 Route::get('Cv/index', function () {
     return view('Cv/index');

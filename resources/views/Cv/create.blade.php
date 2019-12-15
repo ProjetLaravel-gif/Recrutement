@@ -85,14 +85,14 @@
       <div class="col">
         <div class="post-container">
           <div class="post-content-wrapper">
-            <form action="{{ url('cvs') }}"  method="post">
+            <form action="{{ route('cvs') }}"  method="post">
               {{ csrf_field() }}
               <div class="basic-info-input">
                 
 
          <h4><i data-feather="plus-circle"></i>Ajouter CV</h4>
          <input type="hidden" name="candidat_id" value="{{$candidat_id}}">
-
+    
                <div id="name" class="form-group row">
                  <label class="col-md-3 col-form-label">Titre</label>
                  <div class="col-md-9">
@@ -110,9 +110,10 @@
                    <div class="form-group row">
                      <label class="col-md-3 col-form-label"></label>
                      <div class="col-md-9">
-                       <button class="button">
-                            <a href="{{ url('formations/formation') }}" ></a>
+                       <button class="button" type="submit">
+                           
                        Suivant
+                       </a>
                        </button>
                      </div>
                    </div>
@@ -149,6 +150,7 @@
                   </div>
                 </div>
               </div>
+
                @include('layouts/_footer')
 
 

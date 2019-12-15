@@ -23,6 +23,7 @@ class CvController extends Controller
     public function create($candidat_id){
     	 
     	 return view('Cv.create',['candidat_id' => $candidat_id]);
+
     }
 
      //Enrengistrer un cv
@@ -34,7 +35,7 @@ class CvController extends Controller
            $user = Candidat::find($id);
            $cvs->candidat_id = $id;
            $cvs->save(); 
-            return redirect('cvs');
+           return redirect('formations/create/'.$cvs->id)->with( [ 'cv_id' => $cvs->id ] );
               }
 
      //Permet de recuperer un cv puis de le mettre dans un formulaire
@@ -46,16 +47,27 @@ class CvController extends Controller
 
      //Permet de modifier un cv
     public function update(Request $request, $id){
-    	$cv = Cv::find(id);
+    	  $cv = Cv::find(id);
         $cvs->titre = $request->input('titre');
         $cvs->divers = $request->input('divers');
-        $cvs->save(); 
+        $cvs->save();
          return redirect('cvs');
+    }
+
+    public function show($id){
+
+     return view('Cv.formation',['id' => $id]);
     }
 
      //Permet de supprimer un cv 
     public function destroy(){
-    	
+    	   
+    }
+
+    public function getFormations(){
+
+      $formations = Formation::all();
+      return $formations;
     }
 
 }
