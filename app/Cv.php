@@ -16,4 +16,21 @@ class Cv extends Model
     {
         return $this->belongsTo('App\Candidat');
     }
+
+
+    public function comptences()
+    {
+        return $this->hasmany('App\Competence');
+    }
+
+    public function formations()
+    {
+        return $this->hasmany('App\Formation');
+    }
+
+
+    public function experiences()
+    {
+        return $this->hasmany('App\Experience');
+    }
 }

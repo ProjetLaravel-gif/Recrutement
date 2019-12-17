@@ -16,6 +16,7 @@ class FormationController extends Controller
    public function create($cv_id){
     
     return view('Cv.formation',['cv_id' => $cv_id]);
+    
    }
 
    public function store(Request $request){
@@ -28,8 +29,8 @@ class FormationController extends Controller
       	$formation->domaine = $request->input('domaine');
       	$formation->cv_id = $request->input('cv_id');
       	$formation->save();
-      	return redirect('formations');
+      	return redirect('experiences/create/'.$request->input('cv_id'));
 
       }
-   }
+   } 
 

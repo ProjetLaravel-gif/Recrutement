@@ -22,4 +22,20 @@ class Candidat extends Authenticatable
         protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function comptences()
+    {
+        return $this->hasmany('App\Competence');
+    }
+
+    public function formations()
+    {
+        return $this->hasmany('App\Formation');
+    }
+
+
+    public function experiences()
+    {
+        return $this->hasmany('App\Experience');
+    }
 }

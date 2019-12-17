@@ -1289,10 +1289,10 @@
     <script src="{{asset('assets/js/slick.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
 
-    <script src="{{asset('js/custom.js')}}"></script>
+    <script src="{{asset('assets/js/custom.js')}}"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>
-    <script src="{{asset('js/map.js')}}"></script>
+    <script src="{{asset('assets/js/map.js')}}"></script>
   </body>
 
 <!-- Mirrored from themerail.com/html/oficiona/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 2019 21:29:43 GMT -->

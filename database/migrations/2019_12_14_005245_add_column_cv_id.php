@@ -17,6 +17,7 @@ class AddColumnCvId extends Migration
            $table->integer('cv_id')->unsigned()->after('id');
            $table->foreign('cv_id')->references('id')->on('cvs'); 
         });
+
     }
 
     /**

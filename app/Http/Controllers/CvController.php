@@ -28,14 +28,14 @@ class CvController extends Controller
 
      //Enrengistrer un cv
     public function store(Request $request){
-    	   $cvs = new Cv();                 
+    	     $cvs = new Cv();                 
            $cvs->titre = $request->input('titre');
            $cvs->divers = $request->input('divers');
            $id = Auth::guard('candidat')->user()->id;
            $user = Candidat::find($id);
            $cvs->candidat_id = $id;
            $cvs->save(); 
-           return redirect('formations/create/'.$cvs->id)->with( [ 'cv_id' => $cvs->id ] );
+           return redirect('formations/create/'.$cvs->id)->with([ 'cv_id' => $cvs->id ] );
               }
 
      //Permet de recuperer un cv puis de le mettre dans un formulaire
