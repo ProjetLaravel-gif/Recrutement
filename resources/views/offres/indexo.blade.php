@@ -61,9 +61,11 @@
                                      </div>
                                      <table class="table">
                                        <body>
+
                                  @foreach($offres as $offres)
                                          <form action="{{ url('offres/'.$offres->id) }}" method="post">
                                              {{ csrf_field() }}
+                                             {{ method_field('DELETE') }}
                                        <div class="job-list">
                                          <div class="thumb">
                                            <a href="#">
@@ -75,6 +77,7 @@
                                              <h4><a href="">{{Auth::guard('recruteur')->user()->nom}}</a></h4>
                                             <!-- <h4><a href="">{{$offres->intitule}}</a></h4> -->
                                              <div class="info">
+                                               <span class="company"><a href="#">{{ $offres->intitule }}</a></span>
                                                <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $offres->dommaine }}</a></span>
                                                <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $offres->ville }}</a></span>
                                               
@@ -84,9 +87,10 @@
                                            </div>
                                            <div class="more">
                                              <div class="buttons">
-                                              <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">supprimer</a>
-                                               <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">modifier</a>
-                                                <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">voir details</a>
+                                              <button type="submit" data-toggle="modal" data-target="#infos" class="btn" style="background-color:red; color: white;font-family:"ElMessiri-SemiBold" ><span class="glyphicon glyphicon-trash"></span>supprimer</button>
+
+                                               <a href="{{ url('offres/'.$offres->id.'/edito') }}" class="btn" style="background-color:green; color: white;font-family:"ElMessiri-SemiBold">modifier</a>
+                                                <a href="" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold">voir details</a>
                                                <!-- <a href="#" class="favourite"><i data-feather="heart"></i></a> -->
                                              </div>
                                              @php

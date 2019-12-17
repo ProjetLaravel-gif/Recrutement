@@ -82,9 +82,15 @@
                  </label> -->
                <!-- </div> -->
         
-                 <div class="form-group">
-                   <input type="text" placeholder="NOM" name="nom" class="form-control">
-                 </div>
+                <div class="form-group">
+                  <input type="text" placeholder="Nom"  class="form-control{{ $errors->has('nom') ? ' is-invalid' : '' }}" name="nom" value="{{ old('nom') }}" required autofocus>
+
+                                @if ($errors->has('nom'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('nom') }}</strong>
+                                    </span>
+                                @endif
+                </div>
 
                   <div>
                              <div class="form-group">
@@ -97,28 +103,67 @@
                              </div>
                            </div>
 
-                 <div class="form-group">
-                   <input type="text" placeholder="numero de telephone" name="numtel" class="form-control">
-                 </div>
                   <div class="form-group">
-                   <input type="text" placeholder="adresse" name="adresse" class="form-control">
-                 </div>
+                <input type="text" placeholder="numero telephone"class="form-control{{ $errors->has('numtel') ? ' is-invalid' : '' }}" name="numtel" value="{{ old('numtel') }}" required autofocus>
+
+                                @if ($errors->has('numtel'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('numtel') }}</strong>
+                                    </span>
+                                @endif
+                </div>
+                  <div class="form-group">
+                <input type="text" placeholder="adresse"class="form-control{{ $errors->has('adresse') ? ' is-invalid' : '' }}" name="adresse" value="{{ old('adresse') }}" required autofocus>
+
+                                @if ($errors->has('adresse'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('adresse') }}</strong>
+                                    </span>
+                                @endif
+                </div>
                   
-                  <div class="form-group">
-                   <input type="text" placeholder="LOGO" name="logo" class="form-control">
+                  <!-- <div class="form-group">
+                   <input type="text" placeholder="LOGO" name="logo" class="form-control"> -->
                   <!--  <small id="fileHelp" class="form-text text-muted">Please upload a valid image file. Size of image should not be more than 2MB.</small>
                  </div> -->
                
                 
                       <div class="form-group">
-                   <input type="text" placeholder="siteweb" name="siteweb" class="form-control">
-                 </div>
-                 <div class="form-group">
-                   <input type="email" placeholder="Email Address" name="email" class="form-control">
-                 </div>
-                 <div class="form-group">
-                   <input type="password" placeholder="Password" name="password" class="form-control">
-                 </div>
+                <input type="text" placeholder="siteweb"class="form-control{{ $errors->has('siteweb') ? ' is-invalid' : '' }}" name="siteweb" value="{{ old('siteweb') }}" required autofocus>
+
+                                @if ($errors->has('siteweb'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('siteweb') }}</strong>
+                                    </span>
+                                @endif
+                </div>
+                  
+
+                <div class="form-group">
+                         <input id="email" type="email" placeholder="Addresse E-Mail" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                      
+                <div class="form-group">
+                                  <input id="password"   placeholder="Mot De Passe" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+
+                   <div class="form-group">
+                                <input id="password-confirm" placeholder="Confirmer Mot De Passe" type="password" class="form-control" name="password_confirmation"  onblur="verif(this)" required>
+                            </div>
+                            
                  <div class="more-option terms">
                    <div class="mt-0 terms">
                      <input class="custom-radio" type="checkbox" id="radio-4" name="termsandcondition" checked>

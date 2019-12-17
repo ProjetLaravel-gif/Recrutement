@@ -60,7 +60,7 @@ Route::post('profil1','RecruteurProfileController@update_avatar1');
  Route::get('offres','OffreController@indexo'); 
  Route::get('offres/createo/{id}','OffreController@createo');    
  Route::post('offres','OffreController@storeo'); 
- Route::get('offres/{id}/edit','OffreController@edito');
+ Route::get('offres/{id}/edito','OffreController@edito');
  Route::put('offres/{id}','OffreController@updateo');
  Route::delete('offres/{id}','OffreController@destroyo'); 
 

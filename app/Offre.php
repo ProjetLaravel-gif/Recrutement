@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Offre extends Model
 {
+	 use SoftDeletes;
+     protected $dates = ['deleted_at'];
      public function recruteurs()
     {
         return $this->belongsTo('App\Recruteur');
