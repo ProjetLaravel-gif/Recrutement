@@ -150,7 +150,7 @@
                             </div>
 
                       
-                 <div class="form-group">
+                <div class="form-group">
                                   <input id="password"   placeholder="Mot De Passe" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
 
                                 @if ($errors->has('password'))

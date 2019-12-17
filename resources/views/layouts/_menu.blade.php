@@ -174,7 +174,7 @@
                  </ul>
                </li>
                <li class="menu-item"><a href="contact.html">Contact Us</a></li>
-               <li class="menu-item post-job"><a href="post-job.html"><i class="fas fa-plus"></i>Post a Job</a></li>
+              <!--  <li class="menu-item post-job"><a href="post-job.html"><i class="fas fa-plus"></i>Post a Job</a></li> -->
              </ul>
            </div>
          </nav>

@@ -4,7 +4,6 @@
 <!-- Mirrored from themerail.com/html/oficiona/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 2019 21:29:43 GMT -->
 <head>
     <!-- Required meta tags -->
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,6 +25,7 @@
 
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/dashboard.css')}}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:300i,400,500" rel="stylesheet">
@@ -76,12 +76,12 @@
                 <li class="search-by">
                   <h5>par localisation</h5>
                   <ul>
-                    <li><a href="#">New York City <span>(508)</span></a></li>
-                    <li><a href="#">Washington, D.C <span>(96)</span></a></li>
-                    <li><a href="#">Chicago <span>(155)</span></a></li>
-                    <li><a href="#">San Francisco <span>(24)</span></a></li>
-                    <li><a href="#">Los Angeles <span>(268)</span></a></li>
-                    <li><a href="#">Boston <span>(46)</span></a></li>
+                    <li><a href="#">tlemcen <span>(508)</span></a></li>
+                    <li><a href="#">sba <span>(96)</span></a></li>
+                    <li><a href="#">oran<span>(155)</span></a></li>
+                    <li><a href="#">mosta <span>(24)</span></a></li>
+                    <li><a href="#">ain temouchent <span>(268)</span></a></li>
+                    <li><a href="#">alger <span>(46)</span></a></li>
                   </ul>
                 </li>
               </ul>
@@ -95,34 +95,22 @@
                 <li class="menu-item"><a href="job-listing.html">Job Listing</a></li>
                 <li class="menu-item"><a href="job-listing-with-map.html">Job Listing With Map</a></li>
                 <li class="menu-item"><a href="job-details.html">Job Details</a></li>
-                <li class="menu-item"><a href="post-job.html">Post Job</a></li>
               </ul>
             </li>
             <li class="menu-item dropdown">
-              <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">employeur
-              r</a>
+              <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">recruteurs
+              </a>
               <ul  class="dropdown-menu">
                 <li class="menu-item"><a href="employer-listing.html">Employer Listing</a></li>
-                <li class="menu-item"><a href="employer-details.html">Employer Details</a></li>
-                <li class="menu-item"><a href="employer-dashboard.html">Dashboard</a></li>
-                <li class="menu-item"><a href="employer-dashboard-edit-profile.html">Edit Profile</a></li>
-                <li class="menu-item"><a href="employer-dashboard-manage-candidate.html">Manage Candidate</a></li>
                 <li class="menu-item"><a href="employer-dashboard-manage-job.html">Manage Job</a></li>
                 <li class="menu-item"><a href="employer-dashboard-message.html">Message</a></li>
                 <li class="menu-item"><a href="employer-dashboard-pricing.html">Pricing</a></li>
-                <li class="menu-item"><a href="employer-dashboard-post-job.html">Post Job</a></li>
               </ul>
             </li>
             <li class="menu-item dropdown">
-              <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Candidat</a>
+              <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Candidats</a>
               <ul  class="dropdown-menu">
                 <li class="menu-item"><a href="candidate.html">Candidate List</a></li>
-                <li class="menu-item"><a href="candidate-details.html">Candidate Details</a></li>
-                <li class="menu-item"><a href="dashboard.html">Dashboard</a></li>
-                <li class="menu-item"><a href="dashboard-edit-profile.html">Edit Profile</a></li>
-                <li class="menu-item"><a href="add-resume.html">Add Resume</a></li>
-                <li class="menu-item"><a href="resume.html">Resume</a></li>
-                <li class="menu-item"><a href="edit-resume.html">Edit Resume</a></li>
                 <li class="menu-item"><a href="dashboard-bookmark.html">Bookmarked</a></li>
                 <li class="menu-item"><a href="dashboard-applied.html">Applied</a></li>
                 <li class="menu-item"><a href="dashboard-pricing.html">Pricing</a></li>
@@ -150,18 +138,17 @@
                 <li class="menu-item"><a href="register.html">Register</a></li>
               </ul>
             </li>
-            <li class="menu-item post-job"><a title="Title" href="post-job.html"><i class="fas fa-plus"></i>Poster une offre</a></li>
           </ul>
           <ul class="navbar-nav ml-auto account-nav">
-            <li class="dropdown menu-item header-top-notification">
+           <!--  <li class="dropdown menu-item header-top-notification">
               <a href="#" class="notification-button"></a>
               <div class="notification-card">
                 <div class="notification-head">
                   <span>Notifications</span>
                   <a href="#">Mark all as read</a>
                 </div>
-                <div class="notification-body">
-                  <a href="home-2.html" class="notification-list">
+              <div class="notification-body"> -->
+                 <!--  <a href="home-2.html" class="notification-list">
                     <i class="fas fa-bolt"></i>
                     <p>Your Resume Updated!</p>
                     <span class="time">5 hours ago</span>
@@ -191,7 +178,7 @@
                   <a href="#">See all notification</a>
                 </div>
               </div>
-            </li>
+            </li> --> 
             <li class="menu-item login-popup"><button title="Title" type="button" data-toggle="modal" data-target="#exampleModalLong">se connecter</button></li>
             <li class="menu-item login-popup"><button title="Title" type="button" data-toggle="modal" data-target="#exampleModalLong2">s'inscrire</button></li>
           </ul> 
@@ -320,15 +307,15 @@
                 <form action="#" class="search-form">
                   <input type="text" placeholder="entrer mots clés">
                   <select class="selectpicker" id="search-location">
-                    <option value="" selected>Localisation</option>
-                    <option value="california">California</option>
-                    <option value="las-vegas">Las Vegas</option>
-                    <option value="new-work">New Work</option>
-                    <option value="carolina">Carolina</option>
-                    <option value="chicago">Chicago</option>
-                    <option value="silicon-vally">Silicon Vally</option>
-                    <option value="washington">Washington DC</option>
-                    <option value="neveda">Neveda</option>
+                    <option value="" selected>ville</option>
+                    <option value="california">tlemcen</option>
+                    <option value="las-vegas">ain temouchent</option>
+                    <option value="new-work">oran</option>
+                    <option value="carolina">mosta</option>
+                    <option value="chicago">tipazza</option>
+                    <option value="silicon-vally">alger</option>
+                    <option value="washington">constantine</option>
+                    <option value="neveda">tizi</option>
                   </select>
                   <select class="selectpicker" id="search-category">
                     <option value="" selected>Categories</option>
@@ -364,7 +351,7 @@
     <!-- Search and Filter End -->
 
     <!-- Jobs -->
-    <div class="section-padding-bottom alice-bg">
+   <!--  <div class="section-padding-bottom alice-bg">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -973,7 +960,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
     <!-- Jobs End -->
 
     <!-- Top Companies -->
@@ -991,7 +978,7 @@
               </div>
               <span>Are You</span>
               <h3>Candidate?</h3>
-              <a href="{{ url('register/candidat') }}" data-toggle="modal" data-target="#exampleModalLong2">Register Now <i class="fas fa-arrow-right"></i></a>
+              <a href="{{ route('candidat') }}">Register Now <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
           <div class="col-lg-6">
@@ -1001,7 +988,7 @@
               </div>
               <span>Are You</span>
               <h3>Employer?</h3>
-              <a href="#" data-toggle="modal" data-target="#exampleModalLong3">Register Now <i class="fas fa-arrow-right"></i></a>
+              <a href="{{ route('recruteur') }}">Register Now <i class="fas fa-arrow-right"></i></a>
             </div>
           </div>
         </div>
@@ -1289,10 +1276,10 @@
     <script src="{{asset('assets/js/slick.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
 
-    <script src="{{asset('js/custom.js')}}"></script>
+    <script src="{{asset('assets/js/custom.js')}}"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>
-    <script src="{{asset('js/map.js')}}"></script>
+    <script src="{{asset('assets/js/map.js')}}"></script>
   </body>
 
 <!-- Mirrored from themerail.com/html/oficiona/home-1.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 2019 21:29:43 GMT -->

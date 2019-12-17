@@ -131,13 +131,7 @@
                               </select>
                             </div>
                             <div class="form-group">
-                              <select class="form-control" id="exampleFormControlSelect11" name="cartier" value="{{ $offres->cartier}}">
-                                <option>cartier</option>
-                                <option>les cerisier</option>
-                                <option>oudjlida</option>
-                                <option>chetouane</option>
-                                <option>imama</option>
-                              </select>
+                              <input type="text" class="form-control" placeholder="cartier" name="cartier">
                             </div>
                             <div class="form-group">
                               <input type="text" class="form-control" placeholder="emplacement" name="emplacement" value="{{ $offres->emplacement}}">
