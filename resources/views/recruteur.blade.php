@@ -52,7 +52,7 @@
                  <a href="index.html"><img src="logo-2.png" alt=""></a>
                </div>
                <div class="top-nav">
-                 <a href="login.html" class="account-page-link">Se Connecter</a>
+                 <a href="{{ route('recru') }}" class="account-page-link">Se Connecter</a>
                </div>
              </div>
            </div>

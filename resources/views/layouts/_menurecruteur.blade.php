@@ -67,7 +67,7 @@
                      <img src="images/logo/{{ Auth::guard('recruteur')->user()->logo }}" style="width: 80px;  height: 80px; position:absolute; top: 10px; right: 10px; border-radius: 50%; " >
                                    <b>{{ Auth::guard('recruteur')->user()->nom }}</b>  <span class=""></span>
                                 </a></li>  -->
-                  <li><a href="{{ route('profil1') }}"><span class="ti-user"></span>Account</a></li>
+                  <li><a href="{{ url('profil1') }}"><span class="ti-user"></span>Account</a></li>
                   <li><a href="#"><span class="ti-settings"></span>Settings</a></li>
                   <li> <a  href="{{ route('logout') }}"
                                       onclick="event.preventDefault();
