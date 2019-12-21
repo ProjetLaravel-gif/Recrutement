@@ -74,7 +74,7 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
  // Route::get('formations/experience','FormationController@experience');
 
  // Route::resource('cvs','CvController');
- Route::get('cvs','CvController@index');
+ Route::get('cvs','CvController@ig bbndex');
  Route::get('cvs/create/{id}','CvController@create');    
  Route::post('cvs','CvController@store')->name('cvs'); 
  Route::get('cvs/{id}/edit','CvController@edit');
@@ -85,8 +85,16 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
    
    // route formation
    Route::get('formations','FormationController@index');
-   Route::get('formations/create/{id}','FormationController@create');    
+   Route::get('formations/create/{id}','FormationController@create') ;    
    Route::post('formations','FormationController@store'); 
+ // route Experience
+   Route::get('experiences','ExperienceController@index');
+   Route::get('experiences/create/{id}','ExperienceController@create') ;    
+   Route::post('experiences','ExperienceController@store'); 
+  // route Experience
+   Route::get('competences','CompetenceController@index');
+   Route::get('competences/create/{id}','CompetenceController@create') ;    
+   Route::post('competences','CompetenceController@store'); 
 
 Route::get('Cv/index', function () {
     return view('Cv/index');

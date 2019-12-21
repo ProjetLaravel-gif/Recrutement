@@ -190,6 +190,14 @@
 <script src="{{asset('assets/js/vue.js')}}" ></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script >
+  window.laravel = { !! json_encode([
+     'csrfToken' => csrf_token(),
+     'idFormation' => $id,
+      'url'  => url('/') 
+    ])!!
+  };
+</script>
+<script >
   
   var app = new Vue({
      el: '#app',
@@ -201,7 +209,7 @@
      methods: {
 
       getFormations: function(){
-         axios.get('http://localhost:8000/getFormations')
+         axios.get(window.laravel.url+'/getFormations/'+window.laravel.id)
          .then(response => {
           this.formations = response.data;
          })
