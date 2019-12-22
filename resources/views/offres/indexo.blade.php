@@ -69,7 +69,7 @@
                                        <div class="job-list">
                                          <div class="thumb">
                                            <a href="#">
-                                             <img src="images/logo/{{Auth::guard('recruteur')->user()->logo}}" style="width: 80px;  height: 80px;  "class="img-fluid" alt="">
+                                             <img src="/images/logo/{{Auth::guard('recruteur')->user()->logo}}" style="width: 80px;  height: 80px;  "class="img-fluid" alt="">
                                            </a>
                                          </div>
                                          <div class="body">
@@ -90,7 +90,7 @@
                                               <button type="submit" data-toggle="modal" data-target="#infos" class="btn" style="background-color:red; color: white;font-family:"ElMessiri-SemiBold" ><span class="glyphicon glyphicon-trash"></span>supprimer</button>
 
                                                <a href="{{ url('offres/'.$offres->id.'/edito') }}" class="btn" style="background-color:green; color: white;font-family:"ElMessiri-SemiBold">modifier</a>
-                                                <a href="" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold">voir details</a>
+                                                <a href="{{ url('offres/'.$offres->id.'/detail') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold">voir details</a>
                                                <!-- <a href="#" class="favourite"><i data-feather="heart"></i></a> -->
                                              </div>
                                              @php

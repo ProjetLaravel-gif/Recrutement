@@ -65,6 +65,7 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
  Route::get('offres/createo/{id}','OffreController@createo');    
  Route::post('offres','OffreController@storeo'); 
  Route::get('offres/{id}/edito','OffreController@edito');
+ Route::get('offres/{id}/detail','OffreController@detail');
  Route::put('offres/{id}','OffreController@updateo');
  Route::delete('offres/{id}','OffreController@destroyo'); 
 
