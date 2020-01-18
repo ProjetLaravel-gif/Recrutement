@@ -32,5 +32,29 @@ class FormationController extends Controller
       	return redirect('experiences/create/'.$request->input('cv_id'));
 
       }
+
+      public function destroy(Request $request, $id){
+         $formation = Formation::find($id);
+         $formation->delete();
+          // $listcvs = Cv::all();
+          return redirect('cvs');
+    }
+
+      public function getFormation($id){
+
+        $cv = Cv::find($id);
+        return $cv->formations;
+      }
+       public function addFormation(Request $request){
+          $formation = new Formation();
+          $formation->diplome = $request->diplome;
+          $formation->lieu = $request->lieu;
+          $formation->date_debut = $request->date_debut;
+          $formation->date_fin = $request->date_fin;
+          $formation->domaine = $request->domaine;
+          $formation->cv_id = $request->cv_id;
+          $formation->save();
+          return Response()->json(['etat' => true, 'id' => $formation->id]);
+       }
    } 
 

@@ -14,7 +14,9 @@
 Route::get('/', function () {
     return view('acceuil');
 });
-
+// Route::get('Cv/formulairecv', function () {
+//     return view('Cv/formulairecv');
+// });
 Auth::routes();
 
 
@@ -70,27 +72,36 @@ Route::post('profil1','RecruteurProfileController@update_avatar1');
  // Route::get('formations/experience','FormationController@experience');
 
  // Route::resource('cvs','CvController');
- Route::get('cvs','CvController@ig bbndex');
+ Route::get('cvs','CvController@index');
  Route::get('cvs/create/{id}','CvController@create');    
  Route::post('cvs','CvController@store')->name('cvs'); 
  Route::get('cvs/{id}/edit','CvController@edit');
  Route::put('cvs/{id}','CvController@update');
  Route::get('cvs/{id}','CvController@show');
  Route::delete('cvs/{id}','CvController@destroy');
- Route::get('getFormations','CvController@getFormations');
+
    
    // route formation
    Route::get('formations','FormationController@index');
    Route::get('formations/create/{id}','FormationController@create') ;    
    Route::post('formations','FormationController@store'); 
+   Route::get('getFormation/{id}','FormationController@getFormation');
+   Route::get('addFormation','FormationController@addFormation');
+   Route::delete('formations/{id}','FormationController@destroy');
  // route Experience
    Route::get('experiences','ExperienceController@index');
    Route::get('experiences/create/{id}','ExperienceController@create') ;    
    Route::post('experiences','ExperienceController@store'); 
+   Route::get('getExperience/{id}','ExperienceController@getExperience');
+   Route::get('addExperience','ExperienceController@addExperience');
+   Route::delete('experiences/{id}','ExperienceController@destroy');
   // route Experience
    Route::get('competences','CompetenceController@index');
    Route::get('competences/create/{id}','CompetenceController@create') ;    
    Route::post('competences','CompetenceController@store'); 
+   Route::get('getCompetence/{id}','CompetenceController@getCompetence');
+   Route::get('addCompetence','ExperienceController@addCompetence');
+   Route::delete('competences/{id}','CompetenceController@destroy');
 
 Route::get('Cv/index', function () {
     return view('Cv/index');
@@ -103,3 +114,6 @@ Route::get('Cv/experience', function () {
     return view('Cv/experience');
 });
 
+Route::get('pipipi', function () {
+    return view('pipipi');
+});

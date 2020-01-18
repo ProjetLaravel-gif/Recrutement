@@ -90,6 +90,6 @@ class OffreController extends Controller
         $offres = Offre::find($id);
         $offres->delete();
          $listoffres = Offre::all();
-         return view('recruteurdashboard');
+         return redirect('offres');
     }
 }

@@ -49,7 +49,7 @@
 <br>
 
     @yield('recruteur')
-
+    @yield('candidat')
 
  @include('layouts/_footer')
      <script src="{{asset('assets/js/jquery.min.js')}}"></script>
