@@ -7,15 +7,17 @@
          <form action="{{ url('offres/'.$offres->id) }}" method="post">
                     {{ csrf_field() }}
         <div class="job-listing-details">
+          <!-- <button onClick="imprimer('sectionAimprimer')">Imprimer</button> -->
+          <div id='sectionAimprimer'>
           <div class="job-title-and-info">
             <div class="title">
                     <div class="thumb">
                       <a href="#">
-                      <img src="/images/logo/{{Auth::guard('recruteur')->user()->logo}}"  style="width: 80px;  height: 80px; class="img-fluid" alt="">
+                      <img src="/images/logo/{{ $offres->recruteur['logo'] }}"  style="width: 80px;  height: 80px;"class="img-fluid" alt="">
                         </a>
                       </div>
               <div class="title-body">
-                <h4>{{Auth::guard('recruteur')->user()->nom}}</h4>
+                <h4>{{$offres->recruteur['nom']}}</h4>
                 <div class="info">
                   <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $offres->intitule }}</a></span>
                   <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $offres->ville }}</a></span>
@@ -100,7 +102,7 @@
                     <a href="#" class="add-more"><span class="ti-plus"></span></a>
                   </div>
                   <div class="buttons">
-                    <a href="#" class="button print"><i data-feather="printer"></i>Print Job</a>
+                    <a href="#" class="button print" onClick="imprimer('sectionAimprimer')"><i data-feather="printer"></i>Print Job</a>
                     <a href="#" class="button report"><i data-feather="flag"></i>Report Job</a>
                   </div>
                   <div class="job-location">
@@ -128,6 +130,7 @@
               </div>
             </div>
           </div>
+        </div>
         </div>
         </form>
       </div>

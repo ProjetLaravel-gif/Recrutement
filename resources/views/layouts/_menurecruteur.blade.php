@@ -54,7 +54,7 @@
               <div class="account-card">
                 <div class="header-top-account-info">
                       <a href="#" class="account-thumb">
-                        <img src="images/logo/{{ Auth::guard('recruteur')->user()->logo }}" class="img-fluid" alt="">
+                        <img src="/images/logo/{{ Auth::guard('recruteur')->user()->logo }}" class="img-fluid" alt="">
                       </a>
                       <div class="account-body">
                         <h5><a href="#">{{ Auth::guard('recruteur')->user()->nom }}</a></h5>

@@ -54,7 +54,7 @@
                <div class="account-card">
                  <div class="header-top-account-info">
                       <a href="#" class="account-thumb">
-                        <img src="images/avatars/{{ Auth::guard('candidat')->user()->avatar }}" class="img-fluid" alt="">
+                        <img src="/images/avatars/{{ Auth::guard('candidat')->user()->avatar }}" class="img-fluid" alt="">
                       </a>
                       <div class="account-body">
                         <h5><a href="#">{{ Auth::guard('candidat')->user()->nom }} {{ Auth::guard('candidat')->user()->prenom }}</a></h5>

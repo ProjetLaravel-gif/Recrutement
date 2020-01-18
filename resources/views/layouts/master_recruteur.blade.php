@@ -72,6 +72,19 @@
      <script src="{{asset('assets/js/upload-input.js')}}"></script>
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>   
       <script src="{{asset('assets/js/map.js')}}"></script> 
+
+<script>
+function imprimer(divName) {
+      var printContents = document.getElementById(divName).innerHTML;    
+   var originalContents = document.body.innerHTML;      
+   document.body.innerHTML = printContents;     
+   window.print();     
+   document.body.innerHTML = originalContents;
+   }
+</script>
+
+
+      
   </body><
 
  <!-- Mirrored from themerail.com/html/oficiona/job-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 20191:29:44 GMT -->

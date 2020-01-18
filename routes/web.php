@@ -62,6 +62,7 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
 
 
  Route::get('offres','OffreController@indexo'); 
+ Route::get('listoffres','OffreController@indexo1');
  Route::get('offres/createo/{id}','OffreController@createo');    
  Route::post('offres','OffreController@storeo'); 
  Route::get('offres/{id}/edito','OffreController@edito');
@@ -111,3 +112,6 @@ Route::get('Cv/experience', function () {
 Route::get('recruteur/editprofil', function () {
     return view('recruteur/editprofil');
 });
+
+Route::get('contact/{id}','ContactController@createC');    
+Route::post('contact','ContactController@storeC');

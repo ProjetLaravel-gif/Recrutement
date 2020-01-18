@@ -27,7 +27,7 @@ class CreateOffresTable extends Migration
              $table->string('ville');
              $table->string('cartier');
              $table->string('emplacement');
-            $table->string('description');
+            $table->text('description');
             $table->string('webaddresse');
             $table->integer('recruteur_id')->unsigned()->nullable();
             $table->foreign('recruteur_id')->references('id')->on('recruteurs')

@@ -14,18 +14,22 @@ use Illuminate\Http\Request;
 class OffreController extends Controller
 {
     public function indexo(Request $request){
-        $id = Auth::guard('recruteur')->user()->id;
+      $id = Auth::guard('recruteur')->user()->id;
       $user = Recruteur::find($id);
-       $offres = $user->offres()->paginate(5);
+      $offres = $user->offres()->paginate(5);
       return view('offres.indexo' , ['offres' => $offres]);
     }
 
-    //  public function indexo1(){
-
-    //    $listoffres = Auth::guard('recruteur')->user()->offres;
-    //    $listoffres = Offre::all();
-    //   return view('offres.indexo' , ['offres' => $listoffres]);
-    // }
+     public function indexo1(){
+     
+      //$offres = new Offre();
+      //$id = Auth::guard('recruteur')->user()->id;
+      // $offres->recruteur_id = $id;
+      // $offres->save();
+      // $listoffres = Offre::find($id);
+      $listoffres = Offre::all();
+      return view('offres.indexo1' , ['offres' => $listoffres]);
+    }
 
 
     public function createo($recruteur_id){
