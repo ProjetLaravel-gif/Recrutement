@@ -113,5 +113,5 @@ Route::get('recruteur/editprofil', function () {
     return view('recruteur/editprofil');
 });
 
-Route::get('contact/{id}','ContactController@createC');    
-Route::post('contact','ContactController@storeC');
+Route::get('contact/createC/{id}','OffreController@createC');    
+Route::post('contact','OffreController@storeC');

@@ -7,6 +7,7 @@ use App\Offre;
 use App\Parametre;
 use Illuminate\Http\UploadedFile;
 use Auth;
+use App\Contact;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
@@ -105,4 +106,26 @@ class OffreController extends Controller
          $listoffres = Offre::all();
          return view('recruteurdashboard');
     }
+
+
+    public function createC($id){
+
+   return view('contact', ['recruteur_id' => $id]);
+
+    }
+
+      public function storeC(Request $request){
+      $contacts = new Contact();
+      $contacts->nom = $request->input('nom');
+      $contacts->numero = $request->input('numero');
+      $contacts->email = $request->input('email');
+      $contacts->objet = $request->input('objet');
+      $contacts->message = $request->input('message');
+      $contacts->recruteur_id = $request->input('recruteur_id');
+      $contacts->save();
+      $listoffres = Offre::all();
+      return view('offres.indexo1' , ['offres' => $listoffres]);
+    }
+
+
 }

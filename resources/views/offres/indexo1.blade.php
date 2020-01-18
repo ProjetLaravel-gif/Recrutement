@@ -89,8 +89,8 @@
                                                <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">Apply Now</a>
                                                 <a href="#" class="favourite"><i data-feather="heart"></i></a>
                                                 <a href="{{ url('offres/'.$offre->id.'/detail') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>voir details</a>
-                                                 <a href="{{ url('contact/$contacts->recruteur_id') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>contacter</a>
-                                               
+                                                 <a href="{{ url('contact/createC/'.$offre->recruteur_id) }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>contacter</a>
+
                                              </div>
                                              @php
                                              $depot = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $offre->created_at);

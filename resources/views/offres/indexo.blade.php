@@ -86,8 +86,40 @@
                                              </div>
                                            </div>
                                            <div class="more">
-                                             <div class="buttons">
-                                              <button type="submit" data-toggle="modal" data-target="#infos" class="btn" style="background-color:red; color: white;font-family:"ElMessiri-SemiBold" ><span class="glyphicon glyphicon-trash"></span>supprimer</button>
+
+
+
+
+
+                                              <a href="#supprimer{{ $offres->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+                      <div class="modal fade" id="supprimer{{ $offres->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $offres->id }}ModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                  <div class="modal-body text-center">
+                                      Voulez-vous vraiment effectuer la suppression ? 
+                                  </div>
+                                  <div class="modal-footer">
+                                      <form class="form-inline" action="{{ url('offres/'.$offres->id)}}"  method="POST">
+                                          @method('DELETE')
+                                          @csrf
+                                      <button type="button" class="btn btn-light" data-dismiss="modal">Non</button>
+                                          <button type="submit" class="btn btn-danger">Oui</button>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
+
+                                             <!-- <div class="buttons">
+                                              <button type="submit" data-toggle="modal" data-target="#infos" class="btn" style="background-color:red; color: white;font-family:"ElMessiri-SemiBold" ><span class="glyphicon glyphicon-trash"></span>supprimer</button> -->
 
                                                <a href="{{ url('offres/'.$offres->id.'/edito') }}" class="btn" style="background-color:green; color: white;font-family:"ElMessiri-SemiBold">modifier</a>
                                                 <a href="{{ url('offres/'.$offres->id.'/detail') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold">voir details</a>
@@ -273,3 +305,8 @@
                            </div>
                          </div>
                         @endsection 
+
+
+
+
+                        
