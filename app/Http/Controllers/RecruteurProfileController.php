@@ -28,7 +28,29 @@ class RecruteurProfileController extends Controller
                 $recruteur->logo = $filename;
                 $recruteur->save();
             }
-            return view('recruteurdashboard');
+            return $this->profile1();
         
 }
+       public function editprofil($id){
+
+       $recruteur = Recruteur::find($id);
+       return view('profil1', ['recruteur' => $recruteur]);
+    }
+
+    public function updateprofil(Request $request, $id){
+      $recruteur = Recruteur::find($id);
+      $recruteur->nom = $request->input('nom');
+      $recruteur->type = $request->input('type');
+      $recruteur->adresse = $request->input('adresse');
+      $recruteur->siteweb = $request->input('siteweb');
+      $recruteur->numtel = $request->input('numtel');
+      $recruteur->email = $request->input('email');
+      $recruteur->save();
+      return redirect('profil1');
+
+    }
+
+
+
+
 }

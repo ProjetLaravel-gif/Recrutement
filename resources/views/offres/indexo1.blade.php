@@ -1,5 +1,5 @@
-@extends('layouts.candidat')
-@section('candidat')
+@extends('layouts.master')
+@section('content')
 
                          <div class="alice-bg padding-top-70 padding-bottom-70">
                            <div class="container">
@@ -61,39 +61,41 @@
                                      </div>
                                      <table class="table">
                                        <body>
-                                 @foreach($cvs as $cvs)
-                                         <form action="{{ url('cvs/'.$cvs->id) }}" method="post">
-                                             
+
+                                 @foreach($offres as $offre)
+                                         <form action="{{ url('offres/'.$offre->id) }}" method="post">
+                                             {{ csrf_field() }}
+                                             {{ method_field('DELETE') }}
                                        <div class="job-list">
-                                         <div class="thumb">
+                                         <div class="thumb">                                                          
                                            <a href="#">
-                                             <img src="images/logo/{{Auth::guard('candidat')->user()->logo}}" style="width: 80px;  height: 80px;  "class="img-fluid" alt="">
+                                             <img src="/images/logo/{{ $offre->recruteur['logo'] }}" style="width: 80px;  height: 80px;  "class="img-fluid" alt="">
                                            </a>
                                          </div>
                                          <div class="body">
                                            <div class="content">
-                                             <h4><a href="">{{Auth::guard('candidat')->user()->nom  }}&#160;{{Auth::guard('candidat')->user()->prenom}}</a></h4>
-                                            
+                                             <h4><a href="">{{$offre->recruteur['nom']}}</a></h4>
                                              <div class="info">
-                                               <span class="company"><a href="#">{{ $cvs->titre }}</a></span>
-                                               @foreach($cvs->formations as $formation)
-                                               <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $formation->diplome }}</a></span>
-                                               @endforeach
-                                               <!-- <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>{{ $cvs->documents }}</a></span> -->
+                                               <span class="company"><a href="#">{{ $offre->intitule }}</a></span>
+                                               <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $offre->dommaine }}</a></span>
+                                               <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $offre->ville }}</a></span>
+                                              
+                                               <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>{{ $offre->duree }}</a></span>
                                                
                                              </div>
                                            </div>
                                            <div class="more">
                                              <div class="buttons">
-                                              {{ csrf_field() }}
-                                             {{ method_field('DELETE') }}
-                                              <button type="submit" data-toggle="modal" data-target="#infos" class="btn" style="background-color:red; color: white;font-family:"ElMessiri-SemiBold" ><span class="glyphicon glyphicon-trash"></span>supprimer</button>
-
-                                               <a href="{{ url('cvs/'.$cvs->id.'/edit') }}" class="btn" style="background-color:green; color: white;font-family:"ElMessiri-SemiBold">modifier</a>
-                                                <a href="{{ url('cvs/'.$cvs->id.'/details') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold">voir details</a>
-                                               <!-- <a href="#" class="favourite"><i data-feather="heart"></i></a> -->
+                                               <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">Apply Now</a>
+                                                <a href="#" class="favourite"><i data-feather="heart"></i></a>
+                                                <a href="{{ url('offres/'.$offre->id.'/detail') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>voir details</a>
+                                                 <a href="{{ url('contact/$contacts->recruteur_id') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>contacter</a>
+                                               
                                              </div>
-                                             
+                                             @php
+                                             $depot = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $offre->created_at);
+                                             @endphp
+                                             <p class="deadline">Date Dépot: {{$depot}}</p>
                                            </div>
                                          </div>
                                        </div>

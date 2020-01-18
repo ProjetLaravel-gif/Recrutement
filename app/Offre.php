@@ -10,7 +10,8 @@ class Offre extends Model
 {
 	 use SoftDeletes;
      protected $dates = ['deleted_at'];
-     public function recruteurs()
+     
+     public function recruteur()
     {
         return $this->belongsTo('App\Recruteur');
     }

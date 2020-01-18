@@ -27,6 +27,12 @@ class CvController extends Controller
 
     }
 
+     public function details($id){
+
+       $cvs = Cv::find($id);
+       return view('Cv.details', ['cvs' => $cvs]);
+    }
+
      //Enrengistrer un cv
     public function store(Request $request){
     	     $cvs = new Cv();                 

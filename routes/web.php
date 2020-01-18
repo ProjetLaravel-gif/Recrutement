@@ -34,8 +34,6 @@ Route::post('/login/candidat','Auth\LoginController@candidatLogin');
 Route::post('/register/recruteur','Auth\RegisterController@createRecruteur');
 Route::post('/register/candidat','Auth\RegisterController@createCandidat');
 
-
-
 Route::view('/home','home')->middleware('auth');
 Route::view('/recruteur','recruteur');
 Route::view('/candidat','candidat');
@@ -56,13 +54,21 @@ Route::get('acceuil', function () {
 Route::get('profil','CandidatProfileController@profile')->name('profil');
 Route::post('profil','CandidatProfileController@update_avatar');
 
-Route::get('profil1','RecruteurProfileController@profile1')->name('profil1');
+ Route::get('profil1','RecruteurProfileController@profile1')->name('profil1');
 Route::post('profil1','RecruteurProfileController@update_avatar1');
+Route::get('recruteur/{id}/editprofil','RecruteurProfileController@editprofil');
+Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
+
+// Route::get('recruteur/editprofil','RecruteurProfileController@profile1');
+// Route::post('recruteur/editprofil','RecruteurProfileController@update_avatar1');
+
 
  Route::get('offres','OffreController@indexo'); 
+ Route::get('listoffres','OffreController@indexo1');
  Route::get('offres/createo/{id}','OffreController@createo');    
  Route::post('offres','OffreController@storeo'); 
  Route::get('offres/{id}/edito','OffreController@edito');
+ Route::get('offres/{id}/detail','OffreController@detail');
  Route::put('offres/{id}','OffreController@updateo');
  Route::delete('offres/{id}','OffreController@destroyo'); 
 
@@ -77,6 +83,7 @@ Route::post('profil1','RecruteurProfileController@update_avatar1');
  Route::post('cvs','CvController@store')->name('cvs'); 
  Route::get('cvs/{id}/edit','CvController@edit');
  Route::put('cvs/{id}','CvController@update');
+ Route::get('cvs/{id}/details','CvController@details');
  Route::get('cvs/{id}','CvController@show');
  Route::delete('cvs/{id}','CvController@destroy');
 
@@ -114,6 +121,14 @@ Route::get('Cv/experience', function () {
     return view('Cv/experience');
 });
 
+
 Route::get('pipipi', function () {
     return view('pipipi');
 });
+
+Route::get('recruteur/editprofil', function () {
+    return view('recruteur/editprofil');
+});
+
+Route::get('contact/{id}','ContactController@createC');    
+Route::post('contact','ContactController@storeC');
