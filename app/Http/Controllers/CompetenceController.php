@@ -24,8 +24,31 @@ class CompetenceController extends Controller
        	$competence->description = $request->input('description');
        	$competence->cv_iid = $request->input('cv_iid');
        	$competence->save();
-       	return redirect('competences');
+       	return redirect('cvs' );
 
        }
+
+
+        public function destroy(Request $request, $id){
+         $competence = Competence::find($id);
+         $competence->delete();
+          // $listcvs = Cv::all();
+          return redirect('cvs');
+    }
+
+       public function getCompetence($id){
+
+         $cv = Cv::find($id);
+         return $cv->competences;
+      
+       }
+        public function addCompetence(Request $request){
+         $competence = new Competence();                 
+         $competence->description = $request->description;
+         $competence->cv_iid = $request->cv_iid;
+         $competence->save();
+          return Response()->json(['etat' => true, 'id' => $competence->id]);
+       }
+      
 }
 

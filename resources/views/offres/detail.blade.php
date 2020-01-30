@@ -89,7 +89,7 @@
                       <li><span>Job Location:</span>{{ $offres->ville }}</li>
                       <li><span>Salary:</span>{{ $offres->renumeration }}</li>
                       <li><span>webadress:</span>{{ $offres->webaddresse }}</li>
-                      <li><span>Application Deadline:</span>{{ $offres->date_debut_prevu }}</li>
+                      <li><span>date de debut prevue:</span>{{ $offres->date_debut_prevu }}</li>
                     </ul>
                   </div>
                   <div class="share-job-post">

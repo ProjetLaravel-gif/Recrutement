@@ -16,7 +16,10 @@ class Cv extends Model
     {
         return $this->belongsTo('App\Candidat');
     }
-
+    public function divers()
+   {
+       return $this->belongsToMany('App\Diver','cvdivers','cv_id','diver_id');
+   }
 
     public function comptences()
     {

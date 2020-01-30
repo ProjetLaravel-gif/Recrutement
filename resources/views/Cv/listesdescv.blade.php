@@ -1,5 +1,5 @@
-@extends('layouts.master')
-@section('content')
+@extends('layouts.candidat')
+@section('candidat')
 
                          <div class="alice-bg padding-top-70 padding-bottom-70">
                            <div class="container">
@@ -61,55 +61,43 @@
                                      </div>
                                      <table class="table">
                                        <body>
-
-                                 @foreach($offres  as $offre)
-                                         <form action="{{ url('offres/'.$offre->id) }}" method="post">
-                                             {{ csrf_field() }}
+                                 @foreach($cvs as $cvs)
+                                         <form action="{{ url('cvs/'.$cvs->id) }}" method="post">
+                                             
                                        <div class="job-list">
-                                         <div class="thumb">                                                          
+                                         <div class="thumb">
                                            <a href="#">
-                                             <img src="/images/logo/{{ $offre->recruteur['logo'] }}" style="width: 80px;  height: 80px;  "class="img-fluid" alt="">
+                                             <img src="images/logo/{{Auth::guard('candidat')->user()->logo}}" style="width: 80px;  height: 80px;  "class="img-fluid" alt="">
                                            </a>
                                          </div>
                                          <div class="body">
                                            <div class="content">
-                                             <h4><a href="">{{$offre->recruteur['nom']}}</a></h4>
+                                             <h4><a href="">{{Auth::guard('candidat')->user()->nom  }}&#160;{{Auth::guard('candidat')->user()->prenom}}</a></h4>
+                                            
                                              <div class="info">
-                                               <span class="company"><a href="#">{{ $offre->intitule }}</a></span>
-                                               <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $offre->dommaine }}</a></span>
-                                               <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $offre->ville }}</a></span>
-                                              
-                                               <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>{{ $offre->duree }}</a></span>
+                                               <span class="company"><a href="#">{{ $cvs->titre }}</a></span>
+                                               @foreach($cvs->formations as $formation)
+                                               <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $formation->diplome }}</a></span>
+                                               @endforeach
+                                               <!-- <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>{{ $cvs->documents }}</a></span> -->
                                                
                                              </div>
                                            </div>
                                            <div class="more">
                                              <div class="buttons">
-                                               <a href="{{ route('stp')}}" class="button" data-toggle="modal" data-target="#apply-popup-id">Apply Now</a>
-                                                <a href="{{ url('offres') }}"class="favourite"><i data-feather="heart"></i></a>
-                                                <a href="{{ url('offres/'.$offre->id.'/detail') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>voir details</a>
-                                                 <a href="{{ url('contact/createC/'.$offre->recruteur_id) }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>contacter</a>
+                                              {{ csrf_field() }}
+                                             {{ method_field('DELETE') }}
+                                              <button type="submit" data-toggle="modal" data-target="#infos" class="btn" style="background-color:red; color: white;font-family:"ElMessiri-SemiBold" ><span class="glyphicon glyphicon-trash"></span>supprimer</button>
 
+                                               <a href="{{ url('cvs/'.$cvs->id.'/edit') }}" class="btn" style="background-color:green; color: white;font-family:"ElMessiri-SemiBold">modifier</a>
+                                                <a href="{{ url('cvs/'.$cvs->id.'/details') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold">voir details</a>
+                                               <!-- <a href="#" class="favourite"><i data-feather="heart"></i></a> -->
                                              </div>
-                                             @php
-                                             $depot = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $offre->created_at);
-                                             @endphp
-                                             <p class="deadline">Date Dépot: {{$depot}}</p>
+                                             
                                            </div>
                                          </div>
                                        </div>
-                                      
-                                     </div>
-                                   </form>
-
-
-
-</div>
-</div>
-</div>
-</div>
-
-                                      <div class="apply-popup">
+                                       <div class="apply-popup">
                                          <div class="modal fade" id="apply-popup-id" tabindex="-1" role="dialog" aria-hidden="true">
                                            <div class="modal-dialog" role="document">
                                              <div class="modal-content">
@@ -120,17 +108,19 @@
                                                  </button>
                                                </div>
                                                <div class="modal-body">
-                                                 <form action="{{route ('stp')}}" enctype="multipart/form-data" method="POST">
-
-                                                     {{ csrf_field() }}
-
-                                                  <input type="hidden" name="offres_id" value="{{$offre->id}}">
+                                                 <form action="#">
                                                    <div class="form-group">
-                                                     <textarea class="form-control" placeholder="Message" name="message"></textarea>
+                                                     <input type="text" placeholder="Full Name" class="form-control">
                                                    </div>
-                                                   <div class="form-group file-input-wrap" name="cv">
-                                                     <label for="up-cv" name="cv">
-                                                       <input id="up-cv" type="file" name="cv">
+                                                   <div class="form-group">
+                                                     <input type="email" placeholder="Email Address" class="form-control">
+                                                   </div>
+                                                   <div class="form-group">
+                                                     <textarea class="form-control" placeholder="Message"></textarea>
+                                                   </div>
+                                                   <div class="form-group file-input-wrap">
+                                                     <label for="up-cv">
+                                                       <input id="up-cv" type="file">
                                                        <i data-feather="upload-cloud"></i>
                                                        <span>Upload your resume <span>(pdf,zip,doc,docx)</span></span>
                                                      </label>
@@ -141,17 +131,22 @@
                                                        <span class="dot"></span> I accept the <a href="#">terms & conditions</a>
                                                      </label>
                                                    </div>
-                                                   <button class="button primary-bg btn-block">postuler</button>
+                                                   <button class="button primary-bg btn-block">Apply Now</button>
                                                  </form>
                                                </div>
                                              </div>
                                            </div>
                                          </div>
                                        </div>
+                                     </div>
+
+</div>
+</div>
+</div>
+</div>
+</div>
+</form>
 @endforeach
-
-
-
 </body>
 </table>
 

@@ -27,4 +27,14 @@ class ContactController extends Controller
       return redirect('contact');
     }
 
+
+    public function message(){
+
+      $id = Auth::guard('recruteur')->user()->id;
+      $user = Recruteur::find($id);
+      $contacts = $user->contacts;
+      return view('message' , ['contacts' => $contacts]);
+
+    }
+
 }

@@ -27,7 +27,10 @@ class Candidat extends Authenticatable
     {
         return $this->hasmany('App\Competence');
     }
-
+   public function cvs()
+   {
+       return $this->hasmany('App\Cv');
+   }
     public function formations()
     {
         return $this->hasmany('App\Formation');
@@ -37,5 +40,10 @@ class Candidat extends Authenticatable
     public function experiences()
     {
         return $this->hasmany('App\Experience');
+    }
+
+     public function offres()
+    {
+        return $this->hasMany('App\Offre');
     }
 }

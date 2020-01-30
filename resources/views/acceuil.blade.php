@@ -49,7 +49,7 @@
     <header>
       <nav class="navbar navbar-expand-xl absolute-nav transparent-nav cp-nav navbar-light bg-light fluid-nav">
         <a class="navbar-brand" href="index.html"> 
-          <img src="logo.png" class="img-fluid" alt="">
+          <img src="{{asset('images/logo.png')}}" class="img-fluid" alt="">
         </a>
         <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -90,7 +90,7 @@
           <ul class="navbar-nav ml-auto main-nav">
             <li class="menu-item active"><a title="Home" href="home-1.html">acceuil</a></li>
             <li class="menu-item dropdown">
-              <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">emploies</a>
+              <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">emploi</a>
               <ul  class="dropdown-menu">
                 <li class="menu-item"><a href="job-listing.html">Job Listing</a></li>
                 <li class="menu-item"><a href="job-listing-with-map.html">Job Listing With Map</a></li>
@@ -325,10 +325,10 @@
                     <option value="beauty">Beauty</option>
                     <option value="furnitures">Furnitures</option>
                   </select>
-                  <button class="button primary-bg"><i class="fas fa-search"></i>rechercher emploie</button>
+                  <button class="button primary-bg"><i class="fas fa-search"></i>rechercher emploi</button>
                 </form>
                 <div class="filter-categories">
-                  <h4>categorie emploie</h4>
+                  <h4>categorie emploi</h4>
                   <ul>
                     <li><a href="job-listing.html"><i data-feather="bar-chart-2"></i>Accounting / Finance <span>(233)</span></a></li>
                     <li><a href="job-listing.html"><i data-feather="edit-3"></i>Education <span>(46)</span></a></li>
@@ -1009,8 +1009,8 @@
             </div>
             <div class="modal-body">
               <div class="account-type">
-                <a href="#" class="candidate-acc"><i data-feather="user"></i>Candidate</a>
-                <a href="#" class="employer-acc active"><i data-feather="briefcase"></i>Employer</a>
+                <a href="{{ route('candidat') }}" class="candidate-acc"><i data-feather="user"></i>Candidate</a>
+                <a href="{{ route('recruteur') }}" class="employer-acc active"><i data-feather="briefcase"></i>Employer</a>
               </div>
               <form action="#">
                 <div class="form-group">

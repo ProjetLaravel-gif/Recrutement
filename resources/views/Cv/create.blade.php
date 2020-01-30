@@ -27,6 +27,7 @@
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.css')}}">
      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/dashboard.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/select2.min.css')}}">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:300i,400,500" rel="stylesheet">
@@ -100,11 +101,26 @@
                  </div>
                </div>
                 <div id="full-name" class="form-group row">
-                 <label class="col-md-3 col-form-label">Divers
-                 </label>
-                 <div class="col-md-9">
-                   <input type="text" class="form-control" name="divers" placeholder="Divers">
-                 </div>
+                  <label class="col-md-3 col-form-label">Divers</label>
+                  <select class="col-md-9 js-select-diver"  name="divers_ids[]" multiple> 
+                     <option value="1">Arabe</option>
+                     <option value="2">Anglais</option>
+                     <option value="3">Allemand</option>
+                     <option value="4">Bengali</option>
+                     <option value="5">Chinois</option>
+                     <option value="5">Danois</option>
+                     <option value="5">Espagnol</option>
+                     <option value="5">Hindi</option>
+                     <option value="5">Indonesien</option>
+                     <option value="5">Italien</option>
+                     <option value="5">Japonais</option>
+                     <option value="5">Norvegien</option>
+                     <option value="5">Portugais</option>
+                     <option value="5">Polonais</option>
+                     <option value="5">Russe</option>
+                     <option value="5">Suedois</option>
+                     <option value="5">Truc</option>
+                   </select>
                </div>
 
                    <div class="form-group row">
@@ -176,6 +192,12 @@
                   <script src="{{asset('assets/js/upload-input.js')}}"></script>
                   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>   
                    <script src="{{asset('assets/js/map.js')}}"></script> 
+                       <script src="{{asset('assets/js/select2.min.js')}}"></script>
+                   <script type="text/javascript">
+                     $(document).ready(function(){
+                       $('.js-select-diver').select2();
+                     });
+                   </script>
                </body><
 
               <!-- Mirrored from themerail.com/html/oficiona/job-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 20191:29:44 GMT -->
