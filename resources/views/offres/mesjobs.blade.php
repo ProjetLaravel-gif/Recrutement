@@ -13,7 +13,7 @@
                       <tr>
                         <th>Job Title</th>
                         <th>Date Depot</th>
-                        <th>Status</th>
+                        <th>Statut</th>
                         <th class="action">Action</th>
                       </tr>
                     </thead>

@@ -25,6 +25,7 @@ class CreateOffresTable extends Migration
             $table->string('duree');
             $table->string('date_debut_prevu');
              $table->string('ville');
+             $table->string('statut')->nullable();
              $table->string('cartier');
              $table->string('emplacement');
             $table->text('description');

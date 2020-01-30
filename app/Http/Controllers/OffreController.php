@@ -49,6 +49,12 @@ class OffreController extends Controller
        return view('offres.detail', ['offres' => $offres]);
     }
 
+     public function cdetail($id){
+
+       $offres = Offre::find($id);
+       return view('offres.cdetail', ['offres' => $offres]);
+    }
+
 
 
     public function storeo(Request $request){
@@ -134,7 +140,7 @@ class OffreController extends Controller
 
      public function message(Request $request){
 
-     $id = Auth::guard('recruteur')->user()->id;
+      $id = Auth::guard('recruteur')->user()->id;
       $user = Recruteur::find($id);
       $contacts = $user->contacts;
       return view('message' , ['contacts' => $contacts]);
@@ -168,4 +174,15 @@ class OffreController extends Controller
       return redirect('listoffres');
      }
 
+
+     public function voir(){
+       $id = Auth::guard('recruteur')->user()->id;
+      $user = Recruteur::find($id);
+      $Postules = $user->postuler;
+        return view('offres.offrecandidat' , ['Postules' => $Postules]);
+     }
+
 }
+
+ 
+  
