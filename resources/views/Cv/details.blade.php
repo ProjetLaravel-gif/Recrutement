@@ -1,8 +1,7 @@
 @extends('layouts.candidat')
 @section('candidat')
 
-<form action="{{ url('cvs/'.$cvs->id) }}" method="post">
-                    {{ csrf_field() }}
+
 <!-- Breadcrumb -->
 <div class="alice-bg padding-top-70 padding-bottom-70">
   <div class="container">
@@ -32,11 +31,15 @@
 <!-- Breadcrumb End -->
 
 <div class="alice-bg section-padding-bottom">
+   <form action="{{ url('cvs/'.$cvs->id) }}" method="post">
+                    {{ csrf_field() }}
   <div class="container no-gliters">
     <div class="row no-gliters">
       <div class="col">
         <div class="dashboard-container">
           <div class="dashboard-content-wrapper">
+
+            
             <div class="download-resume dashboard-section">
               <a href="#">Download CV<i data-feather="download"></i></a>
               <a href="#">Download Cover Letter<i data-feather="download"></i></a>
@@ -81,37 +84,33 @@
               </div>
             </div>
             <div class="edication-background details-section dashboard-section">
-              <h4><i data-feather="book"></i>Education Background</h4>
+              <h4><i data-feather="book"></i>Formation</h4>
+              @foreach($cvs->formations as $formation)
               <div class="education-label">
-                <span class="study-year">2018 - Present</span>
-                <h5>Masters in Software Engineering<span>@ Engineering University</span></h5>
-                <p>Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage</p>
+                <span class="study-year">{{ $formation->date_debut }}-{{ $formation->date_fin }}</span>
+                <h5>{{ $formation->diplome }}<span>{{ $formation->lieu }} </span></h5>
+               <h5>{{ $formation->domaine }}<!-- <span>@ {{ $formation->domaine }} </span> --></h5>
               </div>
-              <div class="education-label">
-                <span class="study-year">2014 - 2018</span>
-                <h5>Diploma in Graphics Design<span>@ Graphic Arts Institute</span></h5>
-                <p>Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage</p>
-              </div>
-              <div class="education-label">
-                <span class="study-year">2008 - 2014</span>
-                <h5>Secondary School Certificate<span>@  Engineering High School</span></h5>
-                <p>Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage</p>
-              </div>
-            </div>
-            <div class="experience dashboard-section details-section">
-              <h4><i data-feather="briefcase"></i>Work Experiance</h4>
-              <div class="experience-section">
-                <span class="service-year">2016 - Present</span>
-                <h5>Lead UI/UX Designer<span>@ Codepassengers LTD</span></h5>
-                <p>Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage</p>
-              </div>
-              <div class="experience-section">
-                <span class="service-year">2012 - 2016</span>
-                <h5>Former Graphic Designer<span>@ Graphicreeeo CO</span></h5>
-                <p>Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage</p>
-              </div>
-            </div>
-            <div class="professonal-skill dashboard-section details-section">
+              @endforeach
+            </div>  
+             <div class="experience dashboard-section details-section">
+                  <h4><i data-feather="briefcase"></i>Experience</h4>
+                  @foreach($cvs->experiences as $experience)
+                  <div class="experience-section">
+                    <span class="service-year">{{ $experience->date_debut }}-{{ $experience->date_fin }}</span>
+                    <h5>{{ $experience->intitule }}<span>{{ $experience->lieu }}</span></h5>
+                    <p>{{ $experience->description }}</p>
+                  </div>
+                  @endforeach
+                </div>
+                
+                <div class="special-qualification dashboard-section details-section">
+                  <h4><i data-feather="gift"></i>Competence</h4>
+                  @foreach($cvs->competences as $competence)
+                  <p>{{ $competence->description }}</p>
+                   @endforeach
+                </div>
+          <!--   <div class="professonal-skill dashboard-section details-section">
               <h4><i data-feather="feather"></i>Professional Skill</h4>
               <p>Combined with a handful of model sentence structures, to generate lorem Ipsum which  It has survived not only five centuries, but also the leap into electronic typesetting</p>
               <div class="progress-group">
@@ -160,17 +159,9 @@
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="special-qualification dashboard-section details-section">
-              <h4><i data-feather="gift"></i>Special Qualification</h4>
-              <ul>
-                <li>5 years+ experience designing and building products.</li>
-                <li>Skilled at any Kind Design Tools.</li>
-                <li>Passion for people-centered design, solid intuition.</li>
-                <li>Hard Worker & Quick Lerner.</li>
-              </ul>
-            </div>
-            <div class="portfolio dashboard-section details-section">
+            </div> -->
+       
+            <!-- <div class="portfolio dashboard-section details-section">
               <h4><i data-feather="gift"></i>Portfolio</h4>
               <div class="portfolio-slider owl-carousel">
                 <div class="portfolio-item">
@@ -209,17 +200,15 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
             <div class="personal-information dashboard-section last-child details-section">
-              <h4><i data-feather="user-plus"></i>Personal Deatils</h4>
+              <h4><i data-feather="user-plus"></i>Information Personnel </h4>
               <ul>
-                <li><span>Full Name:</span> Micheal N. Taylor</li>
-                <li><span>Father's Name:</span> Howard Armour</li>
-                <li><span>Mother's Name:</span> Megan Higbee</li>
-                <li><span>Date of Birth:</span> 22/08/1992</li>
-                <li><span>Nationality:</span> American </li>
-                <li><span>Sex:</span> Male</li>
-                <li><span>Address:</span> 2018 Nelm Street, Beltsville, VA 20705</li>
+                <li><span>Full Name:</span> {{Auth::guard('candidat')->user()->nom  }}&#160;{{Auth::guard('candidat')->user()->prenom}}</li>
+                <li><span>Date De Naissance:</span> {{Auth::guard('candidat')->user()->datenaiss}} </li>
+                <li><span>Numero De Telephone:</span> {{Auth::guard('candidat')->user()->numtel}} </li>
+                <li><span>Email:</span>{{Auth::guard('candidat')->user()->email}} </li>
+                <li><span>Linkedlin:</span> {{Auth::guard('candidat')->user()->linkedlin}}</li>
               </ul>
             </div>
           </div>
@@ -229,7 +218,7 @@
                 <img src="dashboard/images/user-1.jpg" class="img-fluid" alt="">
               </div>
               <div class="user-body">
-                <h5>Lula Wallace</h5>
+                <h5>{{Auth::guard('candidat')->user()->nom}}</h5>
                 <span>@username</span>
               </div>
             </div>
@@ -249,7 +238,7 @@
             <div class="dashboard-menu">
               <ul>
                 <li><i class="fas fa-home"></i><a href="dashboard.html">Dashboard</a></li>
-                <li><i class="fas fa-user"></i><a href="dashboard-edit-profile.html">Edit Profile</a></li>
+                <li><i class="fas fa-user"></i><a href="">Edit Profile</a></li>
                 <li class="active"><i class="fas fa-file-alt"></i><a href="resume.html">Resume</a></li>
                 <li><i class="fas fa-edit"></i><a href="edit-resume.html">Edit Resume</a></li>
                 <li><i class="fas fa-heart"></i><a href="dashboard-bookmark.html">Bookmarked</a></li>
@@ -315,4 +304,5 @@
 </div>
 <!-- Call to Action End -->
 </form>
+
 @endsection

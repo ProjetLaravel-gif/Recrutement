@@ -39,11 +39,6 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{{asset('images/icon-72x72.png')}}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{asset('images/icon-114x114.png')}}">
  
-<br>
-<br>
-<br>
-<br>
-<br>
 <header class="header-2">
   <div class="container">
     <div class="row">

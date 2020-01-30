@@ -30,7 +30,18 @@ class ExperienceController extends Controller
          	$experiences->save();
          	return redirect('competences/create/'.$request->input('cvv_id'));
 
-         }
+         } 
+
+         public function update(Request $request, $id){
+        $experiences = Experience::find($id);
+        $experiences->intitule = $request->input('intitule');
+        $experiences->lieu = $request->input('lieu');
+        $experiences->lieu = $request->input('description');
+        $experiences->lieu = $request->input('date_debut');
+        $experiences->lieu = $request->input('date_fin');
+        $experiences->save();
+         return redirect('cvs');
+    }
 
         public function destroy(Request $request, $id){
          $experiences = Experience::find($id);

@@ -7,9 +7,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Cv extends Model
 {
-    // use SoftDeletes;
+    use SoftDeletes;
 
-    // protected $dates = ['deleted_at'];
+    protected $dates = ['deleted_at'];
+    
     protected $table = 'cvs';
 
     public function candidats()
@@ -21,19 +22,19 @@ class Cv extends Model
        return $this->belongsToMany('App\Diver','cvdivers','cv_id','diver_id');
    }
 
-    public function comptences()
+    public function competences()
     {
-        return $this->hasmany('App\Competence');
+        return $this->hasmany('App\Competence','cv_iid');
     }
 
     public function formations()
     {
-        return $this->hasmany('App\Formation');
+        return $this->hasmany('App\Formation','cv_id');
     }
 
 
     public function experiences()
     {
-        return $this->hasmany('App\Experience');
+        return $this->hasmany('App\Experience','cvv_id');
     }
 }
