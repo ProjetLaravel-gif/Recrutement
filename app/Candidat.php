@@ -41,4 +41,9 @@ class Candidat extends Authenticatable
     {
         return $this->hasmany('App\Experience');
     }
+
+     public function offres()
+    {
+        return $this->hasMany('App\Offre');
+    }
 }

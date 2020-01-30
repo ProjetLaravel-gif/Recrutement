@@ -3,21 +3,24 @@
 namespace App\Http\Controllers;
 
 use App\Recruteur;
+use App\Candidat;
 use App\Offre;
 use App\Parametre;
 use Illuminate\Http\UploadedFile;
 use Auth;
+use App\Contact;
+use App\Postules;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 
 class OffreController extends Controller
 {
-    public function indexo(Request $request){
+    public function mesjobs(Request $request){
       $id = Auth::guard('recruteur')->user()->id;
       $user = Recruteur::find($id);
       $offres = $user->offres()->paginate(5);
-      return view('offres.indexo' , ['offres' => $offres]);
+      return view('offres.mesjobs' , ['offres' => $offres]);
     }
 
      public function indexo1(){
@@ -44,6 +47,12 @@ class OffreController extends Controller
 
        $offres = Offre::find($id);
        return view('offres.detail', ['offres' => $offres]);
+    }
+
+     public function cdetail($id){
+
+       $offres = Offre::find($id);
+       return view('offres.cdetail', ['offres' => $offres]);
     }
 
 
@@ -105,4 +114,75 @@ class OffreController extends Controller
          $listoffres = Offre::all();
          return redirect('offres');
     }
+
+
+    public function createC($id){
+   return view('contact', ['recruteur_id' => $id]);
+
+    }
+
+      public function storeC(Request $request){
+      $contacts = new Contact();
+      $contacts->nom = $request->input('nom');
+      $contacts->numero = $request->input('numero');
+      $contacts->email = $request->input('email');
+      $contacts->objet = $request->input('objet');
+      $contacts->message = $request->input('message');
+      $contacts->recruteur_id = $request->input('recruteur_id');
+      $id = Auth::guard('candidat')->user()->id;
+      $user = Candidat::find($id);
+      $contacts->candidat_id = $id;
+      $contacts->save();
+      $listoffres = Offre::all();
+      return view('offres.indexo1' , ['offres' => $listoffres]);
+    }
+
+
+     public function message(Request $request){
+
+      $id = Auth::guard('recruteur')->user()->id;
+      $user = Recruteur::find($id);
+      $contacts = $user->contacts;
+      return view('message' , ['contacts' => $contacts]);
+
+    }
+
+
+
+
+     public function postuler(Request $request){
+         $postuler = new Postules();
+         $postuler->message = $request->input('message');
+
+          if($request->cv){
+
+                $fileNameWithExt = $request->file('cv')->getClientOriginalName();
+                $filename = pathinfo($fileNameWithExt, PATHINFO_FILENAME);
+                $extension = $request->file('cv')->getClientOriginalExtension();
+                $fileNameToStore = $filename.'_'.time().'.'.$extension;
+                $path = $request->file('cv')->storeAs('cv',$fileNameToStore);
+                $postuler->cv = $fileNameToStore;
+                }
+
+         
+      
+      $id = Auth::guard('candidat')->user()->id;
+      $postuler->candidat_id = $id;
+      
+      $postuler->offres_id = $request->input('offres_id');
+      $postuler->save();
+      return redirect('listoffres');
+     }
+
+
+     public function voir(){
+       $id = Auth::guard('recruteur')->user()->id;
+      $user = Recruteur::find($id);
+      $Postules = $user->postuler;
+        return view('offres.offrecandidat' , ['Postules' => $Postules]);
+     }
+
 }
+
+ 
+  

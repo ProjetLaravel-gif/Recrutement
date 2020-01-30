@@ -65,15 +65,17 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
 // Route::post('recruteur/editprofil','RecruteurProfileController@update_avatar1');
 
 
- Route::get('offres','OffreController@indexo'); 
+ Route::get('offres','OffreController@mesjobs'); 
  Route::get('listoffres','OffreController@indexo1');
+ Route::post('/hhhhh','OffreController@postuler')->name('stp');
  Route::get('offres/createo/{id}','OffreController@createo');    
  Route::post('offres','OffreController@storeo'); 
  Route::get('offres/{id}/edito','OffreController@edito');
  Route::get('offres/{id}/detail','OffreController@detail');
+ Route::get('offres/{id}/cdetail','OffreController@cdetail');
  Route::put('offres/{id}','OffreController@updateo');
  Route::delete('offres/{id}','OffreController@destroyo'); 
-
+ Route::get('message','OffreController@message');
  // route du cv
  // Route::get('formations/formation','FormationController@formation');
  // Route::get('formations/competence','FormationController@competence');
@@ -136,5 +138,15 @@ Route::get('recruteur/editprofil', function () {
     return view('recruteur/editprofil');
 }); 
 
-Route::get('contact/{id}','ContactController@createC');    
-Route::post('contact','ContactController@storeC');
+
+Route::get('contact/createC/{id}','OffreController@createC');    
+Route::post('contact','OffreController@storeC');
+
+
+
+       //     if($request->hasFile('cv')){
+       //      $cv = $request->file('cv');
+       //      $filename = time() . '.' . $cv->getClientOriginalExtension();
+       //      File::make($cv)->resize(300, 300)->save( public_path('/images/cv/' . $filename ) );
+       //    $postuler->cv = $filename;
+       // }

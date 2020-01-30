@@ -1009,8 +1009,8 @@
             </div>
             <div class="modal-body">
               <div class="account-type">
-                <a href="#" class="candidate-acc"><i data-feather="user"></i>Candidate</a>
-                <a href="#" class="employer-acc active"><i data-feather="briefcase"></i>Employer</a>
+                <a href="{{ route('candidat') }}" class="candidate-acc"><i data-feather="user"></i>Candidate</a>
+                <a href="{{ route('recruteur') }}" class="employer-acc active"><i data-feather="briefcase"></i>Employer</a>
               </div>
               <form action="#">
                 <div class="form-group">

@@ -62,10 +62,9 @@
                                      <table class="table">
                                        <body>
 
-                                 @foreach($offres as $offre)
+                                 @foreach($offres  as $offre)
                                          <form action="{{ url('offres/'.$offre->id) }}" method="post">
                                              {{ csrf_field() }}
-                                             {{ method_field('DELETE') }}
                                        <div class="job-list">
                                          <div class="thumb">                                                          
                                            <a href="#">
@@ -86,11 +85,13 @@
                                            </div>
                                            <div class="more">
                                              <div class="buttons">
-                                               <a href="#" class="button" data-toggle="modal" data-target="#apply-popup-id">Apply Now</a>
-                                                <a href="#" class="favourite"><i data-feather="heart"></i></a>
-                                                <a href="{{ url('offres/'.$offre->id.'/detail') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>voir details</a>
-                                                 <a href="{{ url('contact/$contacts->recruteur_id') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>contacter</a>
-                                               
+                                               <a href="{{ route('stp')}}" class="button" data-toggle="modal" data-target="#apply-popup-id">Apply Now</a>
+                                                <a href="{{ url('offres') }}"class="favourite"><i data-feather="heart"></i></a>
+                                               <!--  <a href="{{ url('offres/'.$offre->id.'/detail') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>voir details</a> -->
+                                                 <a href="{{ url('offres/'.$offre->id.'/cdetail') }}" class="preview" title="Preview"><i data-feather="eye"></i></a>
+                                                 <!-- <a href="{{ url('contact/createC/'.$offre->recruteur_id) }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>contacter</a> -->
+                                                 <a href="{{ url('contact/createC/'.$offre->recruteur_id) }}" class="inbox"><i data-feather="mail"></i></a>
+
                                              </div>
                                              @php
                                              $depot = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $offre->created_at);
@@ -99,7 +100,18 @@
                                            </div>
                                          </div>
                                        </div>
-                                       <div class="apply-popup">
+                                      
+                                     </div>
+                                   </form>
+
+
+
+</div>
+</div>
+</div>
+</div>
+
+                                      <div class="apply-popup">
                                          <div class="modal fade" id="apply-popup-id" tabindex="-1" role="dialog" aria-hidden="true">
                                            <div class="modal-dialog" role="document">
                                              <div class="modal-content">
@@ -110,19 +122,17 @@
                                                  </button>
                                                </div>
                                                <div class="modal-body">
-                                                 <form action="#">
+                                                 <form action="{{route ('stp')}}" enctype="multipart/form-data" method="POST">
+
+                                                     {{ csrf_field() }}
+
+                                                  <input type="hidden" name="offres_id" value="{{$offre->id}}">
                                                    <div class="form-group">
-                                                     <input type="text" placeholder="Full Name" class="form-control">
+                                                     <textarea class="form-control" placeholder="Message" name="message"></textarea>
                                                    </div>
-                                                   <div class="form-group">
-                                                     <input type="email" placeholder="Email Address" class="form-control">
-                                                   </div>
-                                                   <div class="form-group">
-                                                     <textarea class="form-control" placeholder="Message"></textarea>
-                                                   </div>
-                                                   <div class="form-group file-input-wrap">
-                                                     <label for="up-cv">
-                                                       <input id="up-cv" type="file">
+                                                   <div class="form-group file-input-wrap" name="cv">
+                                                     <label for="up-cv" name="cv">
+                                                       <input id="up-cv" type="file" name="cv">
                                                        <i data-feather="upload-cloud"></i>
                                                        <span>Upload your resume <span>(pdf,zip,doc,docx)</span></span>
                                                      </label>
@@ -133,22 +143,17 @@
                                                        <span class="dot"></span> I accept the <a href="#">terms & conditions</a>
                                                      </label>
                                                    </div>
-                                                   <button class="button primary-bg btn-block">Apply Now</button>
+                                                   <button class="button primary-bg btn-block">postuler</button>
                                                  </form>
                                                </div>
                                              </div>
                                            </div>
                                          </div>
                                        </div>
-                                     </div>
-
-</div>
-</div>
-</div>
-</div>
-</div>
-</form>
 @endforeach
+
+
+
 </body>
 </table>
 

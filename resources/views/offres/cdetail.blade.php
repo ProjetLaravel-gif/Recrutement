@@ -1,5 +1,5 @@
-@extends('layouts.master_recruteur')
-@section('recruteur')
+@extends('layouts.master')
+@section('content')
 <div class="alice-bg padding-top-60 section-padding-bottom">
   <div class="container">
     <div class="row">
@@ -121,9 +121,9 @@
               <div class="company-information details-section">
                 <h4><i data-feather="briefcase"></i>About the Company</h4>
                 <ul>
-                  <li><span>Company Name:</span>{{Auth::guard('recruteur')->user()->nom}}</li>
-                  <li><span>Address:</span>{{Auth::guard('recruteur')->user()->adresse}}</li>
-                  <li><span>Website:</span> <a href="#">{{Auth::guard('recruteur')->user()->siteweb}}</a></li>
+                  <li><span>Company Name:</span>{{$offres->recruteur['nom']}}</li>
+                  <li><span>Address:</span>{{$offres->recruteur['adresse']}}</li>
+                  <li><span>Website:</span> <a href="#">{{$offres->recruteur['siteweb']}}</a></li>
                   <li><span>Company Profile:</span></li>
                   <li>It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum looked up one of the more obscure Latin words, consectetur.</li>
                 </ul>

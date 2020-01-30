@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 //use Illuminate\Database\Eloquent\Model;
 use App\Offre;
+use App\Contact;
 class Recruteur  extends Authenticatable
 {
      use Notifiable;
@@ -28,5 +29,11 @@ class Recruteur  extends Authenticatable
      public function offres()
     {
         return $this->hasMany('App\Offre');
+    }
+
+
+      public function contacts()
+    {
+        return $this->hasMany('App\Contact');
     }
 }
