@@ -53,6 +53,8 @@ Route::get('acceuil', function () {
 
 Route::get('profil','CandidatProfileController@profile')->name('profil');
 Route::post('profil','CandidatProfileController@update_avatar');
+Route::get('candidat/{id}/editprofil','CandidatProfileController@editprofil');
+Route::put('candidat/{id}','CandidatProfileController@updateprofil');
 
  Route::get('profil1','RecruteurProfileController@profile1')->name('profil1');
 Route::post('profil1','RecruteurProfileController@update_avatar1');
