@@ -118,6 +118,15 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
    Route::get('addCompetence','ExperienceController@addCompetence');
    Route::delete('competences/{id}','CompetenceController@destroy');
 
+   // route favoris
+   Route::get('favoris/{id}','FavorisController@indexf');
+   Route::get('favoris','FavorisController@index')->name('favoris'); 
+   Route::get('favoris/createf','FavorisController@createf'); 
+   Route::post('favoris','FavorisController@storef'); 
+   Route::get('favoris/{id}/editf','FavorisController@editf');
+   Route::put('favoris/{id}','FavorisController@updatef')->name('paliz');
+   Route::delete('favoris/{id}','FavorisController@destroyf'); 
+
 Route::get('Cv/index', function () {
     return view('Cv/index');
 });
@@ -132,6 +141,9 @@ Route::get('Cv/experience', function () {
 
 Route::get('pipipi', function () {
     return view('pipipi');
+});
+Route::get('Cv/favoris', function () {
+    return view('Cv/favoris');
 });
 
 Route::get('recruteur/editprofil', function () {

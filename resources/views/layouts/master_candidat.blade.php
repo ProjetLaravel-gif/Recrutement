@@ -41,16 +41,13 @@
 
 
   @include('layouts/_menucandidat')
- <br>
- <br>
- <br>
- <br>
- <br>
+
 
      @yield('candidat')
      
 
   @include('layouts/_footer')
+
       <script src="{{asset('assets/js/jquery.min.js')}}"></script>
       <script src="{{asset('assets/js/popper.min.js')}}"></script>
       <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>

@@ -26,4 +26,8 @@ class Offre extends Model
     {
         return $this->belongsTo('App\Postles');
     }
+     public function favoris()
+    {
+        return $this->hasmany('App\Favori','offre_id');
+    }
 }
