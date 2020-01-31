@@ -1,59 +1,248 @@
- <!Doctype html>
- <html lang="en">
-   
- <!-- Mirrored from themerail.com/html/oficiona/post-job.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 2019 21:29:48 GMT -->
- <head>
-     <!-- Required meta tags -->
-     <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!doctype html>
+<html lang="en">
+  
+<!-- Mirrored from themerail.com/html/oficiona/edit-resume.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 2019 21:30:14 GMT -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-     <title>Recrutement</title>
+    <title>Recrutement</title>
 
-     <!-- Bootstrap CSS -->
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
+    <!-- Bootstrap CSS -->
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap.min.css')}}">
 
-     <!-- External Css -->
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fontawesome-all.min.css')}}">
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify-icons.css')}}" />
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/et-line.css')}}" />
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap-select.min.css')}}" />
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/plyr.css')}}" />
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/flag.css')}}" />
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.css')}}" /> 
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/owl.carousel.min.css')}}" />
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.nstSlider.min.css')}}" />
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/html5-simple-date-input-polyfill.css')}}" />
+        <!-- External Css -->
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/fontawesome-all.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/themify-icons.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/et-line.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/bootstrap-select.min.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/plyr.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/flag.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/slick.css')}}" /> 
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/owl.carousel.min.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.nstSlider.min.css')}}" />
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/html5-simple-date-input-polyfill.css')}}" />
 
-     <!-- Custom Css -->
-     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.css')}}">
-      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/dashboard.css')}}">
+        <!-- Custom Css -->
+        <link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.css')}}">
+         <link rel="stylesheet" type="text/css" href="{{asset('assets/css/dashboard.css')}}">
 
-     <!-- Fonts -->
-     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:300i,400,500" rel="stylesheet">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600%7CRoboto:300i,400,500" rel="stylesheet">
 
-     <!-- Favicon -->
-     <link rel="icon" href="{{asset('images/favicon.png')}}">
-     <link rel="apple-touch-icon" href="{{asset('images/apple-touch-icon.png')}}">
-     <link rel="apple-touch-icon" sizes="72x72" href="{{asset('images/icon-72x72.png')}}">
-     <link rel="apple-touch-icon" sizes="114x114" href="{{asset('images/icon-114x114.png')}}">
+        <!-- Favicon -->
+        <link rel="icon" href="{{asset('images/favicon.png')}}">
+        <link rel="apple-touch-icon" href="{{asset('images/apple-touch-icon.png')}}">
+        <link rel="apple-touch-icon" sizes="72x72" href="{{asset('images/icon-72x72.png')}}">
+        <link rel="apple-touch-icon" sizes="114x114" href="{{asset('images/icon-114x114.png')}}">
 
 
-     <!--[if lt IE 9]>
-     <script src="assets/js/html5shiv.min.js"></script>
-     <script src="assets/js/respond.min.js"></script>
-     <![endif]-->
 
-   </head>
-   <body>
+    <!--[if lt IE 9]>
+    <script src="assets/js/html5shiv.min.js"></script>
+    <script src="assets/js/respond.min.js"></script>
+    <![endif]-->
 
-  @include('layouts/_menu')
+  </head>
+  <body>
+
+    <header class="header-2">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="header-top">
+              <div class="logo-area">
+                <a href="index.html"><img src="logo-2.png" alt=""></a>
+              </div>
+              <div class="header-top-toggler">
+                <div class="header-top-toggler-button"></div>
+              </div>
+              <div class="top-nav">
+                <div class="dropdown header-top-notification">
+                  <a href="#" class="notification-button">Notification</a>
+                  <div class="notification-card">
+                    <div class="notification-head">
+                      <span>Notifications</span>
+                      <a href="#">Mark all as read</a>
+                    </div>
+                    <div class="notification-body">
+                      <a href="home-2.html" class="notification-list">
+                        <i class="fas fa-bolt"></i>
+                        <p>Your Resume Updated!</p>
+                        <span class="time">5 hours ago</span>
+                      </a>
+                      <a href="#" class="notification-list">
+                        <i class="fas fa-arrow-circle-down"></i>
+                        <p>Someone downloaded resume</p>
+                        <span class="time">11 hours ago</span>
+                      </a>
+                      <a href="#" class="notification-list">
+                        <i class="fas fa-check-square"></i>
+                        <p>You applied for Project Manager <span>@homeland</span></p>
+                        <span class="time">11 hours ago</span>
+                      </a>
+                      <a href="#" class="notification-list">
+                        <i class="fas fa-user"></i>
+                        <p>You changed password</p>
+                        <span class="time">5 hours ago</span>
+                      </a>
+                      <a href="#" class="notification-list">
+                        <i class="fas fa-arrow-circle-down"></i>
+                        <p>Someone downloaded resume</p>
+                        <span class="time">11 hours ago</span>
+                      </a>
+                    </div>
+                    <div class="notification-footer">
+                      <a href="#">See all notification</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="dropdown header-top-account">
+                  <a href="#" class="account-button">Mon compte</a>
+                  <div class="account-card">
+                    <div class="header-top-account-info">
+                      <a href="#" class="account-thumb">
+                        <img src="images/account/thumb-1.jpg" class="img-fluid" alt="">
+                      </a>
+                      <div class="account-body">
+                        <h5><a href="#">yasmine fandi</a></h5>
+                        <span class="mail">yasminefandi10@gmail.com</span>
+                      </div>
+                    </div>
+                    <ul class="account-item-list">
+                      <li><a href="#"><span class="ti-user"></span>Compte</a></li>
+                      <li><a href="#"><span class="ti-settings"></span>Parametres</a></li>
+                      <li><a href="#"><span class="ti-power-off"></span>Se deconnecter</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <select class="selectpicker select-language" data-width="fit">
+                  <option data-content='<span class="flag-icon flag-icon-us"></span> English'>English</option>
+                  <option  data-content='<span class="flag-icon flag-icon-mx"></span> Español'>Español</option>
+                </select>
+              </div>
+            </div>
+            <nav class="navbar navbar-expand-lg cp-nav-2">
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav">
+                  <li class="menu-item active"><a title="Home" href="home-1.html">
+Accueil</a></li>
+                  <li class="menu-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Emplois</a>
+                    <ul  class="dropdown-menu">
+                      <li class="menu-item"><a  href="job-listing.html">Offres d'emploi</a></li>
+                      <li class="menu-item"><a  href="job-listing-with-map.html">Offre d'emploi avec carte</a></li>
+                      <li class="menu-item"><a  href="job-details.html">
+Détails du poste</a></li>
+                      <!-- <li class="menu-item"><a  href="post-job.html">Post Job</a></li> -->
+                    </ul>
+                  </li>
+                  <li class="menu-item dropdown">
+                    <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">
+Candidats</a>
+                    <ul  class="dropdown-menu">
+                      <li class="menu-item"><a  href="candidate.html">
+Liste des candidats</a></li>
+                      <li class="menu-item"><a  href="candidate-details.html">Détails des candidats</a></li>
+                      <li class="menu-item"><a  href="add-resume.html">Ajouter un cv</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item dropdown">
+                    <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Employeurs</a>
+                    <ul  class="dropdown-menu">
+                      <li class="menu-item"><a  href="employer-listing.html">listes des employeurs</a></li>
+                      <li class="menu-item"><a  href="employer-details.html">Détails des employeurs</a></li>
+                      <li class="menu-item"><a  href="employer-dashboard-post-job.html">
+Publier une offre</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Tableau de bord</a>
+                    <ul  class="dropdown-menu">
+                      <li class="menu-item dropdown">
+                        <a href="#" data-toggle="dropdown"  class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Candidat Tableau de bord</a>
+                        <ul class="dropdown-menu">
+                          <li class="menu-item"><a  href="dashboard.html">Tableau de bord</a></li>
+                          <li class="menu-item"><a  href="dashboard-edit-profile.html">Modifier le Profil</a></li>
+                          <li class="menu-item"><a  href="add-resume.html">Ajouter un cv </a></li>
+                          <li class="menu-item"><a  href="resume.html">CV</a></li>
+                          <li class="menu-item"><a  href="edit-resume.html">Modifier CV </a></li>
+                          <li class="menu-item"><a  href="dashboard-bookmark.html">Favoris</a></li>
+                          <li class="menu-item"><a  href="dashboard-applied.html">Appliqué</a></li>
+                          <li class="menu-item"><a  href="dashboard-pricing.html">
+Prix</a></li>
+                          <li class="menu-item"><a  href="dashboard-message.html">Message</a></li>
+                          <li class="menu-item"><a  href="dashboard-alert.html">
+Alerte</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-item dropdown">
+                        <a href="#" data-toggle="dropdown"  class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Employer Tableau de bord</a>
+                        <ul class="dropdown-menu">
+                          <li class="menu-item"><a href="employer-dashboard.html">Employer Tableau de bord</a></li>
+                          <li class="menu-item"><a href="employer-dashboard-edit-profile.html">Modifier le Profil</a></li>
+                          <li class="menu-item"><a href="employer-dashboard-manage-candidate.html">
+Gérer le candidat</a></li>
+                          <li class="menu-item"><a href="employer-dashboard-manage-job.html">Gérer le travail</a></li>
+                          <!-- <li class="menu-item"><a href="employer-dashboard-message.html">Message du tableau de bord</a></li> -->
+                          <!-- <li class="menu-item"><a href="employer-dashboard-pricing.html">Dashboard Pricing</a></li> -->
+                          <li class="menu-item"><a href="employer-dashboard-post-job.html">Post Job</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="menu-item dropdown">
+                    <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Pages</a>
+                    <ul  class="dropdown-menu">
+                      <li class="menu-item"><a href="about-us.html">
+À propos de nous</a></li>
+                      <li class="menu-item"><a href="how-it-work.html">
+Comment ça fonctionne</a></li>
+                      <li class="menu-item"><a href="pricing.html">
+Plan de tarification</a></li>
+                      <li class="menu-item"><a href="faq.html">FAQ</a></li>
+                      <li class="menu-item dropdown">
+                        <a href="#" data-toggle="dropdown"  class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">News &amp; Advices</a>
+                        <ul class="dropdown-menu">
+                          <li class="menu-item"><a href="blog.html">Nouvelles</a></li>
+                          <!-- <li class="menu-item"><a href="blog-grid.html">News Grid</a></li> -->
+                          <!-- <li class="menu-item"><a href="blog-details.html">News Details</a></li> -->
+                        </ul>
+                      </li>
+                      <!-- <li class="menu-item"><a href="checkout.html">Checkout</a></li>
+                      <li class="menu-item"><a href="payment-complete.html">Payment Complete</a></li>
+                      <li class="menu-item"><a href="invoice.html">Invoice</a></li> -->
+                      <!-- <li class="menu-item"><a href="terms-and-condition.html">Terms And Condition</a></li> -->
+                      <!-- <li class="menu-item"><a href="404.html">404 Page</a></li> -->
+                      <li class="menu-item"><a href="login.html">Se Connecter</a></li>
+                      <li class="menu-item"><a href="register.html">S'inscrire</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item"><a href="contact.html">Cantacter nous</a></li>
+                  <li class="menu-item post-job"><a href="post-job.html"><i class="fas fa-plus"></i>Poster offre</a></li>
+                </ul>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
     <!-- Breadcrumb -->
     <div class="alice-bg section-padding-bottom">
       <div class="container no-gliters">
         <div class="row no-gliters">
           <div class="col">
             <div class="dashboard-container">
-              <div class="dashboard-content-wrapper" id="app">
+              <div class="dashboard-content-wrapper">
+                   
+                      <form action="{{url ('cvs/'.$cvs->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
+                                       {{ csrf_field() }}
+                                       <input type="hidden" name="candidat_id" value="{{$cvs->candidat_id}}">
                 <div class="download-resume dashboard-section">
                   <div class="update-file">
                     <input type="file">
@@ -65,7 +254,6 @@ Mettre à jour le CV <i data-feather="edit-2"></i>
                   <span>
 Télécharger un fichier PDF</span>
                 </div>
-
                 <div class="skill-and-profile dashboard-section">
                   <div class="skill">
                     <label>
@@ -87,7 +275,9 @@ Compétences:</label>
                               <a href="#" class="add-more">+ Ajouter des compétences</a>
                             </div>
                             <div class="content">
-                              <form action="#">
+                              <form action="{{url ('cvs/'.$cvs->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
+                       {{ csrf_field() }}
+                       <input type="hidden" name="candidat_id" value="{{$cvs->candidat_id}}">
                                 <div class="form-group row">
                                   <label class="col-sm-3 col-form-label">
 Type Compétences</label>
@@ -316,102 +506,227 @@ Annuler</button>
                     </div>
                   </div>
                 </div>
-               <div class="about-details details-section dashboard-section">
-                 <h4><i data-feather="align-left"></i>
-À propos de moi</h4>
-                  <p>Combiné avec une poignée de structures de phrases modèles, le lorem Ipsum a été généré. Il a survécu non seulement à cinq siècles, mais aussi au saut dans la composition électronique, demeurant essentiellement inchangé. Il a été popularisé dans les années 1960 avec la publication de feuilles Letraset contenant des passages de Lorem Ipsum, et plus récemment avec un logiciel de publication assistée par ordinateur comme Aldus PageMaker, notamment.
+           
+                   <div class="edication-background details-section dashboard-section">
+                                   <h4><i data-feather="book"></i>Formations</h4>
+                                    @foreach($cvs->formations as $formation)
+                                   <div class="education-label">
+                                      <span class="study-year">{{ $formation->date_debut }}-{{ $formation->date_fin }}</span>
+                                      <h5>{{ $formation->diplome }}<span>{{ $formation->lieu }} </span></h5>
+                                     <h5>{{ $formation->domaine }}<!-- <span>@ {{ $formation->domaine }} </span> --></h5>
+                                   </div>
+                                   
+                                   <!-- Button trigger modal -->
+                                   <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-education">
+                                     <i data-feather="edit-2"></i>
+                                   </button>
+                                   <!-- Modal -->
 
-Richard McClintock, professeur de latin au Hampden-Sydney College en Virginie, a recherché l'un des mots latins les plus obscurs, consectetur, tiré d'un passage de Lorem Ipsum, et en parcourant les cités de ce mot dans la littérature classique, il a découvert l'incontournable </p>
-                  <div class="information-and-contact">
-                    <div class="information">
-                      <h4>Information</h4>
-                      <ul>
-                        <li><span>Catégorie:</span> Design & Creative</li>
-                        <li><span>
-Emplacement:</span> ALgerie </li>
-                        <li><span>Statut:</span> 
-À plein temps</li>
-                        <li><span>Experience:</span>3 années</li>
-                        <li><span>
-Échelle salariale:</span> 3millios-4millios</li>
-                        <li><span>Le sexe :</span> 
-Masculin</li>
-                        <li><span>Age:</span> 22 Ans</li>
-                        <li><span>Qualification:</span> Diplômé</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-about-me">
-                    <i data-feather="edit-2"></i>
-                  </button>
-                  <!-- Modal -->
-                  <div class="modal fade" id="modal-about-me" tabindex="-1" role="dialog" aria-hidden="true">
+                                    <div class="modal fade modal-education" id="modal-education" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-body">
                           <div class="title">
-                            <h4><i data-feather="align-left"></i>À propos de moi</h4>
+                            <h4><i data-feather="book"></i>Education</h4>
+                            <a href="#" class="add-more">+ Ajouter Education</a>
                           </div>
                           <div class="content">
                             <form action="#">
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">
-Ecrivez-vous</label>
-                                <div class="col-sm-9">
-                                  <textarea class="form-control" placeholder="Write Yourself"></textarea>
+                              <div class="input-block-wrap">
+                                <div class="form-group row">
+                                  <label class="col-sm-3 col-form-label">01</label>
+                                  <div class="col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Diplome</div>
+                                      </div>
+                                      <input type="text" class="form-control" name="diplome" value="{{ $formation->diplome}}" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-sm-9 offset-sm-3">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Lieu</div>
+                                      </div>
+                                      <input type="text" class="form-control" name="lieu" value="{{ $formation->lieu}}" >
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="form-group row">
+                                  <div class="col-sm-9 offset-sm-3">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Date-Debut</div>
+                                      </div>
+                                      <input type="text" class="form-control" name="date_debut" value="{{ $formation->date_debut}}" >
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div class="form-group row">
+                                  <div class="col-sm-9 offset-sm-3">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Date-FIN</div>
+                                      </div>
+                                      <input type="text" class="form-control" name="Date-fin"  value="{{ $formation->date_fin}}" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-sm-9 offset-sm-3">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Domaine</div>
+                                      </div>
+                                      <input type="text" class="form-control" name="domaine" value="{{ $formation->domaine}}" >
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                              <h4><i data-feather="align-left"></i>Information</h4>
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Catégorie</label>
-                                <div class="col-sm-9">
-                                  <input type="text" class="form-control"  placeholder="Design &amp; Creative">
+                            
+                              <div class="row">
+                                <div class="offset-sm-3 col-sm-9">
+                                  <div class="buttons">
+                                    <button class="primary-bg">Enregistrer la mise à jour</button>
+                                    <button class="" data-dismiss="modal">Annuler</button>
+                                  </div>
                                 </div>
                               </div>
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Emplacement</label>
-                                <div class="col-sm-9">
-                                  <input type="text" class="form-control"  placeholder=" ALgerie">
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                  </div>  
+                   @endforeach     
+                 </div>             
+                <div class="experience dashboard-section details-section">
+                  <h4><i data-feather="briefcase"></i> Experience</h4>
+                  @foreach($cvs->experiences as $experience)
+                  <div class="experience-section">
+                    <span class="service-year">{{ $experience->date_debut }}-{{ $experience->date_fin }}</span>
+                    <h5>{{ $experience->intitule }}<span>{{ $experience->lieu }}</span></h5>
+                    <p>{{ $experience->description }}</p>
+                  </div>
+                 
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-experience">
+                    <i data-feather="edit-2"></i>
+                  </button>
+                  <!-- Modal -->
+                  <div class="modal fade modal-experience" id="modal-experience" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <div class="title">
+                            <h4><i data-feather="briefcase"></i>Experience</h4>
+                            <a href="#" class="add-more">+ AjouterExperience</a>
+                          </div>
+                          <div class="content">
+                           <form action="{{url ('cvs/'.$cvs->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
+                                                  {{ csrf_field() }}
+                          <input type="hidden" name="cvv_id" value="{{$cvs->cvv_id}}">
+                              <div class="input-block-wrap">
+                                <div class="form-group row">
+                                  <label class="col-sm-3 col-form-label">01</label>
+                                  <div class="col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Intitule</div>
+                                      </div>
+                                      <input type="text" class="form-control" name="intitule" value="{{ $experience->intitule}}" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="offset-sm-3 col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Lieu</div>
+                                      </div>
+                                      <input type="text" class="form-control" name="lieu" value="{{ $experience->lieu}}" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="col-sm-9 offset-sm-3">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Date-Debut</div>
+                                      </div>
+                                      <input type="text" class="form-control" name="date_debut" value="{{ $experience->date_debut}}">
+                                    </div>
+                                  </div>
+                                </div>
+                                 <div class="form-group row">
+                                  <div class="col-sm-9 offset-sm-3">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Date-Fin</div>
+                                      </div>
+                                      <input type="text" class="form-control" name="date_fin" value="{{ $experience->date_fin}}">
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="offset-sm-3 col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Description</div>
+                                      </div>
+                                      <textarea class="form-control" name="description" >{{ $experience->description}}</textarea>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Statut</label>
-                                <div class="col-sm-9">
-                                  <input type="text" class="form-control"  placeholder="À plein temps">
+                             <!--  <div class="input-block-wrap">
+                                <div class="form-group row">
+                                  <label class="col-sm-3 col-form-label">02</label>
+                                  <div class="col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Titre</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Experience</label>
-                                <div class="col-sm-9">
-                                  <input type="text" class="form-control"  placeholder="3 années">
+                                <div class="form-group row">
+                                  <div class="offset-sm-3 col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Compagnie</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">
-Échelle salariale</label>
-                                <div class="col-sm-9">
-                                  <input type="text" class="form-control"  placeholder="3millios-4millios">
+                                <div class="form-group row">
+                                  <div class="col-sm-9 offset-sm-3">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Periode</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Le sexe </label>
-                                <div class="col-sm-9">
-                                  <input type="text" class="form-control"  placeholder="Masculin">
+                                <div class="form-group row">
+                                  <div class="offset-sm-3 col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Description</div>
+                                      </div>
+                                      <textarea class="form-control"></textarea>
+                                    </div>
+                                  </div>
                                 </div>
-                              </div>
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Age</label>
-                                <div class="col-sm-9">
-                                  <input type="text" class="form-control"  placeholder="22 ans">
-                                </div>
-                              </div>
-                              <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Qualification</label>
-                                <div class="col-sm-9">
-                                  <input type="text" class="form-control"  placeholder=Diplômé">
-                                </div>
-                              </div>
+                              </div> -->
                               <div class="row">
                                 <div class="offset-sm-3 col-sm-9">
                                   <div class="buttons">
@@ -426,214 +741,69 @@ Ecrivez-vous</label>
                       </div>
                     </div>
                   </div>
+                   @endforeach
                 </div>
-               
-               <div class="edication-background details-section dashboard-section">
-                  <h4><i data-feather="book"></i>Formations</h4>
-                  <div class="education-label" v-for=" formation in formations">
-                    <span class="study-year">@{{formation.date_debut}}- @{{formation.date_fin}}</span>
-                    <h5>@{{formation.diplome}}<span>@{{formation.lieu}}</span></h5>
-                    <p>@{{formation.domaine}}</p>
-                  </div>
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-experience" @click="open = true" >
-                   Ajouter Formation
-                  </button>
-                  <!-- Modal -->
-                  <div >
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                          <div class="title">
-                            <h4>Formation</h4>
-                            <button type="button" class="btn btn-primary edit-resume" >
-                            <a href="#" class="add-more" @click="open = true">+ Ajouter Formation</a> </button>
-                          </div>
-                          <div class="content">
-                            <form action="#">
-                              <div class="input-block-wrap" v-if="open">
-                                <div class="form-group row">
-                                 
-                                  <div class="col-sm-9">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" formation.diplome">Diplome </div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <div class="offset-sm-3 col-sm-9">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" formation.lieu">
-                                         lieu </div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <div class="col-sm-9 offset-sm-3">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" formation.date_debut">date_debut</div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                 <div class="form-group row">
-                                  <div class="col-sm-9 offset-sm-3">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" formation.date_fin ">date_fin</div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <div class="offset-sm-3 col-sm-9">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" formation.domaine">Domaine</div>
-                                      </div>
-                                      <textarea class="form-control"></textarea>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="row">
-                                <div class="offset-sm-3 col-sm-9">
-                                  <div class="buttons">
-                                    <button type="button" class="btn btn-primary " @click="addExperience">
-                                    Enregistrer la mise à jour</button>
-                                    <button class="" data-dismiss="modal">Annuler</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
                 <div class="experience dashboard-section details-section">
-                  <h4><i data-feather="briefcase"></i> Experience</h4>
-                  <div class="experience-section" v-for=" experience in experiences">
-                    <span class="service-year">@{{experience.date_debut}}- @{{experience.date_fin}}</span>
-                    <h5>@{{experience.intitule}}<span>@{{experience.lieu}}</span></h5>
-                    <p>@{{experience.description}}</p>
+                  <h4><i data-feather="briefcase"></i> Competence</h4>
+                  @foreach($cvs->competences as $competence)
+                  <div class="experience-section">
+                    <p>{{ $competence->description }}</p>
                   </div>
-                <!--   <div class="experience-section">
-                    <span class="service-year">2012 - 2016</span>
-                    <h5>Former Graphic Designer<span>@ Graphicreeeo CO</span></h5>
-                    <p>Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage</p>
-                  </div> -->
-                  <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-experience" @click="open = true" >
-                   Ajouter Experience
-                  </button>
-                  <!-- Modal -->
-                  <div >
-                    <div class="modal-dialog" role="document">
-                      <div class="modal-content">
-                        <div class="modal-body">
-                          <div class="title">
-                            <h4>Experience</h4>
-                            <button type="button" class="btn btn-primary edit-resume" >
-                            <a href="#" class="add-more">+ Ajouter Experience</a> </button>
-                          </div>
-                          <div class="content">
-                            <form action="#">
-                              <div class="input-block-wrap" v-if="open">
-                                <div class="form-group row">
-                          
-                                  <div class="col-sm-9">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" experience.intitule">Intitule</div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <div class="offset-sm-3 col-sm-9">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" experience.lieu">lieu</div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                 <div class="form-group row">
-                                  <div class="offset-sm-3 col-sm-9">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" experience.description">Description</div>
-                                      </div>
-                                      <textarea class="form-control"></textarea>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="form-group row">
-                                  <div class="col-sm-9 offset-sm-3">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" experience.date_debut">date_debut</div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="form-group row">
-                                  <div class="col-sm-9 offset-sm-3">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" experience.date_fin ">date_fin</div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                
-                               
-                              </div>
-                              <div class="row">
-                                <div class="offset-sm-3 col-sm-9">
-                                  <div class="buttons">
-                                    <button type="button" class="btn btn-primary " @click="addExperience">
-                                    Enregistrer la mise à jour</button>
-                                    <button class="" data-dismiss="modal">Annuler</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                                   <!-- Button trigger modal -->
+                                   <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-pro-skill">
+                                     <i data-feather="edit-2"></i>
+                                   </button>
+                                   <!-- Modal -->
+                                   <div class="modal fade modal-pro-skill" id="modal-pro-skill" tabindex="-1" role="dialog" aria-hidden="true">
+                                     <div class="modal-dialog" role="document">
+                                       <div class="modal-content">
+                                         <div class="modal-body">
+                                           <div class="title">
+                                             <h4><i data-feather="feather"></i>
+                 Compétence professionnelle</h4>
+                                             <a href="#" class="add-more">+ Ajouter Compétence</a>
+                                           </div>
+                                           <div class="content">
+                                             <form action="{{url ('cvs/'.$cvs->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
+                                                  {{ csrf_field() }}
+                                  <input type="hidden" name="cv_iid" value="{{$cvs->cv_iid}}">
+                                               <div class="input-block-wrap">
+                                                 <div class="form-group row">
+                                                   <label class="col-sm-3 col-form-label">compétence 01</label>
+                                                   <div class="col-sm-9">
+                                                     <div class="input-group">
+                                                       <div class="input-group-prepend">
+                                                         
+                                                       </div>
+                                                       <textarea class="form-control" name="description" >{{ $competence->description}}</textarea>
+                                                     </div>
+                                                   </div>
+                                                 </div>
+                                               
+                                               </div>
+                                               
+                                             
+                                               <div class="row">
+                                                 <div class="offset-sm-3 col-sm-9">
+                                                   <div class="buttons">
+                                                     <button class="primary-bg">Enregistrer la mise à jour</button>
+                                                     <button class="" data-dismiss="modal">Annuler</button>
+                                                   </div>
+                                                 </div>
+                                               </div>
+                                             </form>
+                                           </div>
+                                         </div>
+                                       </div>
+                                     </div>
+                                   </div>
+                   @endforeach
                 </div>
-               <div class="professonal-skill dashboard-section details-section">
+               <!-- <div class="professonal-skill dashboard-section details-section">
                   <h4><i data-feather="feather"></i>
-                        Compétence professionnelle</h4>
-                        <div v-for=" competence in competences">
-                            <p>@{{competence.description}}</p></div>
-                     <div class="title">
-                            <button type="button" class="btn btn-primary edit-resume" >
-                            <a href="#" class="add-more" @click="open = true">+ Ajouter Compétence</a> </button>
-                          </div>        
-                        
-            <!--       <div class="progress-group">
+Compétence professionnelle</h4>
+                  <p>Combined with a handful of model sentence structures, to generate lorem Ipsum which  It has survived not only five centuries, but also the leap into electronic typesetting</p>
+                  <div class="progress-group">
                     <div class="progress-item">
                       <div class="progress-head">
                         <p class="progress-on">Photoshop</p>
@@ -678,45 +848,134 @@ Ecrivez-vous</label>
                         <p class="progress-to">86%</p>
                       </div>
                     </div>
-                  </div> -->
+                  </div>
                   <!-- Button trigger modal -->
-                <!--   <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-pro-skill">
+                 <!--  <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-pro-skill">
                     <i data-feather="edit-2"></i>
                   </button> -->
                   <!-- Modal -->
-                  <div >
-                    <div role="document">
+                 <!--  <div class="modal fade modal-pro-skill" id="modal-pro-skill" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
                       <div class="modal-content">
-                        <div >
-                          <div class="title" style="padding-top: 4px; padding-left: 4px;">
-                            <h4>
-                               Compétence professionnelle</h4>
-                            <div class="title">
-                            <button type="button" class="btn btn-primary edit-resume" >
-                            <a href="#" class="add-more">+ Ajouter Compétence</a> </button>
+                        <div class="modal-body">
+                          <div class="title">
+                            <h4><i data-feather="feather"></i>
+Compétence professionnelle</h4>
+                            <a href="#" class="add-more">+ Ajouter Compétence</a>
                           </div>
-                          </div>
-                              <div class="content">
+                          <div class="content">
                             <form action="#">
-                              <div class="input-block-wrap" v-if="open">
-                                <div class="form-group row" style="padding-left: 20px;">
+                              <div class="input-block-wrap">
+                                <div class="form-group row">
                                   <label class="col-sm-3 col-form-label">
-                               A propos de la compétence</label>
+A propos de la compétence</label>
                                   <div class="col-sm-9">
                                     <div class="input-group">
                                       <div class="input-group-prepend">
-                                        <div class="input-group-text" v-model=" competence.description">Description</div>
+                                        <div class="input-group-text">Description</div>
                                       </div>
                                       <textarea class="form-control"></textarea>
                                     </div>
                                   </div>
                                 </div>
                               </div>
-                              <div class="row" style="padding-left: 20px;">
+                              <div class="input-block-wrap">
+                                <div class="form-group row">
+                                  <label class="col-sm-3 col-form-label">compétence 01</label>
+                                  <div class="col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">
+Nom de la compétence</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="offset-sm-3 col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Pourcentage</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="input-block-wrap">
+                                <div class="form-group row">
+                                  <label class="col-sm-3 col-form-label">compétence  02</label>
+                                  <div class="col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Nom de la compétence</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="offset-sm-3 col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Pourcentage</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="input-block-wrap">
+                                <div class="form-group row">
+                                  <label class="col-sm-3 col-form-label">compétence  03</label>
+                                  <div class="col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Nom de la compétence</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="offset-sm-3 col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Pourcentage</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="input-block-wrap">
+                                <div class="form-group row">
+                                  <label class="col-sm-3 col-form-label">compétence  04</label>
+                                  <div class="col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Nom de la compétence</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="form-group row">
+                                  <div class="offset-sm-3 col-sm-9">
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <div class="input-group-text">Pourcentage</div>
+                                      </div>
+                                      <input type="text" class="form-control" >
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
                                 <div class="offset-sm-3 col-sm-9">
                                   <div class="buttons">
-                                    <button type="button" class="btn btn-primary " @click="addCompetence">
-                                    Enregistrer la mise à jour</button>
+                                    <button class="primary-bg">Enregistrer la mise à jour</button>
                                     <button class="" data-dismiss="modal">Annuler</button>
                                   </div>
                                 </div>
@@ -727,7 +986,7 @@ Ecrivez-vous</label>
                       </div>
                     </div>
                   </div>
-                </div>
+                </div> -->
                <div class="special-qualification dashboard-section details-section">
                   <h4><i data-feather="gift"></i>
 Une qualification spéciale</h4>
@@ -821,7 +1080,7 @@ Ajouter un autre</a>
                     </div>
                   </div>
                 </div>
-                  <div class="portfolio dashboard-section details-section">
+                <!--   <div class="portfolio dashboard-section details-section">
                   <h4><i data-feather="gift"></i>
 Portefeuille</h4>
                   <div class="portfolio-slider owl-carousel">
@@ -862,12 +1121,12 @@ Portefeuille</h4>
                     </div>
                   </div>
 
-                    <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-portfolio">
+                  <!-- Button trigger modal -->
+                 <!--  <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-portfolio">
                     <i data-feather="edit-2"></i>
                   </button>
                   <!-- Modal -->
-                  <div class="modal fade modal-portfolio" id="modal-portfolio" tabindex="-1" role="dialog" aria-hidden="true">
+                  <!-- <div class="modal fade modal-portfolio" id="modal-portfolio" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-body">
@@ -1015,15 +1274,15 @@ Portefeuille 03</label>
                       </div>
                     </div>
                   </div>
-                </div> 
+                </div>  -->
                <div class="personal-information dashboard-section last-child details-section">
                   <h4><i data-feather="user-plus"></i>Détails personnels</h4>
                   <ul>
                     <li><span>Nom complet:</span> Yasmine Fandir</li>
-                    <li><span>
+   <!--                  <li><span>
 Le nom du père:</span> Howard Armour</li>
                     <li><span>
-Le nom de la mère:</span> Megan Higbee</li>
+Le nom de la mère:</span> Megan Higbee</li> -->
                     <li><span>Date DE Naissance:</span> 24/02/1997</li>
                     <li><span>
 Nationalité:</span> Algerienne </li>
@@ -1051,16 +1310,16 @@ Nationalité:</span> Algerienne </li>
                                 </div>
                               </div>
                               <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Father’s Name</label>
+                                <!-- <label class="col-sm-3 col-form-label">Father’s Name</label>
                                 <div class="col-sm-9">
                                   <input type="text" class="form-control"  placeholder="Howard Armour">
-                                </div>
+                                </div> -->
                               </div>
                               <div class="form-group row">
-                                <label class="col-sm-3 col-form-label">Mother’s Name</label>
+                                <!-- <label class="col-sm-3 col-form-label">Mother’s Name</label>
                                 <div class="col-sm-9">
                                   <input type="text" class="form-control"  placeholder="Megan Higbee">
-                                </div>
+                                </div> -->
                               </div>
                               <div class="form-group row">
                                 <label class="col-sm-3 col-form-label">Date De Naissance</label>
@@ -1180,6 +1439,7 @@ Supprimer le profil</a></li>
                   </div>
                 </div>
               </div>
+           </form>
             </div>
           </div>
         </div>
@@ -1208,34 +1468,142 @@ Publier une offre</a>
       </div>
     </div>
     <!-- Call to Action End -->
- @include('layouts/_footer')
 
+    <!-- Footer -->
+    <footer class="footer-bg">
+      <div class="footer-top border-bottom section-padding-top padding-bottom-40">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="footer-logo">
+                <a href="#">
+                  <img src="images/footer-logo.png" class="img-fluid" alt="">
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-social">
+                <ul class="social-icons">
+                  <li><a href="#"><i data-feather="facebook"></i></a></li>
+                  <li><a href="#"><i data-feather="twitter"></i></a></li>
+                  <li><a href="#"><i data-feather="linkedin"></i></a></li>
+                  <li><a href="#"><i data-feather="instagram"></i></a></li>
+                  <li><a href="#"><i data-feather="youtube"></i></a></li>
+                </ul>
+                <select class="selectpicker select-language" id="select-country">
+                  <option value="United States of America" selected>EN</option>
+                  <option value="United Kingdom">GB</option>
+                  <option value="Spain">ES</option>
+                  <option value="Portugal">PT</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-widget-wrapper padding-bottom-60 padding-top-80">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-5 col-sm-6">
+              <div class="footer-widget widget-about">
+                <h4>About Us</h4>
+                <div class="widget-inner">
+                  <p class="description">like what you do where you do it and get paid more.</p>
+                  <span class="about-contact"><i data-feather="phone-forwarded"></i>+213 6596025°9</span>
+                  <span class="about-contact"><i data-feather="mail"></i>recrutement@gmail.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 offset-lg-1 col-sm-6">
+              <div class="footer-widget footer-shortcut-link">
+                <h4>Information</h4>
+                <div class="widget-inner">
+                  <ul>
+                    <li><a href="#">a propos de nous</a></li>
+                    <li><a href="#">Contacter nous</a></li>
+                    <li><a href="#">Termes &amp; Conditions</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+              <div class="footer-widget footer-shortcut-link">
+                <h4>chercher emploie</h4>
+                <div class="widget-inner">
+                  <ul>
+                    <li><a href="#">creer compte</a></li>
+                    <li><a href="#">orientation professionnelle</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-6">
+              <div class="footer-widget footer-shortcut-link">
+                <h4>Employers</h4>
+                <div class="widget-inner">
+                  <ul>
+                    <li><a href="#">creer compet</a></li>
+                    <li><a href="#">voir offre</a></li>
+                    <li><a href="#">poster offre</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-area">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="footer-bottom border-top">
+                <div class="row">
+                  <div class="col-xl-4 col-lg-5 order-lg-2">
+                    <div class="footer-app-download">
+                      <a href="#" class="apple-app">Apple Store</a>
+                      <a href="#" class="android-app">Google Play</a>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-lg-4 order-lg-1">
+                    <p class="copyright-text">Copyright <a href="#">Oficiona</a> 2019, All right reserved</p>
+                  </div>
+                  <div class="col-xl-4 col-lg-3 order-lg-3">
+                    <div class="back-to-top">
+                      <a href="#">Back to top<i class="fas fa-angle-up"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
 
+   <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="{{asset('assets/js/jquery.min.js')}}"></script>
+    <script src="{{asset('assets/js/popper.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('assets/js/feather.min.js')}}"></script>
+    <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.nstSlider.min.js')}}"></script>
+    <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
+    <script src="{{asset('assets/js/visible.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.countTo.js')}}"></script>
+    <script src="{{asset('assets/js/chart.js')}}"></script>
+    <script src="{{asset('assets/js/plyr.js')}}"></script>
+    <script src="{{asset('assets/js/tinymce.min.js')}}"></script>
+    <script src="{{asset('assets/js/slick.min.js')}}"></script>
+    <script src="{{asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
+    <script src="{{asset('assets/js/custom.js')}}"></script>
+    <script src="{{asset('assets/js/dashboard.js')}}"></script>
+    <script src="{{asset('assets/js/datePicker.js')}}"></script>
+    <script src="{{asset('assets/js/upload-input.js')}}"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>   
+     <script src="{{asset('assets/js/map.js')}}"></script> 
+  </body>
 
-
-   <!--   Optional JavaScript
-     jQuery first, then Popper.js, then Bootstrap JS -->
-     <script src="{{asset('assets/js/jquery.min.js')}}"></script>
-     <script src="{{asset('assets/js/popper.min.js')}}"></script>
-     <script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
-     <script src="{{asset('assets/js/feather.min.js')}}"></script>
-     <script src="{{asset('assets/js/bootstrap-select.min.js')}}"></script>
-     <script src="{{asset('assets/js/jquery.nstSlider.min.js')}}"></script>
-     <script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
-     <script src="{{asset('assets/js/visible.js')}}"></script>
-     <script src="{{asset('assets/js/jquery.countTo.js')}}"></script>
-     <script src="{{asset('assets/js/chart.js')}}"></script>
-     <script src="{{asset('assets/js/plyr.js')}}"></script>
-     <script src="{{asset('assets/js/tinymce.min.js')}}"></script>
-     <script src="{{asset('assets/js/slick.min.js')}}"></script>
-     <script src="{{asset('assets/js/jquery.ajaxchimp.min.js')}}"></script>
-     <script src="{{asset('assets/js/custom.js')}}"></script>
-     <script src="{{asset('assets/js/dashboard.js')}}"></script>
-     <script src="{{asset('assets/js/datePicker.js')}}"></script>
-     <script src="{{asset('assets/js/upload-input.js')}}"></script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>   
-      <script src="{{asset('assets/js/map.js')}}"></script> 
-  </body><
-
- <!-- Mirrored from themerail.com/html/oficiona/job-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 20191:29:44 GMT
- </html>
+<!-- Mirrored from themerail.com/html/oficiona/edit-resume.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 2019 21:30:14 GMT -->
+</html>

@@ -53,6 +53,8 @@ Route::get('acceuil', function () {
 
 Route::get('profil','CandidatProfileController@profile')->name('profil');
 Route::post('profil','CandidatProfileController@update_avatar');
+Route::get('candidat/{id}/editprofil','CandidatProfileController@editprofil');
+Route::put('candidat/{id}','CandidatProfileController@updateprofil');
 
  Route::get('profil1','RecruteurProfileController@profile1')->name('profil1');
 Route::post('profil1','RecruteurProfileController@update_avatar1');
@@ -89,20 +91,23 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
  Route::put('cvs/{id}','CvController@update');
  Route::get('cvs/{id}/details','CvController@details');
  Route::get('cvs/{id}','CvController@show');
+ // Route::get('cvs/{id}','CvController@getFormation');
  Route::delete('cvs/{id}','CvController@destroy');
 
    
    // route formation
    Route::get('formations','FormationController@index');
    Route::get('formations/create/{id}','FormationController@create') ;    
-   Route::post('formations','FormationController@store'); 
+   Route::post('formations','FormationController@store');
+   Route::put('formations/{id}','FormationController@update'); 
    Route::get('getFormation/{id}','FormationController@getFormation');
    Route::get('addFormation','FormationController@addFormation');
    Route::delete('formations/{id}','FormationController@destroy');
  // route Experience
    Route::get('experiences','ExperienceController@index');
    Route::get('experiences/create/{id}','ExperienceController@create') ;    
-   Route::post('experiences','ExperienceController@store'); 
+   Route::post('experiences','ExperienceController@store');
+   Route::put('experiences/{id}','ExperienceController@update');
    Route::get('getExperience/{id}','ExperienceController@getExperience');
    Route::get('addExperience','ExperienceController@addExperience');
    Route::delete('experiences/{id}','ExperienceController@destroy');
@@ -110,6 +115,7 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
    Route::get('competences','CompetenceController@index');
    Route::get('competences/create/{id}','CompetenceController@create') ;    
    Route::post('competences','CompetenceController@store'); 
+   Route::put('competences/{id}','CompetenceController@update');
    Route::get('getCompetence/{id}','CompetenceController@getCompetence');
    Route::get('addCompetence','ExperienceController@addCompetence');
    Route::delete('competences/{id}','CompetenceController@destroy');
@@ -132,7 +138,7 @@ Route::get('pipipi', function () {
 
 Route::get('recruteur/editprofil', function () {
     return view('recruteur/editprofil');
-});
+}); 
 
 
 Route::get('contact/createC/{id}','OffreController@createC');    

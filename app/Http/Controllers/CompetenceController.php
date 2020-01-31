@@ -27,6 +27,13 @@ class CompetenceController extends Controller
        	return redirect('cvs' );
 
        }
+       public function update(Request $request, $id){
+           $competence = Competence::find($id);
+           $competence->description = $request->input('description');
+           $competence->cv_iid = $request->input('cv_iid');
+           $competence->save();
+            return redirect('cvs');
+       }
 
 
         public function destroy(Request $request, $id){

@@ -15,7 +15,9 @@ class AddColumnCvIid extends Migration
     {
         Schema::table('competences', function (Blueprint $table) {
             $table->integer('cv_iid')->unsigned()->after('id');
-           $table->foreign('cv_iid')->references('id')->on('cvs');
+           $table->foreign('cv_iid')->references('id')->on('cvs')
+                        ->onDelete('cascade')
+                        ->onUpdate('cascade');
         });
     }
 

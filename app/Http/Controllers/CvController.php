@@ -28,9 +28,8 @@ class CvController extends Controller
     }
 
      public function details($id){
-
        $cvs = Cv::find($id);
-       return view('Cv.details', ['cvs' => $cvs]);
+        return view('Cv.details', ['cvs' => $cvs]);
     }
 
      //Enrengistrer un cv
@@ -51,16 +50,18 @@ class CvController extends Controller
 }
      //Permet de recuperer un cv puis de le mettre dans un formulaire
     public function edit($id){
-    	$cv = Cv::find($id);
-        return view('Cv.modifiercv',['cv' => $cv]);
+    	$cvs = Cv::find($id);
+        return view('Cv.edit',['cvs' => $cvs]);
 
     }
 
      //Permet de modifier un cv
     public function update(Request $request, $id){
-    	  $cv = Cv::find(id);
+    	  $cvs = Cv::find($id);
         $cvs->titre = $request->input('titre');
-        $cvs->divers = $request->input('divers');
+        $id = Auth::guard('candidat')->user()->id;
+        $user = Candidat::find($id);
+        $cvs->candidat_id = $id;
         $cvs->save();
          return redirect('cvs');
     }
@@ -68,6 +69,7 @@ class CvController extends Controller
     public function show($id){
 
      return view('Cv.formation',['id' => $id]);
+     
     }
 
      //Permet de supprimer un cv 
@@ -77,6 +79,5 @@ class CvController extends Controller
           // $listcvs = Cv::all();
           return redirect('cvs');
     }
-
 
 }

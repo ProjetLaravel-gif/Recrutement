@@ -15,7 +15,9 @@ class AddColumnCvvId extends Migration
     {
         Schema::table('experiences', function (Blueprint $table) {
             $table->integer('cvv_id')->unsigned()->after('id');
-           $table->foreign('cvv_id')->references('id')->on('cvs');
+           $table->foreign('cvv_id')->references('id')->on('cvs')
+                        ->onDelete('cascade')
+                        ->onUpdate('cascade');
         });
     }
 

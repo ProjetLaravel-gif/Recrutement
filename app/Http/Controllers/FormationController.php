@@ -32,6 +32,16 @@ class FormationController extends Controller
       	return redirect('experiences/create/'.$request->input('cv_id'));
 
       }
+      public function update(Request $request, $id){
+        $formation = Formation::find($id);
+        $formation->diplome = $request->input('diplome');
+        $formation->lieu = $request->input('lieu');
+        $formation->date_debut = $request->input('date_debut');
+        $formation->date_fin = $request->input('date_fin');
+        $formation->domaine = $request->input('domaine');
+        $formation->cv_id = $request->input('cv_id');
+        $formation->save();
+         return redirect('cvs');
 
       public function destroy(Request $request, $id){
          $formation = Formation::find($id);
@@ -45,6 +55,7 @@ class FormationController extends Controller
         $cv = Cv::find($id);
         return $cv->formations;
       }
+      
        public function addFormation(Request $request){
           $formation = new Formation();
           $formation->diplome = $request->diplome;
