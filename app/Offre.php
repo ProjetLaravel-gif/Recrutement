@@ -11,6 +11,10 @@ class Offre extends Model
 {
 	 use SoftDeletes;
      protected $dates = ['deleted_at'];
+
+     protected $fillable = [
+            'intitule', 'type', 'dommaine', 'dimplome', 'statut', 
+        ];
      
      public function recruteur()
     {

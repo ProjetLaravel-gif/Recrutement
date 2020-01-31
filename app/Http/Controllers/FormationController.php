@@ -41,12 +41,11 @@ class FormationController extends Controller
         $formation->domaine = $request->input('domaine');
         $formation->cv_id = $request->input('cv_id');
         $formation->save();
-         return redirect('cvs');
+         return redirect('cvs');}
 
       public function destroy(Request $request, $id){
          $formation = Formation::find($id);
          $formation->delete();
-          // $listcvs = Cv::all();
           return redirect('cvs');
     }
 

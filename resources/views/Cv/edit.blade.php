@@ -3,6 +3,31 @@
 
 
     <!-- Breadcrumb -->
+<div class="alice-bg padding-top-70 padding-bottom-70">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="breadcrumb-area">
+          <h1>Candidate Dashboard</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Candidate Dashboard</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="breadcrumb-form">
+          <form action="#">
+            <input type="text" placeholder="Enter Keywords">
+            <button><i data-feather="search"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
     <div class="alice-bg section-padding-bottom">
       <div class="container no-gliters">
         <div class="row no-gliters">
@@ -13,7 +38,7 @@
                       <form action="{{url ('cvs/'.$cvs->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
                                        {{ csrf_field() }}
                                        <input type="hidden" name="candidat_id" value="{{$cvs->candidat_id}}">
-                <div class="download-resume dashboard-section">
+          <!--       <div class="download-resume dashboard-section">
                   <div class="update-file">
                     <input type="file">
 Mettre à jour le CV <i data-feather="edit-2"></i>
@@ -23,18 +48,18 @@ Mettre à jour le CV <i data-feather="edit-2"></i>
                   </div>
                   <span>
 Télécharger un fichier PDF</span>
-                </div>
+                </div> -->
                 <div class="skill-and-profile dashboard-section">
                   <div class="skill">
-                    <label>
-Compétences:</label>
-                    <a href="#">Design</a>
+<!--                     <label>
+Compétences:</label> -->
+                    <!-- <a href="#">Design</a>
                     <a href="#">Illustration</a>
-                    <a href="#">iOS</a>
+                    <a href="#">iOS</a> -->
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary edit-button" data-toggle="modal" data-target="#modal-skill">
+                   <!--  <button type="button" class="btn btn-primary edit-button" data-toggle="modal" data-target="#modal-skill">
                       <i data-feather="edit-2"></i>
-                    </button>
+                    </button> -->
                     <!-- Modal -->
                     <div class="modal fade" id="modal-skill" tabindex="-1" role="dialog" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -45,8 +70,7 @@ Compétences:</label>
                               <a href="#" class="add-more">+ Ajouter des compétences</a>
                             </div>
                             <div class="content">
-                              <form action="{{url ('cvs/'.$cvs->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
-                       {{ csrf_field() }}
+                        
                        <input type="hidden" name="candidat_id" value="{{$cvs->candidat_id}}">
                                 <div class="form-group row">
                                   <label class="col-sm-3 col-form-label">
@@ -119,7 +143,7 @@ Annuler</button>
                                     </div>
                                   </div>
                                 </div>
-                              </form>
+                             
                             </div>
                           </div>
                         </div>
@@ -140,6 +164,9 @@ Annuler</button>
                     <button type="button" class="btn btn-primary edit-button" data-toggle="modal" data-target="#modal-social">
                       <i data-feather="edit-2"></i>
                     </button>
+                    <br>
+                    <br>
+                    <br>
                     <!-- Modal -->
                     <div class="modal fade" id="modal-social" tabindex="-1" role="dialog" aria-hidden="true">
                       <div class="modal-dialog" role="document">

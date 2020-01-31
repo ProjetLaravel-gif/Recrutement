@@ -96,7 +96,7 @@
 
 
                           <div id="duree" class="form-group row">
-                           <label class="col-md-3 col-form-label">durée</label>
+                           <label class="col-md-3 col-form-label">durée(stage/CDD)</label>
                    <div class="col-md-6">
                             <div class="form-group">
                               <input type="text" class="form-control" placeholder="duree STAGE/CDD" name="duree">

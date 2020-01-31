@@ -17,20 +17,46 @@ use Illuminate\Http\Request;
 class OffreController extends Controller
 {
     public function mesjobs(Request $request){
-      $id = Auth::guard('recruteur')->user()->id;
-      $user = Recruteur::find($id);
-      $offres = $user->offres()->paginate(5);
+      // $id = Auth::guard('recruteur')->user()->id;
+      // $user = Recruteur::find($id);
+      // $offres = $user->offres()->paginate(5);
+      $offres = Offre::where('statut','1')->get();
       return view('offres.mesjobs' , ['offres' => $offres]);
     }
 
-     public function indexo1(){
+
+    public function jobs(Request $request){
+      //$offres = Offre::find($id);
+      $offres = Offre::where('statut','0')->get();
+      return view('offres.jobs' , ['offres' => $offres]);
+    }
+
+
+
+     public function statut($id){
+        $offres = Offre::find($id);
+        if ($offres->statut == false) {
+          $offres->statut = true;
+        }
+        else {
+          $offres->statut = false;
+        }
+        $offres->save();
+        return redirect('offres');
+      }
+
+     
+
+
+     public function indexo1(){ 
      
       //$offres = new Offre();
       //$id = Auth::guard('recruteur')->user()->id;
       // $offres->recruteur_id = $id;
       // $offres->save();
       // $listoffres = Offre::find($id);
-      $listoffres = Offre::all();
+      $listoffres = Offre::where('statut','0')->get();
+      //$listoffres = Offre::all();
       return view('offres.indexo1' , ['offres' => $listoffres]);
     }
 
