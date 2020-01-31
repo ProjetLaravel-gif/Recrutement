@@ -38,7 +38,7 @@
                                              @endphp
                         <td class="deadline">{{$depot}}</td>
                         
-                        <td class="status active"><a href="{{ url('statut/'.$offres->id) }}" class="button">publier</a></td>
+                        <td class="status expired"><a href="{{ url('statut/'.$offres->id) }}" class="button">retirer</a></td>
                         <td class="action">
                           <a href="{{ url('offres/'.$offres->id.'/detail') }}" class="preview" title="Preview"><i data-feather="eye"></i></a>
                           <a href="{{ url('offres/'.$offres->id.'/edito') }}" class="edit" title="Edit"><i data-feather="edit"></i></a>

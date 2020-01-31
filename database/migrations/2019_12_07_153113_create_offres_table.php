@@ -22,10 +22,10 @@ class CreateOffresTable extends Migration
             $table->string('nbr_annee_experiences');
              $table->string('competences');
             $table->string('renumeration');
-            $table->string('duree');
+            $table->string('duree')->nullable();
             $table->string('date_debut_prevu');
              $table->string('ville');
-             $table->string('statut')->nullable();
+             $table->string('statut')->default('false');
              $table->string('cartier');
              $table->string('emplacement');
             $table->text('description');

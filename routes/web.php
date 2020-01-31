@@ -64,6 +64,8 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
 
 
  Route::get('offres','OffreController@mesjobs'); 
+ Route::get('jobs','OffreController@jobs')->name('jobs');
+ Route::get('statut/{id}','OffreController@statut');
  Route::get('listoffres','OffreController@indexo1');
  Route::post('/hhhhh','OffreController@postuler')->name('stp');
  Route::get('offres/createo/{id}','OffreController@createo');    
