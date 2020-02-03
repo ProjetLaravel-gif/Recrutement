@@ -86,7 +86,10 @@
                                            <div class="more">
                                              <div class="buttons">
                                                <a href="{{ route('stp')}}" class="button" data-toggle="modal" data-target="#apply-popup-id">Apply Now</a>
-                                                <a href="{{ url('offres') }}"class="favourite"><i data-feather="heart"></i></a>
+                                               <a href="{{ url('favoris/'.$offre->id) }}" class="button">favoris</button>
+
+                                                <!-- <a href="{{ url('favoris/'.$offre->id) }}" class="favourite"><i data-feather="heart"></i></a> -->
+
                                                <!--  <a href="{{ url('offres/'.$offre->id.'/detail') }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>voir details</a> -->
                                                  <a href="{{ url('offres/'.$offre->id.'/cdetail') }}" class="preview" title="Preview"><i data-feather="eye"></i></a>
                                                  <!-- <a href="{{ url('contact/createC/'.$offre->recruteur_id) }}" class="btn" style="background-color:blue; color: white;font-family:"ElMessiri-SemiBold>contacter</a> -->

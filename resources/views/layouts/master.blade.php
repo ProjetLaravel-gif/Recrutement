@@ -48,11 +48,6 @@
   <body>
 
  @include('layouts/_menu')
-<br>
-<br>
-<br>
-<br>
-<br>
 
     @yield('content')
 

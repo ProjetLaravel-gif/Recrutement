@@ -14,7 +14,17 @@ class CreateFavorisTable extends Migration
     public function up()
     {
         Schema::create('favoris', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+             $table->integer('candidat_id')->unsigned()->nullable();
+            $table->foreign('candidat_id')->references('id')->on('candidats')
+                        ->onDelete('cascade')
+                        ->onUpdate('cascade');
+                   
+             $table->integer('offre_id')->unsigned()->nullable();
+            $table->foreign('offre_id')->references('id')->on('offres')
+                        ->onDelete('cascade')
+                        ->onUpdate('cascade');
+                   
             $table->timestamps();
         });
     }
