@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 //use Illuminate\Database\Eloquent\Model;
 use App\Offre;
 use App\Contact;
+use App\Postules;
 class Recruteur  extends Authenticatable
 {
      use Notifiable;
@@ -35,5 +36,10 @@ class Recruteur  extends Authenticatable
       public function contacts()
     {
         return $this->hasMany('App\Contact');
+    }
+
+      public function postules()
+    {
+        return $this->hasMany('App\Postules');
     }
 }

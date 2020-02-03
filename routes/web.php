@@ -78,6 +78,8 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
  Route::put('offres/{id}','OffreController@updateo');
  Route::delete('offres/{id}','OffreController@destroyo'); 
  Route::get('message','OffreController@message');
+ Route::get('postuler','OffreController@voir');
+  Route::get('stp/{nom}','OffreController@stp');
  // route du cv
  // Route::get('formations/formation','FormationController@formation');
  // Route::get('formations/competence','FormationController@competence');

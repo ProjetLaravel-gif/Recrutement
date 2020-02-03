@@ -83,7 +83,12 @@ function imprimer(divName) {
    }
 </script>
 
-
+<script type="text/javascript">
+PDF.SetShowToolBar("true"); //--- barre d'outils true(visible) false(non visible) ---//
+PDF.SetShowScrollbar("true"); //--- barre de scroll true(visible) false(non visible) ---//
+PDF.SetPageMode("none"); //--- cache les signets ---//
+PDF.setZoom(80%); //--- Zoom le document à 80% ---//
+</script>
       
   </body><
 

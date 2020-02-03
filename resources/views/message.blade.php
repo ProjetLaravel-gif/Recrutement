@@ -44,6 +44,7 @@
                   </div> 
                   <div class="body">
                     <h6 class="username">{{ $contacts->candidat['nom']}} {{ $contacts->candidat['prenom']}}</h6>
+                    <a href="" class="preview" title="Preview" data-toggle="modal" data-target="#apply-popup-id"><i data-feather="eye"></i></a>
                     <!-- <span class="text-number">2</span> -->
                   </div>
                 </a>
@@ -52,7 +53,7 @@
                  
                       </div>
 
-                      <div class="message-box">
+                    <!--   <div class="message-box">
                     <div class="message-box-header">
                       <a href="#"><i class="fas fa-ellipsis-h"></i></a>
                       <h5>{{ $contacts->candidat['nom']}}</h5>
@@ -61,12 +62,37 @@
                       <li class="conversation in">
                         <div class="avater">
                           <img src="dashboard/images/avater-1.jpg" class="img-fluid" alt="">
-                        </div>
+                        <!-- </div>
                         <div class="message"><span>{{ $contacts->message}}</span></div>
-                        <span class="send-time">2.32 am</span>
+                        <span class="send-time">2.32 am</span> -->
+                     <!--    <a href="" class="preview" title="Preview" data-toggle="modal" data-target="#apply-popup-id"><i data-feather="eye"></i></a>
                       </li>
                       </ul>
-                   </div>
+                   </div> -->
+                    <div class="apply-popup">
+                                         <div class="modal fade" id="apply-popup-id" tabindex="-1" role="dialog" aria-hidden="true">
+                                           <div class="modal-dialog" role="document">
+                                             <div class="modal-content">
+                                               <div class="modal-header">
+                                                 
+                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                   <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                               </div>
+                                               <div class="modal-body">
+                                                 
+                                               <p><b>NOM:</b>&nbsp;{{$contacts->candidat['nom']}}</p><br>
+                                                 <p><b>EMAIL:</b>&nbsp;{{$contacts->candidat['email']}}</p><br>
+                                                 <p><b>OBJET:</b>&nbsp;{{$contacts->objet}}</p><br>
+                                                 <p><b>MESSAGE:</b>&nbsp;{{$contacts->message}}</p>
+                                                
+                                                
+                                                  
+                                               </div>
+                                             </div>
+                                           </div>
+                                         </div>
+                                       </div>
                    @endforeach
                 </div>
              </div>

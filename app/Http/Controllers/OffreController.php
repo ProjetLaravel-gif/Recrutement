@@ -13,6 +13,7 @@ use App\Postules;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class OffreController extends Controller
 {
@@ -202,13 +203,27 @@ class OffreController extends Controller
 
 
      public function voir(){
-       $id = Auth::guard('recruteur')->user()->id;
-      $user = Recruteur::find($id);
-      $Postules = $user->postuler;
-        return view('offres.offrecandidat' , ['Postules' => $Postules]);
+      $user = Auth::guard('recruteur')->user();
+        $postules = DB::table('candidats')
+        ->join('postules','postules.candidat_id','=','candidats.id')
+        ->join('offres','offres.id','=','postules.offres_id')
+        ->join('recruteurs','recruteurs.id','=','offres.recruteur_id')
+        ->select('candidats.*','postules.*','offres.intitule as offres')
+        ->where('recruteurs.id','=',$user->id)
+        ->get();
+          
+
+        return view('offres.offrecandidat', ['postules'=>$postules]);
      }
 
+
+      public function stp ($nom){
+
+        return Storage::download('cv/'.$nom);
+        
+        
+      }
 }
 
  
-  
+ 
