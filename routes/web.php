@@ -123,13 +123,7 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
    Route::delete('competences/{id}','CompetenceController@destroy');
 
    // route favoris
-   Route::get('favoris/{id}','FavorisController@indexf');
-   Route::get('favoris','FavorisController@index')->name('favoris'); 
-   Route::get('favoris/createf','FavorisController@createf'); 
-   Route::post('favoris','FavorisController@storef'); 
-   Route::get('favoris/{id}/editf','FavorisController@editf');
-   Route::put('favoris/{id}','FavorisController@updatef')->name('paliz');
-   Route::delete('favoris/{id}','FavorisController@destroyf'); 
+   Route::get('favoris/{offre_id}','FavorisController@indexf'); 
 
 Route::get('Cv/index', function () {
     return view('Cv/index');
@@ -160,9 +154,14 @@ Route::post('contact','OffreController@storeC');
 
 
 
-       //     if($request->hasFile('cv')){
-       //      $cv = $request->file('cv');
-       //      $filename = time() . '.' . $cv->getClientOriginalExtension();
-       //      File::make($cv)->resize(300, 300)->save( public_path('/images/cv/' . $filename ) );
-       //    $postuler->cv = $filename;
-       // }
+
+
+
+
+Route::get('simple', 'OffreController@index');
+
+// Route::get('simple', function () {
+//     return view('simple');
+// }); 
+
+// Route::get('simple', 'UserChartController@index');

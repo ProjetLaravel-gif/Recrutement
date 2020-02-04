@@ -4,15 +4,15 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
-
+use App\Offre;
 class Favori extends Model
 {
     use SoftDeletes;
      protected $dates = ['deleted_at'];
 
-         public function offre()
+        public function offres()
     {
-        return $this->hasMany('App\Offre','offre_id');
+        return $this->hasMany('App\Offre');
     }
 
        public function candidat()

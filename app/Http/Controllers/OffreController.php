@@ -21,14 +21,14 @@ class OffreController extends Controller
       // $id = Auth::guard('recruteur')->user()->id;
       // $user = Recruteur::find($id);
       // $offres = $user->offres()->paginate(5);
-      $offres = Offre::where('statut','1')->get();
+      $offres = Offre::where('statut','0')->get();
       return view('offres.mesjobs' , ['offres' => $offres]);
     }
 
 
     public function jobs(Request $request){
       //$offres = Offre::find($id);
-      $offres = Offre::where('statut','0')->get();
+      $offres = Offre::where('statut','1')->get();
       return view('offres.jobs' , ['offres' => $offres]);
     }
 
@@ -36,11 +36,11 @@ class OffreController extends Controller
 
      public function statut($id){
         $offres = Offre::find($id);
-        if ($offres->statut == false) {
-          $offres->statut = true;
+        if ($offres->statut == 0) {
+          $offres->statut = 1;
         }
         else {
-          $offres->statut = false;
+          $offres->statut = 0;
         }
         $offres->save();
         return redirect('offres');
@@ -56,7 +56,7 @@ class OffreController extends Controller
       // $offres->recruteur_id = $id;
       // $offres->save();
       // $listoffres = Offre::find($id);
-      $listoffres = Offre::where('statut','0')->get();
+      $listoffres = Offre::where('statut','1')->get();
       //$listoffres = Offre::all();
       return view('offres.indexo1' , ['offres' => $listoffres]);
     }
@@ -223,6 +223,52 @@ class OffreController extends Controller
         
         
       }
+
+
+      public function index()
+    {
+       // $stat=DB::select("SELECT Month('created_at') as mois ,count('offres.id') as nb 
+       //                  from offres o , recruteurs r 
+       //                  where r.id = o.recruteur_id and Year('created_at')=:Year 
+       //                  group by mois");
+
+
+      // $stat = Offre::select(\DB::raw("COUNT(*) as count"))
+      //               ->join('recruteurs','recruteurs.id','=','offres.recruteur_id')
+      //               ->whereYear('created_at', date('Y'))
+      //               ->groupBy(\DB::raw("Month(created_at)"))
+      //               ->pluck('count');
+
+
+      $user = Auth::guard('recruteur')->user();
+         $stat = DB::table('offres')
+        ->join('recruteurs','recruteurs.id','=','offres.recruteur_id')
+        ->where('offres.recruteur_id','=',$user->id)->count();
+                   
+        return view('simple',compact($stat));
+    }
+
+
+     public function index1()
+     {
+
+        $user = Auth::guard('recruteur')->user();
+         $stat = DB::table('offres')
+        ->join('recruteurs','recruteurs.id','=','offres.recruteur_id')
+        ->where('offres.recruteur_id','=',$user->id and 'offres.type','=', 'stage' )->count();
+                   
+        $stat = DB::table('offres')
+        ->join('recruteurs','recruteurs.id','=','offres.recruteur_id')
+        ->where('offres.recruteur_id','=',$user->id and 'offres.type','=', 'CDD' )->count();
+
+        $stat = DB::table('offres')
+        ->join('recruteurs','recruteurs.id','=','offres.recruteur_id')
+        ->where('offres.recruteur_id','=',$user->id and 'offres.type','=', 'CDI' )->count();
+     }
+
+
+
+
 }
 
  

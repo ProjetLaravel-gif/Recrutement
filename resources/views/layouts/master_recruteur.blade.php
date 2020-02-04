@@ -1,5 +1,3 @@
-
-
 <!Doctype html>
 <html lang="en">
   
@@ -8,7 +6,6 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <title>Recrutement</title>
 
     <!-- Bootstrap CSS -->
@@ -25,7 +22,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/owl.carousel.min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/jquery.nstSlider.min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/html5-simple-date-input-polyfill.css')}}" />
-
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/Chart.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/Chart.min.css')}}" />
     <!-- Custom Css -->
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/main.css')}}">
      <link rel="stylesheet" type="text/css" href="{{asset('assets/css/dashboard.css')}}">
@@ -39,6 +37,8 @@
     <link rel="apple-touch-icon" sizes="72x72" href="{{asset('images/icon-72x72.png')}}">
     <link rel="apple-touch-icon" sizes="114x114" href="{{asset('images/icon-114x114.png')}}">
 
+
+  
 
 
  @include('layouts/_menurecruteur')
@@ -65,8 +65,12 @@
      <script src="{{asset('assets/js/dashboard.js')}}"></script>
      <script src="{{asset('assets/js/datePicker.js')}}"></script>
      <script src="{{asset('assets/js/upload-input.js')}}"></script>
-     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>   
-      <script src="{{asset('assets/js/map.js')}}"></script> 
+     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script><script src="https://code.highcharts.com/highcharts.js"></script>
+      <script src="{{asset('assets/js/Chart.bundle.js')}}"></script> 
+      <script src="{{asset('assets/js/Chart.bundle.min.js')}}"></script>
+      <script src="{{asset('assets/js/Chart.min.js')}}"></script>
+      <script src="{{asset('assets/js/Chart1.min.js')}}"></script>
+    
 
 <script>
 function imprimer(divName) {
@@ -84,7 +88,8 @@ PDF.SetShowScrollbar("true"); //--- barre de scroll true(visible) false(non visi
 PDF.SetPageMode("none"); //--- cache les signets ---//
 PDF.setZoom(80%); //--- Zoom le document à 80% ---//
 </script>
-      
+
+
   </body><
 
  <!-- Mirrored from themerail.com/html/oficiona/job-listing.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 Nov 20191:29:44 GMT -->
