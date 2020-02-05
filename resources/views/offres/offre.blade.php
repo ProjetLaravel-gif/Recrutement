@@ -39,12 +39,12 @@
               <h4 class="bookmark-title"></h4>
               <div class="bookmark-area">
                 
-                 @foreach($favoris as $favori)
+                 @foreach($offres as $offre)
                  
-                  <form action="{{ url('favoris') }}" method="post">
+                  <form action="{{ url('offres') }}" method="post">
                 {{ csrf_field() }}
                       <!--   {{ method_field('DELETE') }} -->
-                <input type="hidden" name="offre_id" value="offre_id">
+                
                 <div class="job-list">
                   <div class="thumb">
                     <a href="#">
@@ -54,73 +54,29 @@
                   <div class="body">
                     <div class="content">
 
-                      <h4><a href="job-details.html">{{ $favori->intitule }}</a></h4>
+                      <h4><a href="job-details.html">{{ $offre->intitule }}</a></h4>
                                             <div class="info">
-                                              <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $favori->dommaine }}</a></span>
-                                              <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $favori->ville }}</a></span>
-                                              <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>{{ $favori->duree }}</a></span>
+                                              <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $offre->dommaine }}</a></span>
+                                              <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $offre->ville }}</a></span>
+                                              <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>{{ $offre->duree }}</a></span>
                                             </div>
                     </div>
 
                     
-                    <div class="more">
-                     <div class="button-area">
-                    <a href="{{ route('stp')}}" class="button" data-toggle="modal" data-target="#apply-popup-id">postuler</a>
-                    <a href="{{ url('contact/createC/'.$favori->offre_id) }}" class="inbox"><i data-feather="mail"></i></a>
-                  </div>
-                       <!-- <a href="#supprimer{{ $favori->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i data-feather="trash-2"></i></a> -->
+                   
+                      <a href="{{ url('contact/createC/'.$offre->recruteur_id) }}" class="inbox"><i data-feather="mail"></i></a>
                       <p class="deadline">date: Oct 31,  2019</p>
                     </div>
                   </div>
-                </div>
+                
+ </form>
 
-               
-        </form>
-
-           <div class="apply-popup">
-                                         <div class="modal fade" id="apply-popup-id" tabindex="-1" role="dialog" aria-hidden="true">
-                                           <div class="modal-dialog" role="document">
-                                             <div class="modal-content">
-                                               <div class="modal-header">
-                                                 <h5 class="modal-title"><i data-feather="edit"></i>APPLY FOR THIS JOB</h5>
-                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                   <span aria-hidden="true">&times;</span>
-                                                 </button>
-                                               </div>
-                                               <div class="modal-body">
-                                                 <form action="{{route ('stp')}}" enctype="multipart/form-data" method="POST">
-
-                                                     {{ csrf_field() }}
-
-                                                  <input type="hidden" name="offres_id" value="{{$favori->offre_id}}">
-                                                   <div class="form-group">
-                                                     <textarea class="form-control" placeholder="Message" name="message"></textarea>
-                                                   </div>
-                                                   <div class="form-group file-input-wrap" name="cv">
-                                                     <label for="up-cv" name="cv">
-                                                       <input id="up-cv" type="file" name="cv">
-                                                       <i data-feather="upload-cloud"></i>
-                                                       <span>Upload your resume <span>(pdf,zip,doc,docx)</span></span>
-                                                     </label>
-                                                   </div>
-                                                   <div class="more-option">
-                                                     <input class="custom-radio" type="checkbox" id="radio-4" name="termsandcondition">
-                                                     <label for="radio-4">
-                                                       <span class="dot"></span> I accept the <a href="#">terms & conditions</a>
-                                                     </label>
-                                                   </div>
-                                                   <button class="button primary-bg btn-block">postuler</button>
-                                                 </form>
-                                               </div>
-                                             </div>
-                                           </div>
-                                         </div>
-                                       </div>
+       
                @endforeach
              
-              </div>
             </div>
           </div>
+        </div>
           <div class="dashboard-sidebar">
             <div class="user-info">
               <div class="thumb">

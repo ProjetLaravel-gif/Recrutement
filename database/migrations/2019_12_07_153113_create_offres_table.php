@@ -30,6 +30,7 @@ class CreateOffresTable extends Migration
              $table->string('emplacement');
             $table->text('description');
             $table->string('webaddresse');
+            $table->string('date');
             $table->integer('recruteur_id')->unsigned()->nullable();
             $table->foreign('recruteur_id')->references('id')->on('recruteurs')
                         ->onDelete('cascade')

@@ -9,6 +9,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Offre;
 use App\Contact;
 use App\Postules;
+use App\Message;
 class Recruteur  extends Authenticatable
 {
      use Notifiable;
@@ -41,5 +42,10 @@ class Recruteur  extends Authenticatable
       public function postules()
     {
         return $this->hasMany('App\Postules');
+    }
+
+    public function messages()
+    {
+        return $this->hasMany('App\Message');
     }
 }

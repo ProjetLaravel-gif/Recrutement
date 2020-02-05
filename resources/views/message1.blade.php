@@ -1,5 +1,5 @@
-@extends('layouts.master_recruteur')
-@section('recruteur')
+@extends('layouts.master')
+@section('content')
 <div class="alice-bg padding-top-70 padding-bottom-70">
   <div class="container">
     <div class="row">
@@ -40,10 +40,10 @@
                {{ csrf_field() }}
                 <a href="#" class="message-single">
                    <div class="thumb">
-                    <img src="/images/avatars/{{ $contacts->candidat['avatar'] }}" class="img-fluid" alt="">
+                    <img src="/images/avatars/{{ $contacts->recruteur['logo'] }}" class="img-fluid" alt="">
                   </div> 
                   <div class="body">
-                    <h6 class="username">{{ $contacts->candidat['nom']}} {{ $contacts->candidat['prenom']}}</h6>
+                    <h6 class="username">{{ $contacts->recruteur['nom']}}</h6>
                     <a href="" class="preview" title="Preview" data-toggle="modal" data-target="#apply-popup-id"><i data-feather="eye"></i></a>
                     <!-- <span class="text-number">2</span> -->
                   </div>
@@ -81,8 +81,8 @@
                                                </div>
                                                <div class="modal-body">
                                                  
-                                               <p><b>NOM:</b>&nbsp;{{$contacts->candidat['nom']}}</p><br>
-                                                 <p><b>EMAIL:</b>&nbsp;{{$contacts->candidat['email']}}</p><br>
+                                               <p><b>NOM:</b>&nbsp;{{$contacts->recruteur['nom']}}</p><br>
+                                                 <p><b>EMAIL:</b>&nbsp;{{$contacts->email}}</p><br>
                                                  <p><b>EMAIL:</b>&nbsp;{{$contacts->numero}}</p><br>
                                                  <p><b>OBJET:</b>&nbsp;{{$contacts->objet}}</p><br>
                                                  <p><b>MESSAGE:</b>&nbsp;{{$contacts->message}}</p>

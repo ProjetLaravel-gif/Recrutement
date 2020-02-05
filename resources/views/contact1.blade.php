@@ -1,5 +1,5 @@
-@extends('layouts.master')
-@section('content')
+@extends('layouts.master_recruteur')
+@section('recruteur')
 <div class="alice-bg padding-top-70 padding-bottom-70">
   <div class="container">
     <div class="row">
@@ -27,9 +27,9 @@
           <div class="row">
             <div class="col-lg-4">
               <div class="contact-address">
-                <form action="{{url ('contact')}}" method="POST">
+                <form action="{{url ('contact1')}}" method="POST">
                 {{ csrf_field() }}
-                 <input type="hidden" name="recruteur_id" value="{{$recruteur_id}}">
+                 
                 <h4>Contact Info</h4>
                 <ul>
                   <li><i data-feather="map-pin"></i></li>

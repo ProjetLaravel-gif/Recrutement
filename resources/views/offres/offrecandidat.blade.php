@@ -60,7 +60,7 @@
                         <td class="action">
                           <a href="" class="preview" title="Preview" data-toggle="modal" data-target="#apply-popup-id"><i data-feather="eye"></i></a>
                           <a href="#" class="download"><i data-feather="download"></i></a>
-                          <a href="#" class="inbox"><i data-feather="mail"></i></a>
+                          <a href="{{ url('contact1/createCc/'.$postules->candidat_id) }}" class="inbox"><i data-feather="mail"></i></a>
                           <a href="#" class="remove"><i data-feather="trash-2"></i></a>
                         </td>
                       </tr>

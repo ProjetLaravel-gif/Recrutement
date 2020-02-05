@@ -49,7 +49,14 @@
                       </div>
                     </div>
 
-                             
+                             <div style="display:none" class="form-group row">
+                      <label class="col-md-3 col-form-label">date</label>
+                      <div class="col-md-9">
+                        <input type="text"  value="<?php echo date("d-m-Y"); ?>" class="form-control" placeholder="date" name="date">
+
+                      </div>
+                    </div>
+
                     <div id="nombred'annesd'experiences" class="form-group row"> 
                     <label class="col-md-3 col-form-label">nombre d'annes d'experiences</label>    
                           <div class="col-md-6">

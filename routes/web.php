@@ -78,8 +78,13 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
  Route::put('offres/{id}','OffreController@updateo');
  Route::delete('offres/{id}','OffreController@destroyo'); 
  Route::get('message','OffreController@message');
+ Route::get('message1','OffreController@message1');
  Route::get('postuler','OffreController@voir');
+ Route::get('postuler1','OffreController@voir2');
   Route::get('stp/{nom}','OffreController@stp');
+   Route::get('list','OffreController@list');
+   Route::post('/postuler','OffreController@postuler1')->name('stp1');
+   Route::get('offre','offreController@offrepostulée'); 
  // route du cv
  // Route::get('formations/formation','FormationController@formation');
  // Route::get('formations/competence','FormationController@competence');
@@ -151,6 +156,9 @@ Route::get('recruteur/editprofil', function () {
 
 Route::get('contact/createC/{id}','OffreController@createC');    
 Route::post('contact','OffreController@storeC');
+Route::post('contact','OffreController@storeC1');
+Route::get('contact1/createCc/{id}','OffreController@createCc');    
+Route::post('contact1','OffreController@storeCc');
 
 
 
@@ -159,7 +167,8 @@ Route::post('contact','OffreController@storeC');
 
 
 Route::get('simple', 'OffreController@index');
-
+Route::get('bar', 'OffreController@index1');
+Route::get('camembert', 'OffreController@index2');
 // Route::get('simple', function () {
 //     return view('simple');
 // }); 

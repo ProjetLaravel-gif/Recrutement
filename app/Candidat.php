@@ -52,4 +52,9 @@ class Candidat extends Authenticatable
         return $this->hasMany('App\Postules');
     }
 
+    public function messages()
+    {
+        return $this->hasMany('App\Message');
+    }
+
 }
