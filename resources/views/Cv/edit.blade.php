@@ -28,16 +28,17 @@
     </div>
   </div>
 </div>
-    <div class="alice-bg section-padding-bottom">
-      <div class="container no-gliters">
+    <div class="alice-bg section-padding-bottom" >
+      <div class="container no-gliters" >
         <div class="row no-gliters">
           <div class="col">
-            <div class="dashboard-container">
+            <div class="dashboard-container" id="app">
               <div class="dashboard-content-wrapper">
                    
                       <form action="{{url ('cvs/'.$cvs->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
                                        {{ csrf_field() }}
                                        <input type="hidden" name="candidat_id" value="{{$cvs->candidat_id}}">
+
           <!--       <div class="download-resume dashboard-section">
                   <div class="update-file">
                     <input type="file">
@@ -161,7 +162,7 @@ Annuler</button>
                     <a href="#"><i class="fab fa-dribbble"></i></a>
                     <a href="#"><i class="fab fa-github"></i></a>
                     <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary edit-button" data-toggle="modal" data-target="#modal-social">
+                    <button type="button" class="btn btn-primary edit-button" data-toggle="modal" data-target="#modal-social" >
                       <i data-feather="edit-2"></i>
                     </button>
                     <br>
@@ -311,10 +312,14 @@ Annuler</button>
                                       <span class="study-year">{{ $formation->date_debut }}-{{ $formation->date_fin }}</span>
                                       <h5>{{ $formation->diplome }}<span>{{ $formation->lieu }} </span></h5>
                                      <h5>{{ $formation->domaine }}<!-- <span>@ {{ $formation->domaine }} </span> --></h5>
+                                   <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-education" @click="editFromation(formation)">
+                                     <i data-feather="edit-2"></i>
+                                   </button>
+                                 
                                    </div>
                                    
                                    <!-- Button trigger modal -->
-                                   <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-education">
+                              <!--     <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-education" @click="editFromation(formation)">
                                      <i data-feather="edit-2"></i>
                                    </button>
                                    <!-- Modal -->
@@ -323,14 +328,100 @@ Annuler</button>
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-body">
+
+
                           <div class="title">
                             <h4><i data-feather="book"></i>Education</h4>
-                            <a href="#" class="add-more">+ Ajouter Education</a>
-                          </div>
+                            <button   onclick="$('#ajout_formation').show();">+ Ajouter Formation</button>  
+
+                           </div>
+                          
+                       
+
+                           
+
+
                           <div class="content">
-                            <form action="#">
+                                            <form action="/ajout_formation" method="post">
+                                                  @csrf
+                                                       <div class="input-block-wrap"  id='ajout_formation'  style='display:none'>
+                                                          <input type="hidden" name="id_cv_formation" value="{{$cvs->id}}">
+                                     
+                                                              <div class="form-group row" >
+                                                                <label class="col-sm-3 col-form-label">01</label>
+                                                                <div class="col-sm-9">
+                                                                  <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                      <div class="input-group-text">Diplome</div>
+                                                                    </div>
+                                                                    <input type="text" class="form-control"  name='diplome_formation' >
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                              <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                  <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                      <div class="input-group-text">
+                              lieu</div>
+                                                                    </div>
+                                                                    <input type="text" class="form-control" name='lieu_formation' >
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                          
+
+                                              <div class="form-group row">
+                                                <div class="col-sm-9 offset-sm-3">
+                                                  <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                      <div class="input-group-text">Date-Debut</div>
+                                                    </div>
+                                                    <input type="date" class="form-control" name="date_debut_formation" value="" >
+                                                  </div>
+                                                </div>
+                                              </div>
+                                              <div class="form-group row">
+                                                <div class="col-sm-9 offset-sm-3">
+                                                  <div class="input-group">
+                                                    <div class="input-group-prepend">
+                                                      <div class="input-group-text">Date-FIN</div>
+                                                    </div>
+                                                    <input type="date" class="form-control" name="date_fin_formation"  value="" >
+                                                  </div>
+                                                </div>
+                                              </div>
+                                                              <div class="form-group row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                  <div class="input-group">
+                                                                    <div class="input-group-prepend">
+                                                                      <div class="input-group-text">Domaine</div>
+                                                                    </div>
+                                                                    <textarea class="form-control" name='domaine_formation' ></textarea>
+                                                                  </div>
+
+
+                                                                </div>
+
+                                                              <div class="row">
+                                                                <div class="offset-sm-3 col-sm-9">
+                                                                  <div class="buttons">
+                                                                    <button type="submit">Ajouter Formation</button>
+
+                                                                    <button type="button" class="" onclick="$('#ajout_formation').hide();">Annuler</button>
+                                                                  </div>
+                                                                </div>
+                                                              </div>
+                                                          </div>                                                              </form>
+                                                    </div>
+                  
                               <div class="input-block-wrap">
                                 <div class="form-group row">
+                                  
+                                  <form action="/update_formation" method="post">
+                                    @csrf
+                                                                           <input type="hidden" name="id" value="{{$formation->id}}">
+
                                   <label class="col-sm-3 col-form-label">01</label>
                                   <div class="col-sm-9">
                                     <div class="input-group">
@@ -369,7 +460,7 @@ Annuler</button>
                                       <div class="input-group-prepend">
                                         <div class="input-group-text">Date-FIN</div>
                                       </div>
-                                      <input type="text" class="form-control" name="Date-fin"  value="{{ $formation->date_fin}}" >
+                                      <input type="text" class="form-control" name="date_fin"  value="{{ $formation->date_fin}}" >
                                     </div>
                                   </div>
                                 </div>
@@ -388,7 +479,7 @@ Annuler</button>
                               <div class="row">
                                 <div class="offset-sm-3 col-sm-9">
                                   <div class="buttons">
-                                    <button class="primary-bg">Enregistrer la mise à jour</button>
+                                    <button type="submit" class="primary-bg">Enregistrer la mise à jour</button>
                                     <button class="" data-dismiss="modal">Annuler</button>
                                   </div>
                                 </div>
@@ -398,7 +489,7 @@ Annuler</button>
                         </div>
                       </div>
                     </div>
-                    
+                  
                   </div>  
                    @endforeach     
                  </div>             
@@ -409,12 +500,13 @@ Annuler</button>
                     <span class="service-year">{{ $experience->date_debut }}-{{ $experience->date_fin }}</span>
                     <h5>{{ $experience->intitule }}<span>{{ $experience->lieu }}</span></h5>
                     <p>{{ $experience->description }}</p>
+                    <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-experience">
+                      <i data-feather="edit-2"></i>
+                    </button>
                   </div>
                  
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-experience">
-                    <i data-feather="edit-2"></i>
-                  </button>
+                 
                   <!-- Modal -->
                   <div class="modal fade modal-experience" id="modal-experience" tabindex="-1" role="dialog" aria-hidden="true">
                     <div class="modal-dialog" role="document">
@@ -422,14 +514,88 @@ Annuler</button>
                         <div class="modal-body">
                           <div class="title">
                             <h4><i data-feather="briefcase"></i>Experience</h4>
-                            <a href="#" class="add-more">+ AjouterExperience</a>
+                                <button onclick="$('#ajout_experience').show();" >+ AjouterExperience</button>
                           </div>
+                
+
                           <div class="content">
-                           <form action="{{url ('cvs/'.$cvs->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
-                                                  {{ csrf_field() }}
-                          <input type="hidden" name="cvv_id" value="{{$cvs->cvv_id}}">
+                            
+                                          <form action="/ajout_experience" method="post">
+                                                @csrf
+                                                     <div class="input-block-wrap"  id='ajout_experience'  style='display:none'>
+                                                        <input type="hidden" name="id_cv_experience" value="{{$cvs->id}}">
+                                   
+                                                            <div class="form-group row" >
+                                                              <label class="col-sm-3 col-form-label">01</label>
+                                                              <div class="col-sm-9">
+                                                                <div class="input-group">
+                                                                  <div class="input-group-prepend">
+                                                                    <div class="input-group-text">Intitule</div>
+                                                                  </div>
+                                                                  <input type="text" class="form-control"  name='intitule_experience' >
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                              <div class="offset-sm-3 col-sm-9">
+                                                                <div class="input-group">
+                                                                  <div class="input-group-prepend">
+                                                                    <div class="input-group-text">
+                            lieu</div>
+                                                                  </div>
+                                                                  <input type="text" class="form-control" name='lieu_experience' >
+                                                                </div>
+                                                              </div>
+                                                            </div>
+                          <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">Date-Debut</div>
+                                </div>
+                                <input type="date" class="form-control" name="date_debut_experience" value="" >
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group row">
+                            <div class="col-sm-9 offset-sm-3">
+                              <div class="input-group">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">Date-FIN</div>
+                                </div>
+                                <input type="date" class="form-control" name="date_fin_experience"  value="" >
+                              </div>
+                            </div>
+                          </div>
+                                          <div class="form-group row">
+                                            <div class="offset-sm-3 col-sm-9">
+                                              <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                  <div class="input-group-text">Description</div>
+                                                </div>
+                                                <textarea class="form-control" name='description_experience' ></textarea>
+                                              </div>
+
+
+                                            </div>
+
+                                          <div class="row">
+                                            <div class="offset-sm-3 col-sm-9">
+                                              <div class="buttons">
+                                                <button type="submit">Ajouter Formation</button>
+
+                                                <button type="button" class="" onclick="$('#ajout_experience').hide();">Annuler</button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                      </div>                                                              </form>
+                                </div>
                               <div class="input-block-wrap">
                                 <div class="form-group row">
+                                  <form action="/update_experience" method="post">
+                                    @csrf
+                                                                           <input type="hidden" name="id" value="{{$experience->id}}">
+
                                   <label class="col-sm-3 col-form-label">01</label>
                                   <div class="col-sm-9">
                                     <div class="input-group">
@@ -481,49 +647,7 @@ Annuler</button>
                                   </div>
                                 </div>
                               </div>
-                             <!--  <div class="input-block-wrap">
-                                <div class="form-group row">
-                                  <label class="col-sm-3 col-form-label">02</label>
-                                  <div class="col-sm-9">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text">Titre</div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <div class="offset-sm-3 col-sm-9">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text">Compagnie</div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <div class="col-sm-9 offset-sm-3">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text">Periode</div>
-                                      </div>
-                                      <input type="text" class="form-control" >
-                                    </div>
-                                  </div>
-                                </div>
-                                <div class="form-group row">
-                                  <div class="offset-sm-3 col-sm-9">
-                                    <div class="input-group">
-                                      <div class="input-group-prepend">
-                                        <div class="input-group-text">Description</div>
-                                      </div>
-                                      <textarea class="form-control"></textarea>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div> -->
+                            
                               <div class="row">
                                 <div class="offset-sm-3 col-sm-9">
                                   <div class="buttons">
@@ -532,7 +656,7 @@ Annuler</button>
                                   </div>
                                 </div>
                               </div>
-                            </form>
+                           </form>
                           </div>
                         </div>
                       </div>
@@ -545,11 +669,12 @@ Annuler</button>
                   @foreach($cvs->competences as $competence)
                   <div class="experience-section">
                     <p>{{ $competence->description }}</p>
-                  </div>
-                                   <!-- Button trigger modal -->
-                                   <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-pro-skill">
+                    <button type="button" class="btn btn-primary edit-resume" data-toggle="modal" data-target="#modal-pro-skill">
                                      <i data-feather="edit-2"></i>
                                    </button>
+                  </div>
+                                   <!-- Button trigger modal -->
+                                   
                                    <!-- Modal -->
                                    <div class="modal fade modal-pro-skill" id="modal-pro-skill" tabindex="-1" role="dialog" aria-hidden="true">
                                      <div class="modal-dialog" role="document">
@@ -558,21 +683,59 @@ Annuler</button>
                                            <div class="title">
                                              <h4><i data-feather="feather"></i>
                  Compétence professionnelle</h4>
-                                             <a href="#" class="add-more">+ Ajouter Compétence</a>
+                                             <button onclick="$('#ajout_competence').show();" >+ AjouterCompetence</button>
                                            </div>
+
+
+                                           
                                            <div class="content">
-                                             <form action="{{url ('cvs/'.$cvs->id)}}" method="POST"><input type="hidden" name="_method" value="PUT">
-                                                  {{ csrf_field() }}
-                                  <input type="hidden" name="cv_iid" value="{{$cvs->cv_iid}}">
+                                                          <form action="/ajout_competence" method="post">
+                                                                @csrf
+                                                                     <div class="input-block-wrap"  id='ajout_competence'  style='display:none'>
+                                                                        <input type="hidden" name="id_cv_competence" value="{{$cvs->id}}">
+                                                   
+                                          
+                                         
+                                                          <div class="form-group row">
+                                                            <div class="offset-sm-3 col-sm-9">
+                                                              <div class="input-group">
+                                                                <div class="input-group-prepend">
+                                                                  <div class="input-group-text">Description</div>
+                                                                </div>
+                                                                <textarea class="form-control" name='description_competence' ></textarea>
+                                                              </div>
+
+
+                                                            </div>
+
+                                                          <div class="row">
+                                                            <div class="offset-sm-3 col-sm-9">
+                                                              <div class="buttons">
+                                                                <button type="submit">Ajouter Competence</button>
+
+                                                                <button type="button" class="" onclick="$('#ajout_competence').hide();">Annuler</button>
+                                                              </div>
+                                                            </div>
+                                                          </div>
+                                                      </div>
+                                                    </form>
+                                                </div>  
+                                  
                                                <div class="input-block-wrap">
                                                  <div class="form-group row">
+                                                  <form action="/update_competence" method="post">
+                                                    @csrf
+                                                                                           <input type="hidden" name="id" value="{{$competence->id}}">
+
                                                    <label class="col-sm-3 col-form-label">compétence 01</label>
-                                                   <div class="col-sm-9">
-                                                     <div class="input-group">
-                                                       <div class="input-group-prepend">
-                                                         
+                                                   <div class="form-group row">
+                                                     <div class="offset-sm-3 col-sm-9">
+                                                       <div class="input-group">
+                                                         <div class="input-group-prepend">
+                                                           <div class="input-group-text">Description</div>
+                                                         </div>
+                                                         <textarea class="form-control" name="description" >{{ $competence->description}}</textarea>
                                                        </div>
-                                                       <textarea class="form-control" name="description" >{{ $competence->description}}</textarea>
                                                      </div>
                                                    </div>
                                                  </div>
@@ -588,7 +751,7 @@ Annuler</button>
                                                    </div>
                                                  </div>
                                                </div>
-                                             </form>
+                                            </form>
                                            </div>
                                          </div>
                                        </div>
@@ -1264,6 +1427,8 @@ Publier une offre</a>
         </div>
       </div>
     </div>
+
+
     <!-- Call to Action End -->
 
 @endsection

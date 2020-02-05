@@ -55,7 +55,7 @@
                 <a href="index.html"><img src="images/logo-2.png" alt=""></a>
               </div>
               <div class="top-nav">
-                <a href="login.html" class="account-page-link">Login</a>
+                 <a href="{{ route('can') }}" class="account-page-link">Se Connecter</a>
               </div>
             </div>
           </div>
@@ -227,7 +227,7 @@
                   <a href="#" class="facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
                   <a href="#" class="google"><i class="fab fa-google"></i>Google</a>
                 </div>
-                <p>Already have an account? <a href="login.html">Login</a></p>
+                <p>Vous avez deja un compte?   <a href="{{ route('can') }}" class="account-page-link">Se Connecter</a></p>
               </div>
             </div>
           </div>

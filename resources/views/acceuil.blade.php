@@ -92,9 +92,9 @@
             <li class="menu-item dropdown">
               <a title="" href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">emploi</a>
               <ul  class="dropdown-menu">
-                <li class="menu-item"><a href="job-listing.html">Job Listing</a></li>
+                <li class="menu-item"><a href="{{ url('listoffres') }}">Job Listing</a></li> 
                 <li class="menu-item"><a href="job-listing-with-map.html">Job Listing With Map</a></li>
-                <li class="menu-item"><a href="job-details.html">Job Details</a></li>
+                
               </ul>
             </li>
             <li class="menu-item dropdown">
@@ -196,12 +196,25 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form action="#">
+                <form action="{{url('/login/candidat')}}" method="POST">
+                   @csrf 
                   <div class="form-group">
-                    <input type="email" placeholder="Email Address" class="form-control">
+                    <input type="email" placeholder="Email Address" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" value="{{ old('email') }}" name="email"
+                    required autofocus>
+                    @if ($errors->has('email'))
+                    
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
                   </div>
                   <div class="form-group">
-                    <input type="password" placeholder="Password" class="form-control">
+                    <input type="password" placeholder="Password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" style="font-size: 15px;"  required>
+                    @if ($errors->has('password'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('password') }}</strong>
+                                                </span>
+                                            @endif
                   </div>
                   <div class="more-option">
                     <div class="form-check">
@@ -210,7 +223,11 @@
                         Remember Me
                       </label>
                     </div>
-                    <a href="#">Forget Password?</a>
+                   @if (Route::has('password.request'))
+                                      <a class="bt" href="{{ route('password.request') }}">
+                                        Mot de passe oublié ?
+                                                   </a>
+                                               @endif
                   </div>
                   <button class="button primary-bg btn-block">Login</button>
                 </form>
@@ -220,7 +237,7 @@
                     <a href="#" class="facebook"><i class="fab fa-facebook-f"></i>Facebook</a>
                     <a href="#" class="google"><i class="fab fa-google"></i>Google</a>
                   </div>
-                  <p>Don't have an account? <a href="#">Register</a></p>
+                  <p>Don't have an account? <a href="{{ route('recruteur') }}">S'inscrire</a></p>
                 </div>
               </div>
             </div>
@@ -230,22 +247,27 @@
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title"><i data-feather="edit"></i>Registration</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <h5 class="modal-title"><i data-feather="edit"></i>Inscription</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" >
                   <span aria-hidden="true">&times;</span>
                 </button>
               </div>
               <div class="modal-body">
-                <div class="account-type">
+                <div class="buttons">
+                    <a href="{{ route('recruteur') }}" class="button primary-bg btn-block" >Candidat</a>
+                   <a href="{{ route('candidat') }}" class="button primary-bg btn-block" >Recruteur</a>
+                  </div>
+
+              <!--   <div class="account-type">
                   <label for="idRegisterCan">
-                    <input id="idRegisterCan" type="radio" name="register">
+                    <input id="idRegisterCan" type="radio" >  
                     <span>Candidate</span>
                   </label>
                   <label for="idRegisterEmp">
                     <input id="idRegisterEmp" type="radio" name="register">
                     <span>Employer</span>
                   </label>
-                </div>
+                </div> -->
                 <!-- <form action="#">
                   <div class="form-group">
                     <input type="text" placeholder="Username" class="form-control">
@@ -1204,11 +1226,12 @@
             </div>
             <div class="col-lg-2 col-sm-6">
               <div class="footer-widget footer-shortcut-link">
-                <h4>chercher emploie</h4>
+                <h4>chercher emploi</h4>
                 <div class="widget-inner">
                   <ul>
-                    <li><a href="#">creer compte</a></li>
-                    <li><a href="#">orientation professionnelle</a></li>
+                     <li><a href="{{ route('candidat') }}">Candidat?</a></li>
+                    <li><a href="{{ route('recruteur') }}">Recruteur?</a></li>
+                   
                   </ul>
                 </div>
               </div>
@@ -1218,9 +1241,10 @@
                 <h4>Employers</h4>
                 <div class="widget-inner">
                   <ul>
-                    <li><a href="#">creer compet</a></li>
+                  
+                    <li><a href="{{ route('recruteur') }}">Recruteur?</a></li>
                     <li><a href="#">voir offre</a></li>
-                    <li><a href="#">poster offre</a></li>
+                    <li><a href="{{ url('offres/createo/$offres->recruteur_id')}}">poster offre</a></li>
                   </ul>
                 </div>
               </div>
@@ -1241,7 +1265,7 @@
                     </div>
                   </div>
                   <div class="col-xl-4 col-lg-4 order-lg-1">
-                    <p class="copyright-text">Copyright <a href="#">Oficiona</a> 2019, All right reserved</p>
+                    <p class="copyright-text">Copyright <a href="#">EasyJob</a> 2020, All right reserved</p>
                   </div>
                   <div class="col-xl-4 col-lg-3 order-lg-3">
                     <div class="back-to-top">
