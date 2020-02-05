@@ -40,7 +40,36 @@
 
 
 
+
   @include('layouts/_menucandidat')
+  
+<!-- Breadcrumb -->
+<div class="alice-bg padding-top-70 padding-bottom-70">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="breadcrumb-area">
+          <h1>Employer Dashboard</h1>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Employer Dashboard</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="breadcrumb-form">
+          <form action="/search" method="get">
+            <input type="text" name="search" placeholder="Enter Keywords">
+            <button><i data-feather="search"></i></button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Breadcrumb End -->
 
 
      @yield('candidat')
@@ -66,6 +95,7 @@
       <script src="{{asset('assets/js/dashboard.js')}}"></script>
       <script src="{{asset('assets/js/datePicker.js')}}"></script>
       <script src="{{asset('assets/js/upload-input.js')}}"></script>
+      <script src="{{ asset('js/app.js') }}" defer></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC87gjXWLqrHuLKR0CTV5jNLdP4pEHMhmg"></script>   
        <script src="{{asset('assets/js/map.js')}}"></script> 
 

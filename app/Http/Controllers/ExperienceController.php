@@ -36,9 +36,10 @@ class ExperienceController extends Controller
         $experiences = Experience::find($id);
         $experiences->intitule = $request->input('intitule');
         $experiences->lieu = $request->input('lieu');
-        $experiences->lieu = $request->input('description');
-        $experiences->lieu = $request->input('date_debut');
-        $experiences->lieu = $request->input('date_fin');
+        $experiences->description = $request->input('description');
+        $experiences->date_debut = $request->input('date_debut');
+        $experiences->date_fin = $request->input('date_fin');
+        $experiences->cvv_id = $request->input('cvv_id');
         $experiences->save();
          return redirect('cvs');
     }

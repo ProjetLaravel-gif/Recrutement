@@ -64,22 +64,24 @@
                                              $depot = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $offres->created_at);
                                              @endphp
                         <td class="deadline">{{$depot}}</td>
-<<<<<<< HEAD
+
                         <td class="status active">Active</td>
 
-=======
                         
                         <td class="status active"><a href="{{ url('statut/'.$offres->id) }}" class="button">publier</a></td>
->>>>>>> a11b848c5d48148a26803a6c1b82b8276fb03bb3
+
                         <td class="action">
                           <a href="{{ url('offres/'.$offres->id.'/detail') }}" class="preview" title="Preview"><i data-feather="eye"></i></a>
                           <a href="{{ url('offres/'.$offres->id.'/edito') }}" class="edit" title="Edit"><i data-feather="edit"></i></a>
                           <a href="#supprimer{{ $offres->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i data-feather="trash-2"></i></a>
                         </td>
                       </tr>
+
                        </tbody>
                   </table>
+
                   </div>
+    
               </div>
                    <div class="dashboard-sidebar">
                 <div class="company-info">
@@ -150,8 +152,9 @@
         </div>
       </div>
     </div>
-         </form>
-@endforeach
+       </form>
+
+                      @endforeach   
 
 
     @endsection

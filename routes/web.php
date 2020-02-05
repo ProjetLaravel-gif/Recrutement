@@ -1,5 +1,13 @@
 <?php
 
+use App\Recruteur;
+use App\Cv;
+use App\Experience;
+use App\Formation;
+use App\Offre;
+
+use Illuminate\Support\Facades\Input;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -89,18 +97,28 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
  Route::post('cvs','CvController@store')->name('cvs'); 
  Route::get('cvs/{id}/edit','CvController@edit');
  Route::put('cvs/{id}','CvController@update');
+ Route::get('/search','CvController@search');
  Route::get('cvs/{id}/details','CvController@details');
  Route::get('cvs/{id}','CvController@show');
- // Route::get('cvs/{id}','CvController@getFormation');
- Route::delete('cvs/{id}','CvController@destroy');
+ Route::post('/ajout_competence','CvController@ajout_competence');
+ Route::post('/update_competence','CvController@update_competence');
 
+
+Route::post('/ajout_formation','CvController@ajout_formation');
+Route::post('/update_formation','CvController@update_formation');
+Route::post('/ajout_experience','CvController@ajout_experience');
+Route::post('/update_experience','CvController@update_experience');
+ 
+ Route::delete('cvs/{id}','CvController@destroy');
+Route::get('/product_catalog','front\ProductCatalogController@showProductCatalogForm');
+//Route::post('/ajout_formation','CvController@ajout_new_formation');
    
    // route formation
    Route::get('formations','FormationController@index');
    Route::get('formations/create/{id}','FormationController@create') ;    
    Route::post('formations','FormationController@store');
    Route::put('formations/{id}','FormationController@update'); 
-   Route::get('getFormation/{id}','FormationController@getFormation');
+   Route::get('getformations/{id}','FormationController@getFormation');
    Route::get('addFormation','FormationController@addFormation');
    Route::delete('formations/{id}','FormationController@destroy');
  // route Experience
@@ -128,6 +146,9 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
    Route::get('favoris/{id}/editf','FavorisController@editf');
    Route::put('favoris/{id}','FavorisController@updatef')->name('paliz');
    Route::delete('favoris/{id}','FavorisController@destroyf'); 
+   //route des messages
+   Route::get('conversations','ConversationController@index');
+  Route::get('conversations/{id}','ConversationController@show');
 
 Route::get('Cv/index', function () {
     return view('Cv/index');
@@ -164,3 +185,37 @@ Route::post('contact','OffreController@storeC');
        //      File::make($cv)->resize(300, 300)->save( public_path('/images/cv/' . $filename ) );
        //    $postuler->cv = $filename;
        // }
+Auth::routes();
+
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+Route::resource('messagries','MessagriesController');
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+// Route::any('/search',function(){ 
+
+  
+//     $q = Input::get ( 'q' );
+   
+//     $recruteurs = Recruteur::where('name','LIKE','%'.$q.'%')->orWhere('prenom','LIKE','%'.$q.'%')->orWhere('email','LIKE','%'.$q.'%')->get();
+//     $offres = Offre::where('intitule','LIKE','%'.$q.'%')->orWhere('ville','LIKE','%'.$q.'%')->orWhere('type','LIKE','%'.$q.'%')->orWhere('dommaine','LIKE','%'.$q.'%')->get();
+//     $formations = Formation::where('diplome','LIKE','%'.$q.'%')->orWhere('lieu','LIKE','%'.$q.'%')->orWhere('domaine','LIKE','%'.$q.'%')->get();
+//     $experiences = Experience::where('intitule','LIKE','%'.$q.'%')->orWhere('lieu','LIKE','%'.$q.'%')->get();
+//     $cvs = Cv::where('titre','LIKE','%'.$q.'%')->get();
+
+//         // return view('search')->withDetails($user)->withQuery ( $q );
+//         return view('search')->with([
+            
+//             'recruteurs' => $recruteurs,
+//             'offres' => $offres,
+//             'formations' => $formations,
+//             'experiences' => $experiences,
+//             'cvs' => $cvs,
+            
+//         ]);
+// });
+

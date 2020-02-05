@@ -79,6 +79,7 @@
          .then(response => {
            if(response.data.etat){
              this.open=false;
+             this.experiences.id= response.data.id;
              this.experiences.unshift(this.experience);
              this.experience ={
                          id:0,
@@ -146,3 +147,116 @@
     }); 
 
   </script>
+
+   public function addExperience(Request $request){
+          $experience = new Experience();                 
+          $experience->intitule = $request->intitule;
+          $experience->lieu = $request->lieu;
+          $experience->description = $request->description;
+          $experience->date_debut = $request->date_debut;
+          $experience->date_fin = $request->date_fin;
+          $experiences->cvv_id = $request->cvv_id;
+          $experience->save();
+          return Response()->json(['etat' => true, 'id' => $experience->id]);
+       }
+ public function addFormation(Request $request){
+         $formation = new Formation();
+         $formation->diplome = $request->diplome;
+         $formation->lieu = $request->lieu;
+         $formation->date_debut = $request->date_debut;
+         $formation->date_fin = $request->date_fin;
+         $formation->domaine = $request->domaine;
+         $formation->cv_id = $request->cv_id;
+         $formation->save();
+         return Response()->json(['etat' => true, 'id' => $formation->id]);
+      }
+         public function addCompetence(Request $request){
+         $competence = new Competence();                 
+         $competence->description = $request->description;
+         $competence->cv_iid = $request->cv_iid;
+         $competence->save();
+          return Response()->json(['etat' => true, 'id' => $competence->id]);
+       }
+
+             }
+ public function updateFormation(Request $request){
+         $formation =  Formation::find($request->id);
+         $formation->diplome = $request->diplome;
+         $formation->lieu = $request->lieu;
+         $formation->date_debut = $request->date_debut;
+         $formation->date_fin = $request->date_fin;
+         $formation->domaine = $request->domaine;
+         $formation->cv_id = $request->cv_id;
+         $formation->save();
+         return Response()->json(['etat' => true]);
+      }
+
+       public function deleteFormation($id){
+              $formation= Formation::find($id);
+              $formation->delete();
+         return Response()->json(['etat' => true]);
+      }
+
+      // Salam werili fichier w page w navi
+      //fichier kismo exp.blade.php
+      w contoller cv
+      w nav rah mahlul
+
+
+
+      <form action="/ajout_formation" method="post">
+                      @csrf
+                      <div class="basic-info-input" id='ajout_formation'  style='display:none'>
+                        <input type="hidden" name="cv_id" value="{{$cv_id}}">
+                          <input type="hidden" name="id_cv_formation" value="{{$cv->id}}">
+                                     
+               
+                
+                    
+
+                  <div id="full-name" class="form-group row" >
+                    <label class="col-md-3 col-form-label">Diplome</label>
+                    <div class="col-md-9">
+                      <input type="text" class="form-control" name='diplome_formation'  placeholder=" Diplome">
+                    </div>
+                  </div>
+                  
+                  <div id="full-name" class="form-group row">
+                    <label class="col-md-3 col-form-label">lieux</label>
+                    <div class="col-md-9">
+                      <input type="text"  name='lieu_formation'   class="form-control" placeholder="lieux">
+                    </div>
+                  </div>
+                  
+                  <div id="full-name" class="form-group row">
+                    <label class="col-md-3 col-form-label">Date debut</label>
+                    <div class="col-md-9">
+                      <input type="Date" name="date_debut_formation"  class="form-control" >
+                    </div>
+                  </div>
+                  
+                  <div id="full-name" class="form-group row">
+                    <label class="col-md-3 col-form-label">Date fin</label>
+                    <div class="col-md-9">
+                      <input type="Date"  name="date_fin_formation" class="form-control" >
+                    </div>
+                  </div>
+                  
+                  <div id="full-name" class="form-group row">
+                    <label class="col-md-3 col-form-label">Domaine</label>
+                    <div class="col-md-9">
+                      <input type="text"  name="domaine" class="form-control" placeholder="Domaine">
+                    </div>
+                  </div>
+                  
+                
+                  
+                  <div class="form-group row">
+                    <label class="col-md-3 col-form-label"></label>
+                    <div class="col-md-9">
+                      <button type="submit">Ajouter Formation</button>
+                      <button class="button" onclick="$('#ajout_formation').hide();">Annuler</button>
+                    </div>
+                  </div>
+</form>
+                </div>

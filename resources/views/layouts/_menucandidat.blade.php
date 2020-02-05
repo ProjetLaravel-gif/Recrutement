@@ -50,7 +50,7 @@
               </div>
             </div>
             <div class="dropdown header-top-account">
-              <a href="#" class="account-button">My Account</a>
+              <a href="#" class="account-button">Mon Compte</a>
               <div class="account-card">
                 <div class="header-top-account-info">
                       <a href="#" class="account-thumb">
@@ -64,7 +64,7 @@
 
 
                  
-                  <li><a href="{{ url('profil') }}"><span class="ti-user"></span>Account</a></li>
+                  <li><a href="{{ url('profil') }}"><span class="ti-user"></span>Compte</a></li>
                   <li><a href="#"><span class="ti-settings"></span>Settings</a></li>
                   <li> <a  href="{{ route('logout') }}"
                                       onclick="event.preventDefault();
@@ -73,7 +73,7 @@
                                    </a></li>
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                        @csrf
-                                   </form><span class="ti-power-off"></span>Log Out</a></li>
+                                   </form><span class="ti-power-off"></span>Se Deconnecter</a></li>
                 </ul>
               </div>
             </div>
@@ -89,7 +89,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav">
-              <li class="menu-item active"><a title="Home" href="home-1.html">Home</a></li>
+              <li class="menu-item active"><a title="Home" href="{{url('/')}}">Accueil</a></li>
               <li class="menu-item dropdown">
                 <a href="#" data-toggle="dropdown" class="dropdown-toggle" aria-haspopup="true" aria-expanded="false">Jobs</a>
                 <ul  class="dropdown-menu">
