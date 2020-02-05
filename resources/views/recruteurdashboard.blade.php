@@ -56,6 +56,14 @@
                 <div class="dashboard-section dashboard-view-chart">
                   <canvas id="view-chart" width="400" height="200"></canvas>
                 </div>
+
+
+
+                <div class="dashboard-section dashboard-view-chart">
+                  <canvas id="view-chart" width="400" height="200"></canvas>
+                </div>
+
+                
                 <div class="dashboard-section dashboard-recent-activity">
                   <h4 class="title">Recent Activity</h4>
                   <div class="activity-list">

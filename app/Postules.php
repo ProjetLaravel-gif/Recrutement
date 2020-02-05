@@ -10,4 +10,15 @@ class Postules extends Model
     {
         return $this->hasMany('App\Offre');
     }
+
+
+     public function recruteurs()
+    {
+        return $this->hasMany('App\Recruteur');
+    }
+
+      public function candidat()
+    {
+        return $this->hasMany('App\Candidat');
+    }
 }

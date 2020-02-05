@@ -1,5 +1,6 @@
  
-
+@extends('layouts.master_recruteur')
+@section('recruteur')
 
 
   <div class="alice-bg padding-top-70 padding-bottom-70">
@@ -45,27 +46,48 @@
                       </tr>
                     </thead>
                     <tbody>
+                       @foreach($postules as $postules)
                       <tr class="candidates-list">
                         <td class="title">
                           <div class="thumb">
-                            <img src="dashboard/images/user-1.jpg" class="img-fluid" alt="">
+                            <img src="/images/avatars/{{$postules->avatar }}" class="img-fluid" alt="">
                           </div>
                           <div class="body">
-                            <h5><a href="#">Lula Wallace</a></h5>
-                            <div class="info">
-                              <span class="designation"><a href="#"><i data-feather="check-square"></i>Senior UI / UX Designer</a></span>
-                              <span class="location"><a href="#"><i data-feather="map-pin"></i>New Orleans</a></span>
-                            </div>
+                            <h5><a href="#">{{$postules->civilite}}  {{$postules->nom}}  {{$postules->prenom}}</a></h5>
                           </div>
                         </td>
                         <td class="status"><i data-feather="check-circle"></i>Shortlisted</td>
                         <td class="action">
+                          <a href="" class="preview" title="Preview" data-toggle="modal" data-target="#apply-popup-id"><i data-feather="eye"></i></a>
                           <a href="#" class="download"><i data-feather="download"></i></a>
                           <a href="#" class="inbox"><i data-feather="mail"></i></a>
                           <a href="#" class="remove"><i data-feather="trash-2"></i></a>
                         </td>
                       </tr>
                        </tr>
+
+                        <div class="apply-popup">
+                                         <div class="modal fade" id="apply-popup-id" tabindex="-1" role="dialog" aria-hidden="true">
+                                           <div class="modal-dialog" role="document">
+                                             <div class="modal-content">
+                                               <div class="modal-header">
+                                                 <h5 class="modal-title"><i data-feather="edit"></i>{{$postules->nom}}</h5>
+                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                   <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                               </div>
+                                               <div class="modal-body">
+                                                 
+                                               <p>message:{{$postules->message}}</p>
+                                                <!-- <a href="storage/app/cv/{{ $postules->cv }}"target="_blank"></a> -->
+                                                <a href="{{ url('stp/'.$postules->cv)}}"><i class="icon-download-alt"></i>telecharger:{{$postules->cv}}</a>
+                                                  
+                                               </div>
+                                             </div>
+                                           </div>
+                                         </div>
+                                       </div>
+                       @endforeach
                     </tbody>
                   </table>
                   <div class="pagination-list text-center">
@@ -151,3 +173,5 @@
         </div>
       </div>
     </div>
+
+    @endsection

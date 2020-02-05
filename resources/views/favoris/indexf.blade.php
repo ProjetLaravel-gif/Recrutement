@@ -36,16 +36,15 @@
         <div class="dashboard-container">
           <div class="dashboard-content-wrapper">
             <div class="dashboard-bookmarked">
-              <h4 class="bookmark-title">06 Job Bookmarked</h4>
+              <h4 class="bookmark-title"></h4>
               <div class="bookmark-area">
                 
-                 @foreach($favoris as $favoris)
+                 @foreach($favoris as $favori)
                  
-                  <form action="{{ url('favoris/'.$favoris->id) }}" method="post">
+                  <form action="{{ url('favoris') }}" method="post">
                 {{ csrf_field() }}
-                        {{ method_field('DELETE') }}
-              <input type="hidden" name="candidat_id" value="{{$candidat_id}}">
-    
+                      <!--   {{ method_field('DELETE') }} -->
+                <input type="hidden" name="offre_id" value="offre_id">
                 <div class="job-list">
                   <div class="thumb">
                     <a href="#">
@@ -55,11 +54,11 @@
                   <div class="body">
                     <div class="content">
 
-                      <h4><a href="job-details.html">{{ $favoris->offre->intitule }}</a></h4>
+                      <h4><a href="job-details.html">{{ $favori->intitule }}</a></h4>
                                             <div class="info">
-                                              <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $favoris->offre->dommaine }}</a></span>
-                                              <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $favoris->offre->ville }}</a></span>
-                                              <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>{{ $favoris->offre->duree }}</a></span>
+                                              <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $favori->dommaine }}</a></span>
+                                              <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $favori->ville }}</a></span>
+                                              <span class="job-type full-time"><a href="#"><i data-feather="clock"></i>{{ $favori->duree }}</a></span>
                                             </div>
                     </div>
 
@@ -69,11 +68,13 @@
                         <a href="#" class="button">Apply Now</a>
                         <a href="#" class="favourite"><i data-feather="heart"></i></a>
                       </div>
-                       <button type="submit">supprimer</button>
+                       <!-- <a href="#supprimer{{ $favori->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i data-feather="trash-2"></i></a> -->
                       <p class="deadline">Deadline: Oct 31,  2019</p>
                     </div>
                   </div>
                 </div>
+
+               
         </form>
                @endforeach
              

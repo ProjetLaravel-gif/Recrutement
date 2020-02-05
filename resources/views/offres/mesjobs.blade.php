@@ -67,6 +67,10 @@
 
                         <td class="status active">Active</td>
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4f82caecddbe4d9705fbb0d6d6447c44fceb1256
                         
                         <td class="status active"><a href="{{ url('statut/'.$offres->id) }}" class="button">publier</a></td>
 

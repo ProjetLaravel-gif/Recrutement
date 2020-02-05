@@ -86,6 +86,8 @@ Route::put('recruteur/{id}','RecruteurProfileController@updateprofil');
  Route::put('offres/{id}','OffreController@updateo');
  Route::delete('offres/{id}','OffreController@destroyo'); 
  Route::get('message','OffreController@message');
+ Route::get('postuler','OffreController@voir');
+  Route::get('stp/{nom}','OffreController@stp');
  // route du cv
  // Route::get('formations/formation','FormationController@formation');
  // Route::get('formations/competence','FormationController@competence');
@@ -139,6 +141,7 @@ Route::get('/product_catalog','front\ProductCatalogController@showProductCatalog
    Route::delete('competences/{id}','CompetenceController@destroy');
 
    // route favoris
+<<<<<<< HEAD
    Route::get('favoris/{id}','FavorisController@indexf');
    Route::get('favoris','FavorisController@index')->name('favoris'); 
    Route::get('favoris/createf','FavorisController@createf'); 
@@ -149,6 +152,9 @@ Route::get('/product_catalog','front\ProductCatalogController@showProductCatalog
    //route des messages
    Route::get('conversations','ConversationController@index');
   Route::get('conversations/{id}','ConversationController@show');
+=======
+   Route::get('favoris/{offre_id}','FavorisController@indexf'); 
+>>>>>>> 4f82caecddbe4d9705fbb0d6d6447c44fceb1256
 
 Route::get('Cv/index', function () {
     return view('Cv/index');
@@ -179,6 +185,7 @@ Route::post('contact','OffreController@storeC');
 
 
 
+<<<<<<< HEAD
        //     if($request->hasFile('cv')){
        //      $cv = $request->file('cv');
        //      $filename = time() . '.' . $cv->getClientOriginalExtension();
@@ -219,3 +226,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 //         ]);
 // });
 
+=======
+
+
+
+
+Route::get('simple', 'OffreController@index');
+
+// Route::get('simple', function () {
+//     return view('simple');
+// }); 
+
+// Route::get('simple', 'UserChartController@index');
+>>>>>>> 4f82caecddbe4d9705fbb0d6d6447c44fceb1256
