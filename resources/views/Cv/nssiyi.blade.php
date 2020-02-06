@@ -1,4 +1,4 @@
-@extends('layouts.master')
+<@extends('layouts.master')
 @section('content')
 
 
@@ -32,7 +32,7 @@
 <!-- Breadcrumb End -->
 
 <div class="alice-bg section-padding-bottom">
-   <form action="{{ url('cvs/'.$cvs->id) }}" method="post">
+   <form action="{{ url('cvs') }}" method="post">
                     {{ csrf_field() }}
                     <div id='sectionAimprimer'>
   <div class="container no-gliters">

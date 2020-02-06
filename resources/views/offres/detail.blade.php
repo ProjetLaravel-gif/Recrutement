@@ -25,10 +25,10 @@
                 </div>
               </div>
             </div>
-            <div class="buttons">
+            <!-- <div class="buttons">
               <a class="save" href="#"><i data-feather="heart"></i>Save Job</a>
               <a class="apply" href="#" data-toggle="modal" data-target="#apply-popup-id">Apply Online</a>
-            </div>
+            </div> -->
           </div>
           <div class="details-information section-padding-60">
             <div class="row">

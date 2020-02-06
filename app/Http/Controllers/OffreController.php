@@ -21,14 +21,15 @@ class OffreController extends Controller
       // $id = Auth::guard('recruteur')->user()->id;
       // $user = Recruteur::find($id);
       // $offres = $user->offres()->paginate(5);
-      $offres = Offre::where('statut','0')->get();
+      $offres = Offre::where('statut','0')->paginate(5);
       return view('offres.mesjobs' , ['offres' => $offres]);
     }
 
 
     public function jobs(Request $request){
       //$offres = Offre::find($id);
-      $offres = Offre::where('statut','1')->get();
+      $offres = Offre::where('statut','1')->paginate(5);
+
       return view('offres.jobs' , ['offres' => $offres]);
     }
 
@@ -56,7 +57,7 @@ class OffreController extends Controller
       // $offres->recruteur_id = $id;
       // $offres->save();
       // $listoffres = Offre::find($id);
-      $listoffres = Offre::where('statut','1')->get();
+      $listoffres = Offre::where('statut','1')->paginate(5);
       //$listoffres = Offre::all();
       return view('offres.indexo1' , ['offres' => $listoffres]);
     }

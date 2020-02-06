@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+
 <div class="alice-bg padding-top-60 section-padding-bottom">
   <div class="container">
     <div class="row">
@@ -26,8 +27,48 @@
               </div>
             </div>
             <div class="buttons">
-              <a class="save" href="#"><i data-feather="heart"></i>Save Job</a>
-              <a class="apply" href="#" data-toggle="modal" data-target="#apply-popup-id">Apply Online</a>
+               <!-- <a href="{{ route('stp')}}" class="btn-block" data-toggle="modal" data-target="#apply-popup-id">postuler</a> -->
+               <a href="{{ route('stp')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#apply-popup-id">postuler</a>
+               <a class="save" href="{{ url('favoris/'.$offres->id) }}"><i data-feather="heart"></i></a>
+              <div class="apply-popup">
+                                         <div class="modal fade" id="apply-popup-id" tabindex="-1" role="dialog" aria-hidden="true">
+                                           <div class="modal-dialog" role="document">
+                                             <div class="modal-content">
+                                               <div class="modal-header">
+                                                 <h5 class="modal-title"><i data-feather="edit"></i>APPLY FOR THIS JOB</h5>
+                                                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                   <span aria-hidden="true">&times;</span>
+                                                 </button>
+                                               </div>
+                                               <div class="modal-body">
+                                                 <form action="{{route ('stp')}}" enctype="multipart/form-data" method="POST">
+
+                                                     {{ csrf_field() }}
+
+                                                  <input type="hidden" name="offres_id" value="{{$offres->id}}">
+                                                   <div class="form-group">
+                                                     <textarea class="form-control" placeholder="Message" name="message"></textarea>
+                                                   </div>
+                                                   <div class="form-group file-input-wrap" name="cv">
+                                                     <label for="up-cv" name="cv">
+                                                       <input id="up-cv" type="file" name="cv">
+                                                       <i data-feather="upload-cloud"></i>
+                                                       <span>Upload your resume <span>(pdf,zip,doc,docx)</span></span>
+                                                     </label>
+                                                   </div>
+                                                   <div class="more-option">
+                                                     <input class="custom-radio" type="checkbox" id="radio-4" name="termsandcondition">
+                                                     <label for="radio-4">
+                                                       <span class="dot"></span> I accept the <a href="#">terms & conditions</a>
+                                                     </label>
+                                                   </div>
+                                                   <button class="button primary-bg btn-block">postuler</button>
+                                                 </form>
+                                               </div>
+                                             </div>
+                                           </div>
+                                         </div>
+                                       </div>
             </div>
           </div>
           <div class="details-information section-padding-60">
@@ -70,8 +111,8 @@
                   </ul>
                 </div>
                 <div class="job-apply-buttons">
-                  <a href="#" class="apply"  data-toggle="modal" data-target="#apply-popup-id">Apply Online</a>
-                  <a href="#" class="email"><i data-feather="mail"></i>Email Job</a>
+                  <a href="{{ route('stp')}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true" data-toggle="modal" data-target="#apply-popup-id">postuler</a>
+                  <a href="{{ url('contact/createC/'.$offres->recruteur_id) }}" class="inbox"><i data-feather="mail"></i></a>
                 </div>
               </div>
               <div class="col-xl-4 offset-xl-1 col-lg-4">

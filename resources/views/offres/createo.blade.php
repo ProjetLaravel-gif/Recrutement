@@ -221,13 +221,12 @@ data-zoom="10"></div>
                       <label class="col-md-3 col-form-label"></label>
                       <div class="col-md-9">
                         <button class="button">Poster offre</button>
+                        <a href="{{ url('recruteurdashboard') }}" class="btn "style="background-color:#0131B4; color: white;font-family:"ElMessiri-SemiBold";" >Annuler</a>
                       </div>
                     </div>
                   </div>
                 </form>
-              </div>
-
-              <div class="post-sidebar">
+                              <div class="post-sidebar">
                 <h5><i data-feather="arrow-down-circle"></i>Navigation</h5>
                 <ul class="sidebar-menu">
                   <li><a href="#job-title">intitulé</a></li>
@@ -244,6 +243,9 @@ data-zoom="10"></div>
                   
                 </ul>
             </div>
+              </div>
+
+
         </div>
     </div>
 </div>

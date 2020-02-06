@@ -1,4 +1,5 @@
-
+@extends('layouts.master_recruteur')
+@section('recruteur')
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -118,5 +119,7 @@ chart.render();
 <body>
 <div id="chartContainer" style="height: 300px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+<a href="{{ url('recruteurdashboard') }}" class="btn "style="background-color:#0131B4; color: white;font-family:"ElMessiri-SemiBold";" >retour</a>
 </body>
 </html>
+@endsection

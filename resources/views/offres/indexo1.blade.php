@@ -135,15 +135,17 @@
                                            </div>
                                            <div class="more">
                                              <div class="buttons">
-                                               <a href="{{ route('stp')}}" class="button" data-toggle="modal" data-target="#apply-popup-id">Apply Now</a>
-<<<<<<< HEAD
-                                               <a href="" class="button">favoris</button>
+                                               <a href="{{ route('stp')}}" class="button" data-toggle="modal" data-target="#apply-popup-id">postuler</a>
+                                               
+                                               <a class="save" href="{{ url('favoris/'.$offre->id) }}"><i data-feather="heart"></i></a>
 
-                                                <!-- <a href="{{ url('favoris/'.$offre->id) }}" class="favourite"><i data-feather="heart"></i></a> -->
-=======
-                                               <a href="{{ url('favoris/'.$offre->id) }}" class="button">favoris</a>
+                                                <!-- <a href="{{ url('favoris/'.$offre->id) }}" class="favourite"><span><i data-feather="heart"></i></span></a> -->
+
+                                               <!-- <a href="{{ url('favoris/'.$offre->id) }}" class="button">favoris</a> -->
+                                               <!--  <a href="{{ url('favoris/'.$offre->id) }}"><span><i class="ion-ios-heart-empty" style="font-size: 40px; padding-left: 20px; color:red;"></i></span></a> -->
+
                                                <!-- <a href="{{ url('favoris/'.$offre->id) }}" class="favourite"><i data-feather="heart"></i></a> -->
->>>>>>> 4f82caecddbe4d9705fbb0d6d6447c44fceb1256
+
 
                                                 <!-- <a href="{{ url('favoris') }}" class="favourite"><i data-feather="heart"></i></a> -->
                                               <!-- <button type="submit">favoris</button> -->
@@ -176,7 +178,7 @@
                                            <div class="modal-dialog" role="document">
                                              <div class="modal-content">
                                                <div class="modal-header">
-                                                 <h5 class="modal-title"><i data-feather="edit"></i>APPLY FOR THIS JOB</h5>
+                                                 <h5 class="modal-title"><i data-feather="edit"></i>postuler</h5>
                                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                    <span aria-hidden="true">&times;</span>
                                                  </button>

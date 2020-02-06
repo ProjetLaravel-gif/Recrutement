@@ -37,33 +37,20 @@ use App\Favori;
       return view('favoris.indexf',['favoris' => $favoris]);
     }  
 
-        // public function index(){
-        //        $id = Auth::guard('candidat')->user()->id;
-        //         $user = Candidat::find($id);
-        //         $favoris = $user->favoris;
-        //   return view('favoris.indexf', ['favoris' => $favoris]);
-        // } 
+     
+     public function tout(){
 
-        // public function createf($offre_id){
-        // 	return view('favoris.createf', ['offre_id' => $offre_id]);
-        // }
-        // public function storef(Request $request){
-        //   $favoris = new Favori();
-        //   $id = Auth::guard('candidat')->user()->id;
-        //   $user = Candidat::find($id);
-        //   $favoris->candidat_id = $id;
-        //   $favoris->offre_id = $request->input('offre_id');
-        //   $favoris->save();
-        //   return redirect('offres/createo');
-        //   }
+         $user = Auth::guard('candidat')->user();
+         $favoris = DB::table('candidats')
+        ->join('favoris','favoris.candidat_id','=','candidats.id')
+        ->join('offres','offres.id','=','favoris.offre_id')
+        ->select('candidats.*','favoris.*','offres.*','offres.intitule as offres')
+        ->where('candidats.id','=',$user->id)
+        ->get();
+        return view('favoris.tout',['favoris' => $favoris]);
 
-        //  public function editf(Request $request){
-          
-        //  }
 
-        //   public function updatef(){
-             
-        //   }
+     }
           
            public function destroyf(Request $request, $id){
            	$favoris = Favori::find($id);

@@ -10,6 +10,8 @@ use App\Competence;
 use App\Diver;
 use Auth;
 use App\Candidat;
+use PDF;
+use App;
 
 class CvController extends Controller
 {
@@ -163,6 +165,22 @@ $formation->save();
       $search = $request->get('search');
       $cvs = DB::table('cvs')->where('titre','like','%'.$search.'%')->paginate(5);
       return view ('Cv.listesdescv', ['cvs' => $cvs]);
+    }
+
+
+   public function pdfview(Request $request)
+    {
+        $cvs = DB::table('cvs')->select('id');
+        view()->share('cvs',$cvs);
+
+
+        if($request->has('download')){
+            $pdf = PDF::loadView('Cv.details');
+            return $pdf->download('details.pdf');
+        }
+
+
+        return view('pdfview');
     }
 
 }

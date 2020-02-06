@@ -158,7 +158,8 @@ Route::get('/product_catalog','front\ProductCatalogController@showProductCatalog
    Route::get('conversations','ConversationController@index');
   Route::get('conversations/{id}','ConversationController@show');
 
-   Route::get('favoris/{offre_id}','FavorisController@indexf'); 
+   Route::get('favoris/{offre_id}','FavorisController@indexf');
+   Route::get('favoris','FavorisController@tout');  
 
 
 Route::get('Cv/index', function () {
@@ -248,3 +249,4 @@ Route::get('camembert', 'OffreController@index2');
 
 // Route::get('simple', 'UserChartController@index');
 
+Route::get('pdfview',array('as'=>'pdfview','uses'=>'CvController@pdfview'));

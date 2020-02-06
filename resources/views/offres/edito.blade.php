@@ -182,6 +182,7 @@
                       <label class="col-md-3 col-form-label"></label>
                       <div class="col-md-9">
                         <button class="button">modifier offre</button>
+                        <a href="{{ url('offres') }}" class="btn "style="background-color:#0131B4; color: white;font-family:"ElMessiri-SemiBold";" >Annuler</a>
                       </div>
                     </div>
                   </div>

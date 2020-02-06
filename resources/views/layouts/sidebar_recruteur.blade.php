@@ -6,7 +6,7 @@
                       </a>
                   <div class="company-body">
                     <h5>{{ Auth::guard('recruteur')->user()->nom }}</h5>
-                    <span>@username</span>
+                    <!-- <span>@username</span> -->
                   </div>
                 </div>
                 <div class="profile-progress">
@@ -25,14 +25,14 @@
                 <div class="dashboard-menu">
                   <ul>
                     <li><i class="fas fa-home"></i><a href="employer-dashboard.html">Dashboard</a></li>
-                    <li><i class="fas fa-user"></i><a href="{{route('profil1')}}">Edit Profile</a></li>
-                    <li><i class="fas fa-briefcase"></i><a href="{{url('offres')}}">offres publiées</a></li>
-                    <li><i class="fas fa-briefcase"></i><a href="{{route('jobs')}}"> offres publiées</a></li>
-                    <li class="active"><i class="fas fa-users"></i><a href="{{url('postuler')}}">Manage Candidates</a></li>
-                    <li><i class="fas fa-heart"></i><a href="#">Shortlisted Resumes</a></li>
-                    <li><i class="fas fa-plus-square"></i><a href="{{ url('offres/createo/$offres->recruteur_id')}}">Post New Job</a></li>
-                    <li><i class="fas fa-comment"></i><a href="{{url('message')}}">Message</a></li>
-                    <li><i class="fas fa-calculator"></i><a href="employer-dashboard-pricing.html">Pricing Plans</a></li>
+                    <li><i class="fas fa-user"></i><a href="{{route('profil1')}}">modifier profil</a></li>
+                    <li><i class="fas fa-briefcase"></i><a href="{{url('offres')}}">offres en attentes</a></li>
+                    <li><i class="fas fa-briefcase"></i><a href="{{route('jobs')}}"> offres en publiées</a></li>
+                    <li class="active"><i class="fas fa-users"></i><a href="{{url('postuler')}}">gerer candidats</a></li>
+                    <li><i class="fas fa-plus-square"></i><a href="{{ url('offres/createo/$offres->recruteur_id')}}">publier offre</a></li>
+                    <li><i class="fas fa-comment"></i><a href="{{url('message')}}">Messages</a></li>
+                    <li><i class="fas fa-comment"></i><a href="{{url('simple')}}">nb offres par mois</a></li>
+                    <li><i class="fas fa-comment"></i><a href="{{url('camembert')}}">nb offres par wilaya</a></li>
                   </ul>
                   <ul class="delete">
                     <li><i class="fas fa-power-off"></i><a  href="{{ route('logout') }}"

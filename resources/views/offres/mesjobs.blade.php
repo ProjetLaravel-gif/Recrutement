@@ -45,23 +45,23 @@
                       </tr>
                     </thead>
                     <tbody>
-                    	 @foreach($offres as $offres)
-                                         <form action="{{ url('offres/'.$offres->id) }}" method="post">
+                    	 @foreach($offres as $offre)
+                                         <form action="{{ url('offres/'.$offre->id) }}" method="post">
                                              {{ csrf_field() }}
                                              {{ method_field('DELETE') }}
 
                       <tr class="job-items">
                         <td class="title">
-                          <h5><a href="#">{{ $offres->intitule }}</a></h5>
+                          <h5><a href="#">{{ $offre->intitule }}</a></h5>
                           <div class="info">
-                            <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $offres->dommaine }}</a></span>
-                                               <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $offres->ville }}</a></span>
+                            <span class="company"><a href="#"><i data-feather="briefcase"></i>{{ $offre->dommaine }}</a></span>
+                                               <span class="office-location"><a href="#"><i data-feather="map-pin"></i>{{ $offre->ville }}</a></span>
                                               
-                                               <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>{{ $offres->duree }}</a></span>
+                                               <span class="job-type part-time"><a href="#"><i data-feather="clock"></i>{{ $offre->duree }}</a></span>
                           </div>
                         </td>
                         @php
-                                             $depot = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $offres->created_at);
+                                             $depot = \Carbon\Carbon::createFromFormat('Y-m-d H:s:i', $offre->created_at);
                                              @endphp
                         <td class="deadline">{{$depot}}</td>
 
@@ -69,17 +69,17 @@
 
 
                         
-                        <td class="status active"><a href="{{ url('statut/'.$offres->id) }}" class="button">publier</a></td>
+                        <td class="status active"><a href="{{ url('statut/'.$offre->id) }}" class="button">publier</a></td>
 
                         <td class="action">
-                          <a href="{{ url('offres/'.$offres->id.'/detail') }}" class="preview" title="Preview"><i data-feather="eye"></i></a>
-                          <a href="{{ url('offres/'.$offres->id.'/edito') }}" class="edit" title="Edit"><i data-feather="edit"></i></a>
+                          <a href="{{ url('offres/'.$offre->id.'/detail') }}" class="preview" title="Preview"><i data-feather="eye"></i></a>
+                          <a href="{{ url('offres/'.$offre->id.'/edito') }}" class="edit" title="Edit"><i data-feather="edit"></i></a>
 
-                          <!-- <a href="#supprimer{{ $offres->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i data-feather="trash-2"></i></a> -->
-                          <a href="#supprimer{{ $offres->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
-                      <div class="modal fade" id="supprimer{{ $offres->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $offres->id }}ModalLabel" aria-hidden="true">
+                        
+                          <a href="#supprimer{{ $offre->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
+                      <div class="modal fade" id="supprimer{{ $offre->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $offre->id }}ModalLabel" aria-hidden="true">
 
-                          <a href="#supprimer{{ $offres->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i data-feather="trash-2"></i></a>
+                          <a href="#supprimer{{ $offre->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i data-feather="trash-2"></i></a>
                         </td>
                       </tr>
 
@@ -128,7 +128,7 @@
                     <li><i class="fas fa-trash-alt"></i><a href="#" data-toggle="modal" data-target="#modal-delete">Delete Profile</a></li>
                   </ul>
                   <!-- Modal -->
-                 <div class="modal fade" id="supprimer{{ $offres->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $offres->id }}ModalLabel" aria-hidden="true">
+                 <div class="modal fade" id="supprimer{{ $offre->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $offre->id }}ModalLabel" aria-hidden="true">
 
                           <div class="modal-dialog">
                               <div class="modal-content">
@@ -142,7 +142,7 @@
                                       Voulez-vous vraiment effectuer la suppression ? 
                                   </div>
                                   <div class="modal-footer">
-                                      <form class="form-inline" action="{{ url('offres/'.$offres->id)}}"  method="POST">
+                                      <form class="form-inline" action="{{ url('offres/'.$offre->id)}}"  method="POST">
                                           @method('DELETE')
                                           @csrf
                                       <button type="button" class="btn btn-light" data-dismiss="modal">Non</button>
@@ -155,12 +155,15 @@
                         </td>
                       </tr>
                        </form>
+                        
               @endforeach
+                            
+                                    <nav aria-label="Page navigation example">{{ $offres->links() }}</nav>
                        </tbody>
                   </table>
                   </div> 
                        
-             
+             <nav aria-label="Page navigation example">{{ $offres->links() }}</nav>
 
              </div>
               @include('layouts/sidebar_recruteur')
@@ -172,9 +175,7 @@
         
  
 
-       </form>
-
-                      @endforeach   
+      
 
 
 
