@@ -61,7 +61,34 @@
                           <a href="" class="preview" title="Preview" data-toggle="modal" data-target="#apply-popup-id"><i data-feather="eye"></i></a>
                           <a href="#" class="download"><i data-feather="download"></i></a>
                           <a href="{{ url('contact1/createCc/'.$postules->candidat_id) }}" class="inbox"><i data-feather="mail"></i></a>
-                          <a href="#" class="remove"><i data-feather="trash-2"></i></a>
+
+
+                            <a href="#supprimer{{ $postules->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i data-feather="trash-2"></i></a>
+                          <div class="modal fade" id="supprimer{{ $postules->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $postules->id }}ModalLabel" aria-hidden="true">
+                          <div class="modal-dialog">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                    
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                  <div class="modal-body text-center">
+                                      Voulez-vous vraiment effectuer la suppression ? 
+                                  </div>
+                                  <div class="modal-footer">
+                                      <form class="form-inline" action="{{ url('postules/'.$postules->id)}}"  method="POST">
+                                          @method('DELETE')
+                                          @csrf
+                                      <button type="button" class="btn btn-light" data-dismiss="modal">Non</button>
+                                          <button type="submit" class="btn btn-danger">Oui</button>
+                                      </form>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+
+
                         </td>
                       </tr>
                        </tr>

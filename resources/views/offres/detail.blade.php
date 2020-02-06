@@ -69,10 +69,10 @@
                     <li>Lunch &amp; Snacks</li>
                   </ul>
                 </div>
-                <div class="job-apply-buttons">
+                <!-- <div class="job-apply-buttons">
                   <a href="#" class="apply"  data-toggle="modal" data-target="#apply-popup-id">Apply Online</a>
                   <a href="#" class="email"><i data-feather="mail"></i>Email Job</a>
-                </div>
+                </div> -->
               </div>
               <div class="col-xl-4 offset-xl-1 col-lg-4">
                 <div class="information-and-share">
@@ -83,11 +83,10 @@
                     <h4>Job Summary</h4>
                     <ul>
                       <li><span>Published on:</span> {{$depot}}</li>
-                      <li><span>Vacancy:</span> 08</li>
-                      <li><span>Employment Status:</span> Full-time</li>
+                      <li><span>saliare:</span>{{ $offres->renumeration }}</li>
+                      <!-- <li><span>Employment Status:</span> Full-time</li> -->
                       <li><span>Experience:</span>{{ $offres->nbr_annee_experiences }}</li>
                       <li><span>Job Location:</span>{{ $offres->ville }}</li>
-                      <li><span>Salary:</span>{{ $offres->renumeration }}</li>
                       <li><span>webadress:</span>{{ $offres->webaddresse }}</li>
                       <li><span>date de debut prevue:</span>{{ $offres->date_debut_prevu }}</li>
                     </ul>
@@ -108,8 +107,38 @@
                   <div class="job-location">
                     <h4>Job Location</h4>
                     <div id="map-area">
-                      <div class="cp-map" id="location" data-lat="40.713355" data-lng="-74.005535" data-zoom="10"></div>
-                      <!-- <div class="cp-map" id="location" data-lat="40.713355" data-lng="-74.005535" data-zoom="10"></div> -->
+                     <br>
+<style>
+       /* Set the size of the div element that contains the map */
+      #map {
+        height: 400px;  /* The height is 400 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+    </style>
+ 
+<div id="map"></div>
+    <script>
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  var uluru = {lat:35.7300362 , lng: -0.5852167};
+  // The map, centered at Uluru
+  var map = new google.maps.Map(
+      document.getElementById('map'), {zoom: 10, center: uluru});
+  // The marker, positioned at Uluru
+  var marker = new google.maps.Marker({position: uluru, map: map});
+}
+
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARNL0H7Pvr1Rfo16dBoM55iuPOdjomTvs&sensor=false&callback=initMap">
+    </script>
+ <!-- <div class="cp-map" id="location" data-lat="40.713355" data-lng="-74.005535" data-zoom="10"></div> -->
                     </div>
                   </div>
                 </div> 

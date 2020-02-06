@@ -1,5 +1,6 @@
-@extends('layouts.candidat')
-@section('candidat')
+@extends('layouts.master')
+@section('content')
+
 
 
 <!-- Breadcrumb -->
@@ -33,6 +34,7 @@
 <div class="alice-bg section-padding-bottom">
    <form action="{{ url('cvs/'.$cvs->id) }}" method="post">
                     {{ csrf_field() }}
+                    <div id='sectionAimprimer'>
   <div class="container no-gliters">
     <div class="row no-gliters">
       <div class="col">
@@ -41,7 +43,7 @@
 
             
             <div class="download-resume dashboard-section">
-              <a href="#">Download CV<i data-feather="download"></i></a>
+              <a href="#" class="button print" onClick="imprimer('sectionAimprimer')"><i data-feather="printer"></i>imprimer cv</a>
               <a href="#">Download Cover Letter<i data-feather="download"></i></a>
             </div>
             <div class="skill-and-profile dashboard-section">
@@ -269,6 +271,7 @@
                           <input type="checkbox" class="form-check-input" checked="">
                           <label class="form-check-label">You accepts our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy</a></label>
                         </div>
+                      </div>
                       </form>
                     </div>
                   </div>

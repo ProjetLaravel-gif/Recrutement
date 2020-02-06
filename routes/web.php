@@ -146,7 +146,7 @@ Route::get('/product_catalog','front\ProductCatalogController@showProductCatalog
    Route::delete('competences/{id}','CompetenceController@destroy');
 
    // route favoris
-<<<<<<< HEAD
+
    Route::get('favoris/{id}','FavorisController@indexf');
    Route::get('favoris','FavorisController@index')->name('favoris'); 
    Route::get('favoris/createf','FavorisController@createf'); 
@@ -157,9 +157,9 @@ Route::get('/product_catalog','front\ProductCatalogController@showProductCatalog
    //route des messages
    Route::get('conversations','ConversationController@index');
   Route::get('conversations/{id}','ConversationController@show');
-=======
+
    Route::get('favoris/{offre_id}','FavorisController@indexf'); 
->>>>>>> 4f82caecddbe4d9705fbb0d6d6447c44fceb1256
+
 
 Route::get('Cv/index', function () {
     return view('Cv/index');
@@ -193,7 +193,7 @@ Route::post('contact1','OffreController@storeCc');
 
 
 
-<<<<<<< HEAD
+
        //     if($request->hasFile('cv')){
        //      $cv = $request->file('cv');
        //      $filename = time() . '.' . $cv->getClientOriginalExtension();
@@ -234,7 +234,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //         ]);
 // });
 
-=======
+
 
 
 
@@ -247,4 +247,4 @@ Route::get('camembert', 'OffreController@index2');
 // }); 
 
 // Route::get('simple', 'UserChartController@index');
->>>>>>> 4f82caecddbe4d9705fbb0d6d6447c44fceb1256
+

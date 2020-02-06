@@ -67,21 +67,18 @@
 
                         
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 4f82caecddbe4d9705fbb0d6d6447c44fceb1256
                         
                         <td class="status active"><a href="{{ url('statut/'.$offres->id) }}" class="button">publier</a></td>
 
                         <td class="action">
                           <a href="{{ url('offres/'.$offres->id.'/detail') }}" class="preview" title="Preview"><i data-feather="eye"></i></a>
                           <a href="{{ url('offres/'.$offres->id.'/edito') }}" class="edit" title="Edit"><i data-feather="edit"></i></a>
-<<<<<<< HEAD
+
                           <!-- <a href="#supprimer{{ $offres->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i data-feather="trash-2"></i></a> -->
                           <a href="#supprimer{{ $offres->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i class="fa fa-trash-o"></i></a>
                       <div class="modal fade" id="supprimer{{ $offres->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $offres->id }}ModalLabel" aria-hidden="true">
-=======
+
                           <a href="#supprimer{{ $offres->id }}Modal" role="button" class="btn btn-danger" data-toggle="modal"><i data-feather="trash-2"></i></a>
                         </td>
                       </tr>
@@ -132,7 +129,7 @@
                   </ul>
                   <!-- Modal -->
                  <div class="modal fade" id="supprimer{{ $offres->id }}Modal" tabindex="-1" role="dialog" aria-labelledby="supprimer{{ $offres->id }}ModalLabel" aria-hidden="true">
->>>>>>> ca9dfa888cb22ffd51a7a830e89be8f64f71013e
+
                           <div class="modal-dialog">
                               <div class="modal-content">
                                   <div class="modal-header">
@@ -171,14 +168,14 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
+
         
  
-=======
+
        </form>
 
                       @endforeach   
 
->>>>>>> ca9dfa888cb22ffd51a7a830e89be8f64f71013e
+
 
     @endsection

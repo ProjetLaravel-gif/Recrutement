@@ -9,7 +9,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active" aria-current="page">Employer Dashboard</li>
+              <li class="breadcrumb-item active" aria-current="page">candidat Dashboard</li>
             </ol>
           </nav>
         </div>
@@ -51,24 +51,8 @@
                      </form>
          
                  
-                      </div>
+                      
 
-                    <!--   <div class="message-box">
-                    <div class="message-box-header">
-                      <a href="#"><i class="fas fa-ellipsis-h"></i></a>
-                      <h5>{{ $contacts->candidat['nom']}}</h5>
-                    </div>
-                    <ul class="dashboard-conversation">
-                      <li class="conversation in">
-                        <div class="avater">
-                          <img src="dashboard/images/avater-1.jpg" class="img-fluid" alt="">
-                        <!-- </div>
-                        <div class="message"><span>{{ $contacts->message}}</span></div>
-                        <span class="send-time">2.32 am</span> -->
-                     <!--    <a href="" class="preview" title="Preview" data-toggle="modal" data-target="#apply-popup-id"><i data-feather="eye"></i></a>
-                      </li>
-                      </ul>
-                   </div> -->
                     <div class="apply-popup">
                                          <div class="modal fade" id="apply-popup-id" tabindex="-1" role="dialog" aria-hidden="true">
                                            <div class="modal-dialog" role="document">
@@ -95,6 +79,8 @@
                                          </div>
                                        </div>
                    @endforeach
+                      
+            </div>
                 </div>
              </div>
           </div> 
